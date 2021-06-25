@@ -1,7 +1,7 @@
 @extends('frontend.dashboard.master')
 
 @section('title')
-SAPAHAR PHARMA
+GLOBAL PHARMA
 @endsection
 
 @section('content-section')
@@ -30,15 +30,17 @@ SAPAHAR PHARMA
        <td>{{$value->category}}</td>
        <td>{{$value->manufecture}}</td>
        <td>{{$value->self_number}}</td>
-       <td>{{$value->strength}}</td>
        <td>{{$value->medicine_price}}</td>
-       <td>{{$value->Images}}</td>
-       <td>Edit|Delete</td>
+       <td>{{$value->menufecturer_price}}</td>
+       <td>{{$value->strength}}</td>
+       <td><img src="{{ asset('images/'.$value->Images) }}" alt="" width="50" height="50"></td>
+       <td><a href="#edit">Edit</a> | <a href="#delete">Delete</a></td>
     </tr>
     @endforeach
 
-    
+
 </table>
+{{ $data->links() }}
 
 @endsection
 

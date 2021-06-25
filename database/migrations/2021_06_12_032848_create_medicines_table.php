@@ -22,6 +22,7 @@ class CreateMedicinesTable extends Migration
             $table->string('self_number');
             $table->string('strength');
             $table->string('medicine_price');
+            $table->string('menufecturer_price');
             $table->string('Images');
             $table->timestamps();
         });

@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Medicine;
+use Illuminate\Support\Facades\Redirect;
+use Ramsey\Uuid\Exception\RandomSourceException;
+use Image;
 
 class MedicineController extends Controller
 {
@@ -16,7 +19,7 @@ class MedicineController extends Controller
      */
     public function index()
     {
-        $data= Medicine::all();
+        $data= Medicine::orderby('id','desc')->paginate(10);
         return view('frontend.dashboard.pages.view_medicine',compact('data'));
 
     }
@@ -39,9 +42,36 @@ class MedicineController extends Controller
      */
     public function store(Request $request)
     {
-        $value= $request->all();
-        Medicine::create($value);
-        return back()->with(' data insert successfull');
+    //    $request->validate([
+    //         'Images' => 'require|images',
+    //     ]);
+        $value = new Medicine;
+
+        if($request->hasFile('Images')){
+            $image=$request->file('Images');
+            // return $image ;
+            $file_name=time().'.'.$image->getClientOriginalExtension();
+            // return $file_name ;
+
+            $image_resize=Image::make($image->getRealPath());
+            $image_resize->resize(100,100);
+
+            $image_resize->save('images/'.$file_name);
+            $value->Images=$file_name;
+
+        }
+// return $value ;
+
+        $value->medicine_name=$request->medicine_name;
+        $value->genric_name=$request->genric_name;
+        $value->category=$request->category;
+        $value->manufecture=$request->manufecture;
+        $value->self_number=$request->self_number;
+        $value->strength=$request->strength;
+        $value->medicine_price=$request->medicine_price;
+        $value->menufecturer_price=$request->menufecturer_price;
+        $value->save();
+        return Redirect()->back();
     }
 
     /**
