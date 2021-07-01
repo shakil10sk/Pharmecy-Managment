@@ -6,6 +6,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Medicine;
+use Illuminate\Support\Facades\Redirect;
+use Ramsey\Uuid\Exception\RandomSourceException;
+use Image;
+use App\Exports\MedicinesExport;
+use App\Imports\MedicinesImport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class MedicineController extends Controller
 {
@@ -16,7 +22,7 @@ class MedicineController extends Controller
      */
     public function index()
     {
-        $data= Medicine::all();
+        $data= Medicine::orderby('id','desc')->paginate(10);
         return view('frontend.dashboard.pages.view_medicine',compact('data'));
 
     }
@@ -39,9 +45,40 @@ class MedicineController extends Controller
      */
     public function store(Request $request)
     {
-        $value= $request->all();
-        Medicine::create($value);
-        return back()->with(' data insert successfull');
+    //    $request->validate([
+    //         'Images' => 'require|images',
+    //     ]);
+        $value = new Medicine;
+
+        if($request->hasFile('Images')){
+            $image=$request->file('Images');
+            // return $image ;
+            $file_name=time().'.'.$image->getClientOriginalExtension();
+            // return $file_name ;
+
+            $image_resize=Image::make($image->getRealPath());
+            $image_resize->resize(100,100);
+
+            $image_resize->save('images/'.$file_name);
+            $value->Images=$file_name;
+
+        }
+// return $value ;
+
+        $value->medicine_name=$request->medicine_name;
+        $value->genric_name=$request->genric_name;
+        $value->category_id=$request->category_id;
+        $value->manufecture=$request->manufecture;
+        $value->self_number=$request->self_number;
+        $value->qty=$request->qty;
+        $value->strength=$request->strength;
+        $value->sell_price=$request->sell_price;
+        $value->buy_price=$request->buy_price;
+        $value->Product_code=$request->Product_code;
+        $value->buy_date=$request->buy_date;
+        $value->expire_date=$request->expire_date;
+        $value->save();
+        return Redirect()->back();
     }
 
     /**
@@ -88,4 +125,27 @@ class MedicineController extends Controller
     {
         //
     }
+
+    public function importMedicine(){
+        return view('frontend.dashboard.pages.importMedicine');
+    }
+
+    public function export()
+    {
+        return Excel::download(new MedicinesExport, 'Medicines.xlsx');
+    }
+    public function import(Request $request)
+    {
+        $import= Excel::import(new MedicinesImport, $request->file('import_file'));
+        if( $import){
+                $notification=array(
+                    'message'=>'Medicine Import Successfully',
+                    'alert-type'=>'success'
+                );
+                return Redirect(url('/medicine/view'))->with($notification);
+            }else{
+                return Redirect()->back();
+            }
+    }
 }
+

@@ -1,4 +1,4 @@
-   <script>
+        <script>
             var resizefunc = [];
         </script>
 
@@ -36,6 +36,9 @@
 
         <!-- CUSTOM JS -->
         <script src="{{asset('frontend/js/jquery.app.js')}}"></script>
+        <script src="{{ asset('frontend/assets/datatables/jquery.dataTables.min.js') }}"></script>
+        <script src="{{ asset('frontend/assets/datatables/dataTables.bootstrap.js') }}"></script>
+
 
         <!--Form Validation-->
          <script src="{{asset('frontend/assets/form-wizard/bootstrap-validator.min.js')}}" type="text/javascript"></script>
@@ -56,6 +59,7 @@
         <!-- Todo -->
         <script src="{{asset('frontend/js/jquery.todo.js')}}"></script>
 
+
         <script type="text/javascript">
             /* ==============================================
             Counter Up
@@ -66,4 +70,9 @@
                     time: 1200
                 });
             });
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#datatable').dataTable();
+            } );
         </script>

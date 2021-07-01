@@ -8,8 +8,10 @@
         <link rel="shortcut icon" href="{{asset('images/favicon_1.ico')}}">
         <title>@yield('title') </title>
 
-      
+
         @include('frontend.dashboard.partials.style');
+
+
 
 
     </head>
@@ -39,6 +41,7 @@
                 <!-- Start content -->
                 <div class="content">
                     <div class="container">
+
 
                         <!-- Page-Title -->
                         @yield('title-section')

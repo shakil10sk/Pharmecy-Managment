@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Dashboard;
 
+use App\Http\Controllers\Controller;
+use App\medicine;
 use Illuminate\Http\Request;
 
-class POSController extends Controller
+class ManufacturerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,8 @@ class POSController extends Controller
      */
     public function index()
     {
-        return view('pos');
+        $manufacturer=Medicine::all();
+        return view('frontend.dashboard.pages.manufecturer.view',compact('manufacturer'));
     }
 
     /**
