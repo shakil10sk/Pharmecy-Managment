@@ -37,3 +37,6 @@ Route::group(['prefix'=>'admin','middleware'=>['isAdmin','auth','preventBackHist
 Route::group(['prefix'=>'user','middleware'=>['isUser','auth','preventBackHistory']],function (){
     Route::get('/dashboard',[UserController::class,'index'])->name('user.dashboard');
 });
+Route::group(['prefix'=>'user','middleware'=>['isUser','auth','preventBackHistory']],function (){
+    Route::get('/dashboard',[UserController::class,'index'])->name('user.dashboard');
+});

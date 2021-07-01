@@ -40,14 +40,19 @@
     </head>
     <body>
 
-
+        
         <div class="wrapper-page">
             <div class="panel panel-color panel-primary panel-pages">
                 <div class="panel-heading bg-img"> 
                     <div class="bg-overlay"></div>
                    <h3 class="text-center m-t-10 text-white"> Login With Dashboard </h3>
                 </div> 
-
+                {{-- error messages --}}
+                @if ($message = Session::get('error'))
+                <div class="alert alert-danger">
+                  <p>{{ $message }}</p>
+                </div>
+                @endif
 
                 <div class="panel-body">
                 <form class="form-horizontal m-t-20" method="POST" action="{{ route('login') }}">
@@ -56,7 +61,7 @@
 
                     <div class="form-group">
                         <div class="col-xs-12">
-                            <input class="form-control input-lg"  placeholder="Email" name="email" value="{{ old('email') }}">
+                            <input class="form-control input-lg"  placeholder="Email" name="email" id="email" value="{{ old('email') }}">
                             <span class="text-danger">
                                 @error('email')
                                     {{ $message }}
@@ -68,7 +73,12 @@
 
                     <div class="form-group">
                         <div class="col-xs-12">
-                            <input class="form-control input-lg" type="password" name="password"  placeholder="Password" value="{{ old('password') }}" >
+                            <div class="input-group" id="show_hide_password">
+                                <input class="form-control input-lg" type="password" name="password" id="password" placeholder="Password" value="{{ old('password') }}">
+                                <div class="input-group-addon">
+                                  <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
+                                </div>
+                              </div>
                         </div>
                         <span class="text-danger">
                             @error('password')
@@ -101,6 +111,28 @@
                         </div>
                     </div>
                 </form> 
+                <table id="table" class="table table-hover table-bordered table-responsive" style="cursor: pointer;font-size:15px;">
+                    <thead class="">
+                        <tr>
+                            <th scope="col">Email</th>
+                            <th scope="col">Password</th>
+                            <th scope="col">Role</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td scope="row">admin@gmail.com</td>
+                                <td>123456</td>
+                                <td>Admin</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">user@gmail.com</td>
+                                <td>123456</td>
+                                <td>User</td>
+                            </tr>
+                            
+                        </tbody>
+                </table>
                 </div>                                 
                 
             </div>
@@ -124,6 +156,33 @@
 
         <!-- CUSTOM JS -->
         <script src="{{ asset('frontend/js/jquery.app.js')}}"></script>
+        <script>
+            $(document).ready(function() {
+                $("#show_hide_password a").on('click', function(event) {
+                    event.preventDefault();
+                    if($('#show_hide_password input').attr("type") == "text"){
+                        $('#show_hide_password input').attr('type', 'password');
+                        $('#show_hide_password i').addClass( "fa-eye-slash" );
+                        $('#show_hide_password i').removeClass( "fa-eye" );
+                    }else if($('#show_hide_password input').attr("type") == "password"){
+                        $('#show_hide_password input').attr('type', 'text');
+                        $('#show_hide_password i').removeClass( "fa-eye-slash" );
+                        $('#show_hide_password i').addClass( "fa-eye" );
+                    }
+                });
+            });
+            // $(documetn).ready(function(){
+            //     var table 
+            // })
+            var table = document.getElementById('table'),rIndex ;
+            for(var i = 0 ; i< table.rows.length ; i++ ){
+                table.rows[i].onclick = function(){
+                    rIndex = this.rowIndex ;
+                    document.getElementById("email").value = this.cells[0].innerHTML;
+                    document.getElementById("password").value = this.cells[1].innerHTML;
+                }
+            }
+        </script>
 	
 	</body>
 </html>
