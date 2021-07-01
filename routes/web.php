@@ -23,6 +23,10 @@ Route::get('/', function () {
 Route::get('/medicine/view','Dashboard\MedicineController@index');
 Route::get('/medicine/add','Dashboard\MedicineController@create');
 Route::post('/medicine/post','Dashboard\MedicineController@store');
+// import and Export Medicine By Excell
+Route::get('/import-medicine','Dashboard\MedicineController@importMedicine');
+Route::get('/export','Dashboard\MedicineController@export');
+Route::post('/import','Dashboard\MedicineController@import')->name('import');
 
 // for Employee
 Route::get('/employee/add','Dashboard\EmployeeController@create');
@@ -50,6 +54,8 @@ Route::post('/customar/update/{id}','Dashboard\CustomarController@update');
 
 // Category section
 Route::get('/category/','Dashboard\CategoryController@index');
+Route::get('/add/category','Dashboard\CategoryController@create');
+Route::post('/store/category','Dashboard\CategoryController@store')->name('store.category');
 
 // Manufacturer  section
 Route::get('/manufacturer','Dashboard\ManufacturerController@index');
@@ -64,3 +70,4 @@ Route::post('/add-cart','user\CartController@index');
 Route::post('/cart-update/{rowId}','user\CartController@CartUpdate');
 Route::get('/cart-remove/{rowId}','user\CartController@CartRemove');
 Route::post('/create-invoice','user\CartController@CreateInvoice');
+Route::post('/final-invoice','user\CartController@FinalInvoice');

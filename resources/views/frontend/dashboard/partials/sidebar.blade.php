@@ -58,13 +58,13 @@
                 </li>
 
                 <li>
-                    <a href="/invoice" class="waves-effect ">
+                    {{-- <a href="/invoice" class="waves-effect ">
                         <i class="md md-event"></i>
                         <span>
                             INVOICE
                         </span>
                     </a>
-                </li>
+                </li> --}}
 
                 {{-- <li class="has_sub">
                                 <a href="#" class="waves-effect"><i class="md md-mail"></i><span> Mail </span><span class="pull-right"><i class="md md-add"></i></span></a>
@@ -91,6 +91,9 @@
                         </li>
                         <li>
                             <a href="/medicine/view">View Medicine</a>
+                        </li>
+                        <li>
+                            <a href="/import-medicine">Import Medicine</a>
                         </li>
                     </ul>
                 </li>
@@ -148,6 +151,9 @@
                     </a>
                     <ul class="list-unstyled">
                         {{-- <li><a href="/create-employee">Add category</a></li> --}}
+                        <li>
+                            <a href="/add/category">Add category</a>
+                        </li>
                         <li>
                             <a href="/category">View category</a>
                         </li>

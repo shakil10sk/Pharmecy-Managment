@@ -9,6 +9,9 @@ use App\Medicine;
 use Illuminate\Support\Facades\Redirect;
 use Ramsey\Uuid\Exception\RandomSourceException;
 use Image;
+use App\Exports\MedicinesExport;
+use App\Imports\MedicinesImport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class MedicineController extends Controller
 {
@@ -64,12 +67,16 @@ class MedicineController extends Controller
 
         $value->medicine_name=$request->medicine_name;
         $value->genric_name=$request->genric_name;
-        $value->category=$request->category;
+        $value->category_id=$request->category_id;
         $value->manufecture=$request->manufecture;
         $value->self_number=$request->self_number;
+        $value->qty=$request->qty;
         $value->strength=$request->strength;
-        $value->medicine_price=$request->medicine_price;
-        $value->menufecturer_price=$request->menufecturer_price;
+        $value->sell_price=$request->sell_price;
+        $value->buy_price=$request->buy_price;
+        $value->Product_code=$request->Product_code;
+        $value->buy_date=$request->buy_date;
+        $value->expire_date=$request->expire_date;
         $value->save();
         return Redirect()->back();
     }
@@ -118,4 +125,27 @@ class MedicineController extends Controller
     {
         //
     }
+
+    public function importMedicine(){
+        return view('frontend.dashboard.pages.importMedicine');
+    }
+
+    public function export()
+    {
+        return Excel::download(new MedicinesExport, 'Medicines.xlsx');
+    }
+    public function import(Request $request)
+    {
+        $import= Excel::import(new MedicinesImport, $request->file('import_file'));
+        if( $import){
+                $notification=array(
+                    'message'=>'Medicine Import Successfully',
+                    'alert-type'=>'success'
+                );
+                return Redirect(url('/medicine/view'))->with($notification);
+            }else{
+                return Redirect()->back();
+            }
+    }
 }
+

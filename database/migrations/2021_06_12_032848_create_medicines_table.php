@@ -17,13 +17,17 @@ class CreateMedicinesTable extends Migration
             $table->id();
             $table->string('medicine_name');
             $table->string('genric_name');
-            $table->string('category');
+            $table->string('category_id');
             $table->string('manufecture');
             $table->string('self_number');
+            $table->string('qty');
             $table->string('strength');
-            $table->string('medicine_price');
-            $table->string('menufecturer_price');
+            $table->string('sell_price');
+            $table->string('buy_price');
             $table->string('Images');
+            $table->string('Product_code');
+            $table->string('buy_date');
+            $table->string('expire_date');
             $table->timestamps();
         });
     }

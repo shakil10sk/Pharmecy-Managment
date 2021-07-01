@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\medicine;
 use Illuminate\Http\Request;
+use App\Category;
 
 class CategoryController extends Controller
 {
@@ -15,7 +16,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $category=medicine::all();
+        $category=Category::all();
         return view('frontend.dashboard.pages.category.category',compact('category'));
     }
 
@@ -26,7 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('frontend.dashboard.pages.category.addCategory');
     }
 
     /**
@@ -37,9 +38,20 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        // $category=Category;
+        $category=$request->all();
+        $notify=Category::create($category);
+        if($notify){
+            $notification=array(
+                'message'=>'Category Add Successfully',
+                'alert-type'=>'success'
+            );
+            return Redirect(url('/add/category'))->with($notification);
+        }else{
+            return Redirect()->back();
+        }
 
+    }
     /**
      * Display the specified resource.
      *
