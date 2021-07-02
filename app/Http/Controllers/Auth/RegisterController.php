@@ -5,7 +5,10 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+<<<<<<< HEAD
 use Illuminate\Http\Request;
+=======
+>>>>>>> main
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -32,6 +35,7 @@ class RegisterController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
+<<<<<<< HEAD
     protected function redirectTo(){
         if(Auth()->user()->role == 1 ){
             return route('admin.dashboard');
@@ -40,6 +44,8 @@ class RegisterController extends Controller
             return route('user.dashboard');
         }
     }
+=======
+>>>>>>> main
     /**
      * Create a new controller instance.
      *
@@ -61,7 +67,11 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+<<<<<<< HEAD
             'password' => ['required', 'string', 'min:6', 'confirmed'],
+=======
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+>>>>>>> main
         ]);
     }
 
@@ -73,6 +83,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+<<<<<<< HEAD
         // $data = new User(); 
         // $data->name = $request->name;
         // $data->email = $request->email;
@@ -90,6 +101,11 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'role'  => 2 ,
+=======
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+>>>>>>> main
             'password' => Hash::make($data['password']),
         ]);
     }

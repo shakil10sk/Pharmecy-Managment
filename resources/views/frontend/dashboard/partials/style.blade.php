@@ -1,4 +1,5 @@
- <!-- Base Css Files -->
+
+<!-- Base Css Files -->
         <link href="{{ asset('frontend/css/bootstrap.min.css')}}" rel="stylesheet" />
 
         <!-- Font Icons -->
@@ -12,6 +13,9 @@
         <!-- Waves-effect -->
         <link href="{{ asset('frontend/css/waves-effect.css')}}" rel="stylesheet">
 
+        <!-- DataTables -->
+        <link href="{{ asset('frontend/assets/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
+
         <!-- sweet alerts -->
         <link href="{{ asset('frontend/assets/sweet-alert/sweet-alert.min.css')}}" rel="stylesheet">
 
@@ -22,6 +26,10 @@
         <!-- Custom Files -->
         <link href="{{ asset('frontend/css/helper.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('frontend/css/style.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('frontend/style.css')}}" rel="stylesheet" type="text/css" />
+
+
+
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

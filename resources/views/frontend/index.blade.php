@@ -1,7 +1,7 @@
 @extends('frontend.dashboard.master')
 
 @section('title')
-SAPAHAR PHARMA
+GLOBAL PHARMA
 @endsection
 
 
@@ -10,7 +10,7 @@ SAPAHAR PHARMA
             <div class="col-sm-12">
                 <h4 class="pull-left page-title">Welcome Adminastrator!</h4>
                 <ol class="breadcrumb pull-right">
-                    <li><a href="#">SAPAHAR PHRMA</a></li>
+                    <li><a href="#">GLOBAL PHRMA</a></li>
                     <li class="active">ADMIN Dashboard</li>
                 </ol>
             </div>

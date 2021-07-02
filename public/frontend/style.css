@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.contact-form {
+    width: 100%;
+    height: 100vh;
+    background-color: #333333;
+    margin: auto;
+}
+
+.contact-form-container {
+    display: flex;
+}
+
+.left-form {
+    width: 50%;
+}
+
+.right-form {
+    width: 50%;
+}

@@ -5,8 +5,11 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+<<<<<<< HEAD
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+=======
+>>>>>>> main
 
 class LoginController extends Controller
 {
@@ -30,6 +33,7 @@ class LoginController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
+<<<<<<< HEAD
     protected function redirectTo(){
         if(Auth()->user()->role == 1 ){
             return route('admin.dashboard');
@@ -39,6 +43,8 @@ class LoginController extends Controller
         }
     }
 
+=======
+>>>>>>> main
     /**
      * Create a new controller instance.
      *
@@ -48,6 +54,7 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+<<<<<<< HEAD
     public function login(Request $request){
         $input = $request->all();
         $this->validate($request,[
@@ -65,4 +72,6 @@ class LoginController extends Controller
             return redirect()->route('login')->with('error','Email And Password are Wrong ');
         }
     }
+=======
+>>>>>>> main
 }

@@ -1,42 +1,72 @@
- <div class="left side-menu">
-     <div class="sidebar-inner slimscrollleft">
-         <div class="user-details">
-             <div class="pull-left">
-                 <img src="{{ asset('frontend/images/sk.jpg') }}" alt=""
-                     class="thumb-md img-circle">
-             </div>
-             <div class="user-info">
-                 <div class="dropdown">
-                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Shakil <span
-                             class="caret"></span></a>
-                     <ul class="dropdown-menu">
-                         <li><a href="javascript:void(0)"><i class="md md-face-unlock"></i> Profile<div
-                                     class="ripple-wrapper"></div></a></li>
-                         <li><a href="javascript:void(0)"><i class="md md-settings"></i> Settings</a></li>
-                         <li><a href="javascript:void(0)"><i class="md md-lock"></i> Lock screen</a></li>
-                         <li><a href="javascript:void(0)"><i class="md md-settings-power"></i> Logout</a></li>
-                     </ul>
-                 </div>
-                 <p class="text-muted m-0">Administrator</p>
-             </div>
-         </div>
-         <!--- Divider -->
-         <div id="sidebar-menu">
-             <ul>
-                 <li>
-                     <a href="/" class="waves-effect active"><i class="md md-home"></i><span> Dashboard </span></a>
-                 </li>
+<div class="left side-menu">
+    <div class="sidebar-inner slimscrollleft">
+        <div class="user-details">
+            <div class="pull-left">
+                <img src="{{ asset('/frontend/images/admin.jpg') }}" alt=""
+                    class="thumb-md img-circle"></div>
+            <div class="user-info">
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Shakil
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="md md-face-unlock"></i>
+                                Profile<div class="ripple-wrapper"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="md md-settings"></i>
+                                Settings</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="md md-lock"></i>
+                                Lock screen</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="md md-settings-power"></i>
+                                Logout</a>
+                        </li>
+                    </ul>
+                </div>
+                <p class="text-muted m-0">Administrator</p>
+            </div>
+        </div>
+        <!--- Divider -->
+        <div id="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="/" class="waves-effect ">
+                        <i class="md md-home"></i>
+                        <span>
+                            Dashboard
+                        </span>
+                    </a>
+                </li>
 
-                 <li>
-                     <a href="/pos" class="waves-effect "><i class="md md-palette"></i><span> POS </span></a>
-                 </li>
+                <li>
+                    <a href="/pos" class="waves-effect ">
+                        <i class="md md-palette"></i>
+                        <span>
+                            POS
+                        </span>
+                    </a>
+                </li>
 
-                 <li>
-                     <a href="/invoice" class="waves-effect "><i class="md md-event"></i><span> INVOICE </span></a>
-                 </li>
+                <li>
+                    {{-- <a href="/invoice" class="waves-effect ">
+                        <i class="md md-event"></i>
+                        <span>
+                            INVOICE
+                        </span>
+                    </a>
+                </li> --}}
 
-
-                 {{-- <li class="has_sub">
+                {{-- <li class="has_sub">
                                 <a href="#" class="waves-effect"><i class="md md-mail"></i><span> Mail </span><span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="/inbox">Inbox</a></li>
@@ -45,57 +75,115 @@
                                 </ul>
                             </li> --}}
 
-                 <li class="has_sub">
-                     <a href="#" class="waves-effect"><i class="md md-redeem"></i><span> Employee </span><span
-                             class="pull-right"><i class="md md-add"></i></span></a>
-                     <ul class="list-unstyled">
-                         <li><a href="/create-employee">Create Employee</a></li>
-                         <li><a href="/view-employee">View Employee</a></li>
-                     </ul>
-                 </li>
+                <li class="has_sub">
+                    <a href="#" class="waves-effect">
+                        <i class="md md-invert-colors-on"></i>
+                        <span>
+                            Medicine
+                        </span>
+                        <span class="pull-right">
+                            <i class="md md-add"></i>
+                        </span>
+                    </a>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="/medicine/add">Add Medicine</a>
+                        </li>
+                        <li>
+                            <a href="/medicine/view">View Medicine</a>
+                        </li>
+                        <li>
+                            <a href="/import-medicine">Import Medicine</a>
+                        </li>
+                    </ul>
+                </li>
 
-                 <li class="has_sub">
-                     <a href="#" class="waves-effect"><i class="md md-invert-colors-on"></i><span> Medicine </span><span
-                             class="pull-right"><i class="md md-add"></i></span></a>
-                     <ul class="list-unstyled">
-                         <li><a href="/medicine/add">Add Medicine</a></li>
-                         <li><a href="/medicine/view">View Medicine</a></li>
-                     </ul>
-                 </li>
+                <li class="has_sub">
+                    <a href="#" class="waves-effect">
+                        <i class="md md-redeem"></i>
+                        <span>
+                            Employee
+                        </span>
+                        <span class="pull-right">
+                            <i class="md md-add"></i>
+                        </span>
+                    </a>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="/employee/add">Create Employee</a>
+                        </li>
+                        <li>
+                            <a href="/employee/view">View Employee</a>
+                        </li>
+                    </ul>
+                </li>
 
-                 <i class="" aria-hidden="true"></i>
-                 <li class="has_sub">
-                     <a href="#" class="waves-effect"><i class="fa fa-sellsy"></i><span> Customar </span><span
-                             class="pull-right"><i class="md md-add"></i></span></a>
-                     <ul class="list-unstyled">
-                         <li><a href="/create-employee">Add Customar</a></li>
-                         <li><a href="/view-employee">View Customar</a></li>
-                     </ul>
-                 </li>
+                <i class="" aria-hidden="true"></i>
+                <li class="has_sub">
+                    <a href="#" class="waves-effect">
+                        <i class="fa fa-sellsy"></i>
+                        <span>
+                            Customar
+                        </span>
+                        <span class="pull-right">
+                            <i class="md md-add"></i>
+                        </span>
+                    </a>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="/customar/add">Add Customar</a>
+                        </li>
+                        <li>
+                            <a href="/customar/view">View Customar</a>
+                        </li>
+                    </ul>
+                </li>
 
-                 <li class="has_sub">
-                     <a href="#" class="waves-effect"><i class="md md-invert-colors-on"></i><span> category </span><span
-                             class="pull-right"><i class="md md-add"></i></span></a>
-                     <ul class="list-unstyled">
-                         <li><a href="/create-employee">Add category</a></li>
-                         <li><a href="/view-employee">View category</a></li>
-                     </ul>
-                 </li>
+                <li class="has_sub">
+                    <a href="#" class="waves-effect">
+                        <i class="md md-invert-colors-on"></i>
+                        <span>
+                            category
+                        </span>
+                        <span class="pull-right">
+                            <i class="md md-add"></i>
+                        </span>
+                    </a>
+                    <ul class="list-unstyled">
+                        {{-- <li><a href="/create-employee">Add category</a></li> --}}
+                        <li>
+                            <a href="/add/category">Add category</a>
+                        </li>
+                        <li>
+                            <a href="/category">View category</a>
+                        </li>
+                    </ul>
+                </li>
 
-                 <li class="has_sub">
-                     <a href="#" class="waves-effect"><i class="md md-invert-colors-on"></i><span> Company </span><span
-                             class="pull-right"><i class="md md-add"></i></span></a>
-                     <ul class="list-unstyled">
-                         <li><a href="/create-employee">Add Company</a></li>
-                         <li><a href="/view-employee">View Company</a></li>
-                     </ul>
-                 </li>
+                <li class="has_sub">
+                    <a href="#" class="waves-effect">
+                        <i class="md md-invert-colors-on"></i>
+                        <span>
+                            Manufacturer
+                        </span>
+                        <span class="pull-right">
+                            <i class="md md-add"></i>
+                        </span>
+                    </a>
+                    <ul class="list-unstyled">
+                        {{-- <li><a href="/create-employee">Manufecturer</a></li> --}}
+                        <li>
+                            <a href="/manufacturer ">Manufacturer
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
-                 {{-- <li>
+                {{-- <li>
                                 <a href="calendar.html" class="waves-effect"><i class="md md-event"></i><span> Calendar </span></a>
                             </li> --}}
 
-                 {{-- <li class="has_sub">
+                {{-- <li class="has_sub">
                                 <a href="#" class="waves-effect"><i class="md md-palette"></i> <span> Elements </span> <span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="typography.html">Typography</a></li>
@@ -111,7 +199,7 @@
                                 </ul>
                             </li> --}}
 
-                 {{-- <li class="has_sub">
+                {{-- <li class="has_sub">
                                 <a href="#" class="waves-effect"><i class="md md-invert-colors-on"></i><span> Components </span><span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="grid.html">Grid</a></li>
@@ -124,7 +212,7 @@
                                 </ul>
                             </li> --}}
 
-                 {{-- <li class="has_sub">
+                {{-- <li class="has_sub">
                                 <a href="#" class="waves-effect"><i class="md md-redeem"></i> <span> Icons </span> <span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="material-icon.html">Material Design</a></li>
@@ -133,7 +221,7 @@
                                 </ul>
                             </li> --}}
 
-                 {{-- <li class="has_sub">
+                {{-- <li class="has_sub">
                                 <a href="#" class="waves-effect"><i class="md md-now-widgets"></i><span> Forms </span><span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="form-elements.html">General Elements</a></li>
@@ -147,7 +235,7 @@
                                 </ul>
                             </li> --}}
 
-                 {{-- <li class="has_sub">
+                {{-- <li class="has_sub">
                                 <a href="#" class="waves-effect"><i class="md md-view-list"></i><span> Data Tables </span><span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="tables.html">Basic Tables</a></li>
@@ -157,7 +245,7 @@
                                 </ul>
                             </li> --}}
 
-                 {{-- <li class="has_sub">
+                {{-- <li class="has_sub">
                                 <a href="#" class="waves-effect"><i class="md md-poll"></i><span> Charts </span><span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="morris-chart.html">Morris Chart</a></li>
@@ -170,7 +258,7 @@
                                 </ul>
                             </li> --}}
 
-                 {{-- <li class="has_sub">
+                {{-- <li class="has_sub">
                                 <a href="#" class="waves-effect"><i class="md md-place"></i><span> Maps </span><span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="gmap.html"> Google Map</a></li>
@@ -178,7 +266,7 @@
                                 </ul>
                             </li> --}}
 
-                 {{-- <li class="has_sub">
+                {{-- <li class="has_sub">
                                 <a href="#" class="waves-effect"><i class="md md-pages"></i><span> Pages </span><span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="profile.html">Profile</a></li>
@@ -199,7 +287,7 @@
                                 </ul>
                             </li> --}}
 
-                 {{-- <li class="has_sub">
+                {{-- <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="md md-share"></i><span>Multi Level </span><span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul>
                                     <li class="has_sub">
@@ -215,9 +303,9 @@
                                     </li>
                                 </ul>
                             </li> --}}
-             </ul>
-             <div class="clearfix"></div>
-         </div>
-         <div class="clearfix"></div>
-     </div>
- </div>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
