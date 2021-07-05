@@ -27,27 +27,31 @@ Route::get('/', function () {
     // return view('welcome');
     return view('Auth.login');
 });
-<<<<<<< HEAD
-=======
 // Route::get('/', function () {
 //     return view('welcome');
 // });
 // For Medicine section
-Route::get('/medicine/view','Dashboard\MedicineController@index');
-Route::get('/medicine/add','Dashboard\MedicineController@create');
-Route::post('/medicine/post','Dashboard\MedicineController@store');
+
+Route::prefix('medicine')->middleware('isAdmin')->group(function(){
+    Route::get('/view','Dashboard\MedicineController@index');
+    Route::get('/add','Dashboard\MedicineController@create');
+    Route::post('/post','Dashboard\MedicineController@store');
+});
 // import and Export Medicine By Excell
 Route::get('/import-medicine','Dashboard\MedicineController@importMedicine');
 Route::get('/export','Dashboard\MedicineController@export');
 Route::post('/import','Dashboard\MedicineController@import')->name('import');
 
 // for Employee
-Route::get('/employee/add','Dashboard\EmployeeController@create');
-Route::get('/employee/view','Dashboard\EmployeeController@index');
-Route::post('/employee/view','Dashboard\EmployeeController@store');
-Route::get('/employee/edit/{id}','Dashboard\EmployeeController@edit');
-Route::get('/employee/delete/{id}','Dashboard\EmployeeController@destroy');
-Route::post('/employee/update/{id}','Dashboard\EmployeeController@update');
+Route::prefix('employee')->middleware('isAdmin')->group(function(){
+    Route::get('/add','Dashboard\EmployeeController@create');
+    Route::get('/view','Dashboard\EmployeeController@index');
+    Route::post('/view','Dashboard\EmployeeController@store');
+    Route::get('/edit/{id}','Dashboard\EmployeeController@edit');
+    Route::get('/delete/{id}','Dashboard\EmployeeController@destroy');
+    Route::post('/update/{id}','Dashboard\EmployeeController@update');
+});
+
 
 // pos Section
 
@@ -57,41 +61,30 @@ Route::get('/pos','user\POSController@index');
 // Invoice Section
 Route::get('/invoice','user\InvoiceController@index');
 
-
-// Customar Section
-Route::get('/customar/add','Dashboard\CustomarController@create');
-Route::post('/customar/store','Dashboard\CustomarController@store');
-Route::get('/customar/view','Dashboard\CustomarController@index');
-Route::get('/customar/edit/{id}','Dashboard\CustomarController@edit');
-Route::post('/customar/update/{id}','Dashboard\CustomarController@update');
+Route::prefix('/customar')->group(function(){
+    Route::get('/add','Dashboard\CustomarController@create');
+    Route::post('/store','Dashboard\CustomarController@store');
+    Route::get('/view','Dashboard\CustomarController@index');
+    Route::get('/edit/{id}','Dashboard\CustomarController@edit');
+    Route::post('/update/{id}','Dashboard\CustomarController@update');
+});
 
 // Category section
-Route::get('/category/','Dashboard\CategoryController@index');
+
+Route::get('/category','Dashboard\CategoryController@index');
 Route::get('/add/category','Dashboard\CategoryController@create');
 Route::post('/store/category','Dashboard\CategoryController@store')->name('store.category');
 
 // Manufacturer  section
 Route::get('/manufacturer','Dashboard\ManufacturerController@index');
 
->>>>>>> main
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');<<<<<<< HEAD
+Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix'=>'admin','middleware'=>['isAdmin','auth','preventBackHistory']],function (){
     Route::get('/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
 });
 Route::group(['prefix'=>'user','middleware'=>['isUser','auth','preventBackHistory']],function (){
     Route::get('/dashboard',[UserController::class,'index'])->name('user.dashboard');
 });
-Route::group(['prefix'=>'user','middleware'=>['isUser','auth','preventBackHistory']],function (){
-    Route::get('/dashboard',[UserController::class,'index'])->name('user.dashboard');
-});
-=======
 
-// Cart Controller section
-Route::post('/add-cart','user\CartController@index');
-Route::post('/cart-update/{rowId}','user\CartController@CartUpdate');
-Route::get('/cart-remove/{rowId}','user\CartController@CartRemove');
-Route::post('/create-invoice','user\CartController@CreateInvoice');
-Route::post('/final-invoice','user\CartController@FinalInvoice');
->>>>>>> main
