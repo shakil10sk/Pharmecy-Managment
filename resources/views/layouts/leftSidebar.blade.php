@@ -27,7 +27,7 @@
                             <li>
                                 <a href="index.html" class="waves-effect active"><i class="md md-home"></i><span> Dashboard </span></a>
                             </li>
-                            @if(Auth::check() && Auth::user()->role == 1 || Auth::user()->role == 2 )
+                            @if(Auth::check() && Auth::user()->role == 1  )
                             <li class="has_sub">
                                 <a href="#" class="waves-effect"><i class="md md-mail"></i><span> Mail </span><span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
@@ -36,6 +36,7 @@
                                     <li><a href="email-read.html">View Mail</a></li>
                                 </ul>
                             </li>
+                            
                             @endif
 
                             <li class="has_sub">
