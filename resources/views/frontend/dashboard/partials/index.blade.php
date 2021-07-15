@@ -1,12 +1,7 @@
 
-@extends('layouts.master')
-@section('content')
-    <!-- ============================================================== -->
-            <!-- Start right Content here -->
-            <!-- ============================================================== -->                      
-            <div class="content-page">
-                <!-- Start content -->
-                <div class="content">
+@extends('frontend.dashboard.master')
+
+                    @section('content')
                     <div class="container">
 
                         <!-- Page-Title -->
@@ -381,16 +376,7 @@
                         </div> <!-- end row -->
 
                     </div> <!-- container -->
-                               
-                </div> <!-- content -->
+                    @endsection         
+ 
 
-                <footer class="footer text-right">
-                    2015 © Moltran.
-                </footer>
-
-            </div>
-            <!-- ============================================================== -->
-            <!-- End Right content here -->
-            <!-- ============================================================== -->
-@endsection
 

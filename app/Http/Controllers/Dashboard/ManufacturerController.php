@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\medicine;
+use App\Models\Manufacturer;
 use Illuminate\Http\Request;
 
 class ManufacturerController extends Controller
@@ -15,8 +16,8 @@ class ManufacturerController extends Controller
      */
     public function index()
     {
-        $manufacturer=Medicine::all();
-        return view('frontend.dashboard.pages.manufecturer.view',compact('manufacturer'));
+        $manufacturer = Manufacturer::all();
+        return view('frontend.dashboard.pages.manufacturer.view',compact('manufacturer'));
     }
 
     /**
@@ -26,7 +27,7 @@ class ManufacturerController extends Controller
      */
     public function create()
     {
-        //
+        return view('frontend.dashboard.pages.manufacturer.create');
     }
 
     /**
@@ -37,7 +38,10 @@ class ManufacturerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'manufacturer_name' => 'required|unique:manufacturers',
+            'manufacturer_mobile' => 'required|unique:manufacturers'
+        ]);
     }
 
     /**

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Dashboard\ManufacturerController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\User\UserController;
@@ -87,4 +88,10 @@ Route::group(['prefix'=>'admin','middleware'=>['isAdmin','auth','preventBackHist
 Route::group(['prefix'=>'user','middleware'=>['isUser','auth','preventBackHistory']],function (){
     Route::get('/dashboard',[UserController::class,'index'])->name('user.dashboard');
 });
-
+// Manufacturer Route 
+Route::middleware(['isAdmin','isUser']);
+Route::prefix('manufacturer')->name('manufacturer.')->group(function(){
+    Route::get('/view',[ManufacturerController::class,'index'])->name('index');
+    Route::get('/add',[ManufacturerController::class,'create'])->name('create');
+    Route::post('/store',[ManufacturerController::class,'store'])->name('store');
+});

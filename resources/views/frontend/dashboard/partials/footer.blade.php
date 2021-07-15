@@ -1,3 +1,3 @@
 <footer class="footer text-right">
-    2021 © GLOBAL PHARMA.
+    2015 © Moltran.
 </footer>

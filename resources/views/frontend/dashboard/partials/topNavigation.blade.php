@@ -1,10 +1,9 @@
-<div class="topbar">
+ <!-- Top Bar Start -->
+ <div class="topbar">
     <!-- LOGO -->
     <div class="topbar-left">
-        <div class="text-center d-inline-block">
-            <a href="/" class="logo "><span class="bg-info">GLOBAL PHARMA</span></a>
-            {{-- <a href="/" class="logo "><img class="myimage" src="{{ asset('frontend/images/logo.PNG') }}" alt="Global"  ></span></a> --}}
-            {{-- <a href="index.html" class="logo"><i class="md md-terrain"></i> <span>abc </span></a> --}}
+        <div class="text-center">
+            <a href="index.html" class="logo"><i class="md md-terrain"></i> <span>Moltran </span></a>
         </div>
     </div>
     <!-- Button mobile view to collapse sidebar menu -->
@@ -89,12 +88,19 @@
                         <a href="#" class="right-bar-toggle waves-effect waves-light"><i class="md md-chat"></i></a>
                     </li>
                     <li class="dropdown">
-                        <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true"><img src="{{asset('/frontend/images/admin.jpg')}}" alt="user-img" class="img-circle"> </a>
+                        <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true"><img src="{{ asset('/frontend/images/admin.jpg') }}" alt="user-img" class="img-circle"> </a>
                         <ul class="dropdown-menu">
                             <li><a href="javascript:void(0)"><i class="md md-face-unlock"></i> Profile</a></li>
                             <li><a href="javascript:void(0)"><i class="md md-settings"></i> Settings</a></li>
                             <li><a href="javascript:void(0)"><i class="md md-lock"></i> Lock screen</a></li>
-                            <li><a href="javascript:void(0)"><i class="md md-settings-power"></i> Logout</a></li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <form action="{{ route('logout') }}" method="POST">
+                                    @csrf
+                                    <i class="md md-settings-power"></i> <input type="submit" value="Logout" class="d-inline-block" style="outline: none;border:none;background: none ;" >
+                                    </form>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -103,3 +109,4 @@
         </div>
     </div>
 </div>
+<!-- Top Bar End -->

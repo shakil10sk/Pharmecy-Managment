@@ -57,8 +57,6 @@
                 <div class="panel-body">
                 <form class="form-horizontal m-t-20" method="POST" action="{{ route('login') }}">
                     @csrf
-
-
                     <div class="form-group">
                         <div class="col-xs-12">
                             <input class="form-control input-lg"  placeholder="Email" name="email" id="email" value="{{ old('email') }}">
@@ -69,8 +67,6 @@
                             </span>
                         </div>
                     </div>
-                    
-
                     <div class="form-group">
                         <div class="col-xs-12">
                             <div class="input-group" id="show_hide_password">
@@ -86,7 +82,6 @@
                             @enderror
                         </span>
                     </div>
-                    
                     <div class="form-group ">
                         <div class="col-xs-12">
                             <div class="checkbox checkbox-primary">
@@ -98,13 +93,11 @@
                             
                         </div>
                     </div>
-                    
                     <div class="form-group text-center m-t-40">
                         <div class="col-xs-12">
                             <button class="btn btn-primary waves-effect waves-light btn-lg w-lg" type="submit">Login</button>
                         </div>
                     </div>
-
                     <div class="form-group m-t-30">
                         <div class="col-sm-12 text-center">
                             <a href="{{ route('register') }}">Create A new account </a>
@@ -157,6 +150,7 @@
         <!-- CUSTOM JS -->
         <script src="{{ asset('frontend/js/jquery.app.js')}}"></script>
         <script>
+            // Show Password 
             $(document).ready(function() {
                 $("#show_hide_password a").on('click', function(event) {
                     event.preventDefault();

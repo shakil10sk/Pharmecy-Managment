@@ -1,81 +1,60 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
-        <meta name="author" content="Coderthemes">
-        <link rel="shortcut icon" href="{{asset('images/favicon_1.ico')}}">
-        <title>@yield('title') </title>
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+    <meta name="author" content="Coderthemes">
+    <link rel="shortcut icon" href="images/favicon_1.ico">
+    <title>@yield('title')</title>
 
-        @include('frontend.dashboard.partials.style');
+    @include('frontend.dashboard.partials.styles')
+    @yield('style')
 
-
-
-
-    </head>
-
-
-
-    <body class="fixed-left">
-
-        <!-- Begin page -->
-        <div id="wrapper">
-
-            <!-- Top Bar Start -->
-           @include('frontend.dashboard.partials.topbar')
-            <!-- Top Bar End -->
-
-
-            <!-- ========== Left Sidebar Start ========== -->
-           @include('frontend.dashboard.partials.sidebar')
-            <!-- Left Sidebar End -->
+</head>
 
 
 
-            <!-- ============================================================== -->
-            <!-- Start right Content here -->
-            <!-- ============================================================== -->
-            <div class="content-page">
-                <!-- Start content -->
-                <div class="content">
-                    <div class="container">
+<body class="fixed-left">
+
+    <!-- Begin page -->
+    <div id="wrapper">
 
 
-                        <!-- Page-Title -->
-                        @yield('title-section')
+        {{-- Top Navigation bar  --}}
+        @include('frontend.dashboard.partials.topNavigation')
+
+        {{-- Left Sidebar  --}}
+
+        @include('frontend.dashboard.partials.leftSidebar')
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="content-page">
+            <!-- Start content -->
+            <div class="content">
 
 
-                        @yield('content-section')
+                @yield('content')
+            </div> <!-- content -->
 
-
-                        {{-- inbox section --}}
-                        {{-- @include('frontend.dashboard.partials.inbox') --}}
-
-                    </div> <!-- container -->
-
-                </div> <!-- content -->
-
-                {{-- footer section --}}
-                @include('frontend.dashboard.partials.footer')
-
-
-            </div>
-            <!-- ============================================================== -->
-            <!-- End Right content here -->
-            <!-- ============================================================== -->
-
-
-            <!-- Right Sidebar chat -->
-            {{-- @include('frontend.dashboard.partials.chat') --}}
-            <!-- /Right-bar -->
+            {{-- Footer  --}}
+            @include('frontend.dashboard.partials.footer')
 
         </div>
-        <!-- END wrapper -->
+        <!-- ============================================================== -->
+        <!-- End Right content here -->
+        <!-- ============================================================== -->
+        @include('frontend.dashboard.partials.rightSidebar')
 
+    </div>
+    <!-- END wrapper -->
 
-        @include('frontend.dashboard.partials.script')
+    @include('frontend.dashboard.partials.scripts')
+    @yield('script')
 
-    </body>
+</body>
+
 </html>
