@@ -3,6 +3,7 @@
 
  <!-- Font Icons -->
  <link href="{{ asset('frontend/assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" />
+ {{-- <link href="{{ asset('frontend/assets/font-awesome/css/font-awesome5.min.css') }}" rel="stylesheet" /> --}}
  <link href="{{ asset('frontend/assets/ionicon/css/ionicons.min.css') }}" rel="stylesheet" />
  <link href="{{ asset('frontend/css/material-design-iconic-font.min.css') }}" rel="stylesheet">
 

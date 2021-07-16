@@ -35,13 +35,26 @@
                          </li>
                          @if(Auth::check() && Auth::user()->role == 1 )
                          <li class="has_sub">
-                             <a href="#" class="waves-effect {{ Route::is('manufacturer.create') || Route::is('manufacturer.index')  ? 'active' : '' }} "><i class="fa fa-users"></i><span> Manufacturer </span><span
+                             <a href="#" class="waves-effect {{ Route::is('manufacturer.create') || Route::is('manufacturer.index')|| Route::is('manufacturer.edit')  ? 'active' : '' }} "><i class="fa fa-users"></i><span> Manufacturer </span><span
                                      class="pull-right"><i class="md md-add"></i></span></a>
                              <ul class="list-unstyled">
                                 
                                 <li class="{{ Route::is('manufacturer.create') ? 'active' : '' }}"  ><a href="{{ route('manufacturer.create') }}">Manufacture Add </a></li>
                                 <li class="{{ Route::is('manufacturer.index') ? 'active' : '' }}"> <a  href="{{ route('manufacturer.index') }}">Manufacture List </a></li>
                                  <li><a href="email-read.html">View Mail</a></li>
+                             </ul>
+                         </li>
+
+                         <li class="has_sub">
+                             <a href="#" class="waves-effect {{ Route::is('medicineCategory.create') || Route::is('medicineCategory.index') || Route::is('medicineCategory.edit')||Route::is('medicineUnit.create') || Route::is('medicineUnit.index')|| Route::is('medicineUnit.edit')  ? 'active' : '' }} "><i class="fa fa-user"></i><span> Medicine  </span><span
+                                     class="pull-right"><i class="md md-add"></i></span></a>
+                             <ul class="list-unstyled">
+                                
+                                <li class="{{ Route::is('medicineCategory.create') ? 'active' : '' }}"  ><a href="{{ route('medicineCategory.create') }}"> Category Add </a></li>
+                                <li class="{{ Route::is('medicineCategory.index') ? 'active' : '' }}"> <a  href="{{ route('medicineCategory.index') }}"> Category List </a></li>
+
+                                <li class="{{ Route::is('medicineUnit.create') ? 'active' : '' }}"  ><a href="{{ route('medicineUnit.create') }}"> Unit Add </a></li>
+                                <li class="{{ Route::is('medicineUnit.index') ? 'active' : '' }}"> <a  href="{{ route('medicineUnit.index') }}"> Unit List </a></li>
                              </ul>
                          </li>
 

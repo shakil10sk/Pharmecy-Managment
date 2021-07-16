@@ -15,7 +15,7 @@ Manufacturer Add
                                 <h4 class="fs-17 font-weight-600 mb-0 pt-2 pb-2">Add Manufacturer</h4>
                             </div>
                             <div class="text-right col-md-6 col-lg-6 col-sm-6">
-                                <a href=""
+                                <a href="{{ route('manufacturer.index') }}"
                                     class="btn btn-success btn-sm mr-1"><i
                                         class="fa fa-align-justify m-r-10"></i>Manufacturer List</a>
                                 <button class="client-add-btn btn btn-success md-trigger" type="button"
@@ -26,6 +26,7 @@ Manufacturer Add
                         <hr>
                     </div>
                     <div class="card-body">
+                        @include('message.success')
                         <form action="{{ route('manufacturer.store') }}"
                             enctype="multipart/form-data" method="post" accept-charset="utf-8">
                             @csrf 
@@ -36,7 +37,7 @@ Manufacturer Add
                                     <div class="">
                                         <input type="text" name="manufacturer_name" class="form-control"
                                             id="manufacturer_name" placeholder="Manufacturer Name" value="">
-                                        <input type="hidden" name="old_name" value="">
+                                        <input type="hidden" name="old_name" value="{{ old('manufacturer_name') }}">
                                     </div>
                                     @error('manufacturer_name')
                                         <div class="alert text-danger m-b-0">
@@ -50,7 +51,7 @@ Manufacturer Add
                                     <div class="">
                                         <input type="text" name="manufacturer_mobile"
                                             class="form-control input-mask-trigger text-left valid_number"
-                                            id="manufacturer_mobile" placeholder="Mobile No" value=""
+                                            id="manufacturer_mobile" placeholder="Mobile No" value="{{ old('manufacturer_mobile') }}"
                                             data-inputmask="'alias': 'decimal', 'groupSeparator': '', 'autoGroup': true"
                                             im-insert="true">
                                     </div>

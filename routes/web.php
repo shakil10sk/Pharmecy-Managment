@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Dashboard\ManufacturerController;
+use App\Http\Controllers\Dashboard\Medicine\MedicineCategoryController;
+use App\Http\Controllers\Dashboard\Medicine\MedicineUnitController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\User\UserController;
@@ -80,7 +82,7 @@ Route::post('/store/category','Dashboard\CategoryController@store')->name('store
 Route::get('/manufacturer','Dashboard\ManufacturerController@index');
 
 Auth::routes();
-
+// Started Working 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix'=>'admin','middleware'=>['isAdmin','auth','preventBackHistory']],function (){
     Route::get('/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
@@ -88,10 +90,31 @@ Route::group(['prefix'=>'admin','middleware'=>['isAdmin','auth','preventBackHist
 Route::group(['prefix'=>'user','middleware'=>['isUser','auth','preventBackHistory']],function (){
     Route::get('/dashboard',[UserController::class,'index'])->name('user.dashboard');
 });
-// Manufacturer Route 
+//  Route For Manufacturer
 Route::middleware(['isAdmin','isUser']);
 Route::prefix('manufacturer')->name('manufacturer.')->group(function(){
     Route::get('/view',[ManufacturerController::class,'index'])->name('index');
     Route::get('/add',[ManufacturerController::class,'create'])->name('create');
     Route::post('/store',[ManufacturerController::class,'store'])->name('store');
+    Route::post('{id}/destroy',[ManufacturerController::class,'destroy'])->name('destroy');
+    Route::get('{id}/edit',[ManufacturerController::class,'edit'])->name('edit');
+    Route::put('{id}/update',[ManufacturerController::class,'update'])->name('update');
+});
+// Route For Medicine Category 
+Route::prefix('medicineCategory')->name('medicineCategory.')->group(function(){
+    Route::get('/view',[MedicineCategoryController::class,'index'])->name('index');
+    Route::get('/add',[MedicineCategoryController::class,'create'])->name('create');
+    Route::post('/store',[MedicineCategoryController::class,'store'])->name('store');
+    Route::post('{id}/destroy',[MedicineCategoryController::class,'destroy'])->name('destroy');
+    Route::get('{id}/edit',[MedicineCategoryController::class,'edit'])->name('edit');
+    Route::put('{id}/update',[MedicineCategoryController::class,'update'])->name('update');
+});
+// Route For Medicine Unit
+Route::prefix('medicineUnit')->name('medicineUnit.')->group(function(){
+    Route::get('/view',[MedicineUnitController::class,'index'])->name('index');
+    Route::get('/add',[MedicineUnitController::class,'create'])->name('create');
+    Route::post('/store',[MedicineUnitController::class,'store'])->name('store');
+    Route::post('{id}/destroy',[MedicineUnitController::class,'destroy'])->name('destroy');
+    Route::get('{id}/edit',[MedicineUnitController::class,'edit'])->name('edit');
+    Route::put('{id}/update',[MedicineUnitController::class,'update'])->name('update');
 });
