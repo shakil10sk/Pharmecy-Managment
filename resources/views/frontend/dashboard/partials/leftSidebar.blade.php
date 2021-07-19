@@ -34,6 +34,19 @@
                                  </span></a>
                          </li>
                          @if(Auth::check() && Auth::user()->role == 1 )
+                         {{-- Route For Customer  --}}
+                         <li class="has_sub">
+                             <a href="#" class="waves-effect {{ Route::is('customer.create') || Route::is('customer.index')|| Route::is('customer.edit')|| Route::is('customer.credit')|| Route::is('customer.paid')  ? 'active' : '' }} "><i class="fa fa-users"></i><span> Customer </span><span
+                                     class="pull-right"><i class="md md-add"></i></span></a>
+                             <ul class="list-unstyled">
+                                
+                                <li class="{{ Route::is('customer.create') ? 'active' : '' }}"  ><a href="{{ route('customer.create') }}">Customer Add </a></li>
+                                <li class="{{ Route::is('customer.index') ? 'active' : '' }}"> <a  href="{{ route('customer.index') }}">Customer List </a></li>
+                                <li class="{{ Route::is('customer.credit') ? 'active' : '' }}"> <a  href="{{ route('customer.credit') }}">Customer Credit </a></li>
+                                <li class="{{ Route::is('customer.paid') ? 'active' : '' }}"> <a  href="{{ route('customer.paid') }}">Customer Paid </a></li>
+                             </ul>
+                         </li>
+                         {{-- Route For Manufacturer  --}}
                          <li class="has_sub">
                              <a href="#" class="waves-effect {{ Route::is('manufacturer.create') || Route::is('manufacturer.index')|| Route::is('manufacturer.edit')  ? 'active' : '' }} "><i class="fa fa-users"></i><span> Manufacturer </span><span
                                      class="pull-right"><i class="md md-add"></i></span></a>
@@ -41,10 +54,9 @@
                                 
                                 <li class="{{ Route::is('manufacturer.create') ? 'active' : '' }}"  ><a href="{{ route('manufacturer.create') }}">Manufacture Add </a></li>
                                 <li class="{{ Route::is('manufacturer.index') ? 'active' : '' }}"> <a  href="{{ route('manufacturer.index') }}">Manufacture List </a></li>
-                                 <li><a href="email-read.html">View Mail</a></li>
                              </ul>
                          </li>
-
+{{----x-xx-x-x-x------ Route For Medicine ------xx---xxx- --}}
                          <li class="has_sub">
                              <a href="#" class="waves-effect {{ Route::is('medicineCategory.create') || Route::is('medicineCategory.index') || Route::is('medicineCategory.edit')||Route::is('medicineUnit.create') || Route::is('medicineUnit.index')|| Route::is('medicineUnit.edit')||Route::is('medicineType.create') || Route::is('medicineType.index')|| Route::is('medicineType.edit')||Route::is('medicineLeaf.create') || Route::is('medicineLeaf.index')|| Route::is('medicineLeaf.edit') ||Route::is('medicine.create') || Route::is('medicine.index')|| Route::is('medicine.edit')  ? 'active' : '' }} "><i class="fa fa-user"></i><span> Medicine  </span><span
                                      class="pull-right"><i class="md md-add"></i></span></a>
@@ -73,32 +85,9 @@
 
                          @endif
 
-                         <li>
-                             <a href="/pos" class="waves-effect ">
-                                 <i class="md md-palette"></i>
-                                 <span>  POS</span>
-                             </a>
-                         </li>
 
-                         <li>
-                             <a href="{{ url('/invoice') }}" class="waves-effect "><i class="md md-event"></i><span> INVOICE</span></a>
-                         </li>
-                        
-
-                         <li class="has_sub">
-                             <a href="#" class="waves-effect">
-                                 <i class="md md-invert-colors-on"></i><span> Medicine </span>
-                                 <span class="pull-right">
-                                     <i class="md md-add"></i>
-                                 </span>
-                             </a>
-                             <ul class="list-unstyled">
-                                 <li><a href="/medicine/add">Add Medicine</a></li>
-                                 <li><a href="/medicine/view">View Medicine</a></li>
-                                 <li><a href="/import-medicine">Import Medicine</a></li>
-                             </ul>
-                         </li>
-
+                         
+                       
                          <li class="has_sub">
                              <a href="#" class="waves-effect">
                                  <i class="md md-redeem"></i>

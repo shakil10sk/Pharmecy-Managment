@@ -82,16 +82,17 @@
 @endsection
 
 @section('script')
-    <!-- CUSTOM JS -->
-    <script src="{{ asset('frontend/js/jquery.app.js') }}"></script>
 
-    <script src="{{ asset('frontend/assets/datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('frontend/assets/datatables/dataTables.bootstrap.js') }}"></script>
+<script src="{{ asset('frontend/assets/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('frontend/assets/datatables/dataTables.bootstrap.js') }}"></script>
 
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#datatable').dataTable();
-        } );
-    </script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#datatable').dataTable({
+            "scrollX": true
+        });
+    });
+
+</script>
 @endsection

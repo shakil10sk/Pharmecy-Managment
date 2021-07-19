@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Dashboard\Customer\CustomerController;
 use App\Http\Controllers\Dashboard\ManufacturerController;
 use App\Http\Controllers\Dashboard\Medicine\MedicineCategoryController;
 use App\Http\Controllers\Dashboard\Medicine\MedicineController;
@@ -21,32 +22,10 @@ use App\Http\Controllers\User\UserController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('frontend.index');
-// });
-
-// Route::get('/medicine/view','Dashboard\MedicineController@index');
-// Route::get('/medicine/add','Dashboard\MedicineController@create');
-// Route::post('/medicine/add','Dashboard\MedicineController@store');
 
 Route::get('/', function () {
-    // return view('welcome');
     return view('Auth.login');
 });
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-// For Medicine section
-
-Route::prefix('medicine')->middleware('isAdmin')->group(function(){
-    Route::get('/view','Dashboard\MedicineController@index');
-    Route::get('/add','Dashboard\MedicineController@create');
-    Route::post('/post','Dashboard\MedicineController@store');
-});
-// import and Export Medicine By Excell
-Route::get('/import-medicine','Dashboard\MedicineController@importMedicine');
-Route::get('/export','Dashboard\MedicineController@export');
-Route::post('/import','Dashboard\MedicineController@import')->name('import');
 
 // for Employee
 Route::prefix('employee')->middleware('isAdmin')->group(function(){
@@ -57,32 +36,6 @@ Route::prefix('employee')->middleware('isAdmin')->group(function(){
     Route::get('/delete/{id}','Dashboard\EmployeeController@destroy');
     Route::post('/update/{id}','Dashboard\EmployeeController@update');
 });
-
-
-// pos Section
-
-Route::get('/pos','user\POSController@index');
-
-
-// Invoice Section
-Route::get('/invoice','user\InvoiceController@index');
-
-Route::prefix('/customar')->group(function(){
-    Route::get('/add','Dashboard\CustomarController@create');
-    Route::post('/store','Dashboard\CustomarController@store');
-    Route::get('/view','Dashboard\CustomarController@index');
-    Route::get('/edit/{id}','Dashboard\CustomarController@edit');
-    Route::post('/update/{id}','Dashboard\CustomarController@update');
-});
-
-// Category section
-
-Route::get('/category','Dashboard\CategoryController@index');
-Route::get('/add/category','Dashboard\CategoryController@create');
-Route::post('/store/category','Dashboard\CategoryController@store')->name('store.category');
-
-// Manufacturer  section
-Route::get('/manufacturer','Dashboard\ManufacturerController@index');
 
 Auth::routes();
 // Started Working 
@@ -147,4 +100,15 @@ Route::prefix('medicine')->name('medicine.')->group(function(){
     Route::post('{id}/destroy',[MedicineController::class,'destroy'])->name('destroy');
     Route::get('{id}/edit',[MedicineController::class,'edit'])->name('edit');
     Route::put('{id}/update',[MedicineController::class,'update'])->name('update');
+});
+// Route For Customer
+Route::prefix('customer')->name('customer.')->group(function(){
+    Route::get('/view',[CustomerController::class,'index'])->name('index');
+    Route::get('/credit',[CustomerController::class,'credit'])->name('credit');
+    Route::get('/paid',[CustomerController::class,'paid'])->name('paid');
+    Route::get('/add',[CustomerController::class,'create'])->name('create');
+    Route::post('/store',[CustomerController::class,'store'])->name('store');
+    Route::post('{id}/destroy',[CustomerController::class,'destroy'])->name('destroy');
+    Route::get('{id}/edit',[CustomerController::class,'edit'])->name('edit');
+    Route::put('{id}/update',[CustomerController::class,'update'])->name('update');
 });
