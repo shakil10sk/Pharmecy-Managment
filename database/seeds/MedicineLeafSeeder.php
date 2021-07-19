@@ -1,12 +1,10 @@
 <?php
 
-use App\Models\Medicine\MedicineCategory;
-use App\Models\Medicine\MedicineType;
-use App\Models\Medicine\MedicineUnit;
+use App\Models\Medicine\MedicineLeaf;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 
-class MedicineCategorySeeder extends Seeder
+class MedicineLeafSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,9 +15,9 @@ class MedicineCategorySeeder extends Seeder
     {
         $faker = Faker::create();
         foreach (range(1,10) as  $value) {
-            MedicineCategory::create([
-                'name' => $faker->name ,
-                'status' => "1",
+            MedicineLeaf::create([
+                'leaf_type' => $faker->lastName ,
+                'total_number' => $faker->randomNumber(2),
             ]);
             
         }

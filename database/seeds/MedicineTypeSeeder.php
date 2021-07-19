@@ -17,7 +17,7 @@ class MedicineTypeSeeder extends Seeder
         foreach (range(1,10) as  $value) {
             MedicineType::create([
                 'type' => $faker->name ,
-                'status' => $faker->boolean,
+                'status' => "1",
             ]);
         }
     }

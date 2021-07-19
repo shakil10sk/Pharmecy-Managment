@@ -3,6 +3,9 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Dashboard\ManufacturerController;
 use App\Http\Controllers\Dashboard\Medicine\MedicineCategoryController;
+use App\Http\Controllers\Dashboard\Medicine\MedicineController;
+use App\Http\Controllers\Dashboard\Medicine\MedicineLeafController;
+use App\Http\Controllers\Dashboard\Medicine\MedicineTypeController;
 use App\Http\Controllers\Dashboard\Medicine\MedicineUnitController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -117,4 +120,31 @@ Route::prefix('medicineUnit')->name('medicineUnit.')->group(function(){
     Route::post('{id}/destroy',[MedicineUnitController::class,'destroy'])->name('destroy');
     Route::get('{id}/edit',[MedicineUnitController::class,'edit'])->name('edit');
     Route::put('{id}/update',[MedicineUnitController::class,'update'])->name('update');
+});
+// Route For Medicine Type 
+Route::prefix('medicineType')->name('medicineType.')->group(function(){
+    Route::get('/view',[MedicineTypeController::class,'index'])->name('index');
+    Route::get('/add',[MedicineTypeController::class,'create'])->name('create');
+    Route::post('/store',[MedicineTypeController::class,'store'])->name('store');
+    Route::post('{id}/destroy',[MedicineTypeController::class,'destroy'])->name('destroy');
+    Route::get('{id}/edit',[MedicineTypeController::class,'edit'])->name('edit');
+    Route::put('{id}/update',[MedicineTypeController::class,'update'])->name('update');
+});
+// Route For Medicine Leaf 
+Route::prefix('medicineLeaf')->name('medicineLeaf.')->group(function(){
+    Route::get('/view',[MedicineLeafController::class,'index'])->name('index');
+    Route::get('/add',[MedicineLeafController::class,'create'])->name('create');
+    Route::post('/store',[MedicineLeafController::class,'store'])->name('store');
+    Route::post('{id}/destroy',[MedicineLeafController::class,'destroy'])->name('destroy');
+    Route::get('{id}/edit',[MedicineLeafController::class,'edit'])->name('edit');
+    Route::put('{id}/update',[MedicineLeafController::class,'update'])->name('update');
+});
+// Route For Medicine 
+Route::prefix('medicine')->name('medicine.')->group(function(){
+    Route::get('/view',[MedicineController::class,'index'])->name('index');
+    Route::get('/add',[MedicineController::class,'create'])->name('create');
+    Route::post('/store',[MedicineController::class,'store'])->name('store');
+    Route::post('{id}/destroy',[MedicineController::class,'destroy'])->name('destroy');
+    Route::get('{id}/edit',[MedicineController::class,'edit'])->name('edit');
+    Route::put('{id}/update',[MedicineController::class,'update'])->name('update');
 });

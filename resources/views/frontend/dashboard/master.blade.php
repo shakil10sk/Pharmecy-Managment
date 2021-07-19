@@ -8,9 +8,11 @@
     <meta name="author" content="Coderthemes">
     <link rel="shortcut icon" href="images/favicon_1.ico">
     <title>@yield('title')</title>
-
+    {{-- @yield('style') --}}
     @include('frontend.dashboard.partials.styles')
     @yield('style')
+    @include('frontend.dashboard.partials.customStyle')
+    
 
 </head>
 
@@ -38,6 +40,8 @@
 
 
                 @yield('content')
+
+
             </div> <!-- content -->
 
             {{-- Footer  --}}

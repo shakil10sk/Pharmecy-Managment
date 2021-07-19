@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Dashboard\Medicine;
 
 use App\Http\Controllers\Controller;
-use App\Models\Medicine\MedicineType;
+use App\Models\Medicine\MedicineLeaf;
 use Illuminate\Http\Request;
 
-class MedicineTypeController extends Controller
+class MedicineLeafController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class MedicineTypeController extends Controller
      */
     public function index()
     {
-        $medicineType = MedicineType::all();
-        return view('frontend.dashboard.pages.medicine.type.view',compact('medicineType'));
+        $medicineLeaf = MedicineLeaf::all();
+        return view('frontend.dashboard.pages.medicine.leaf.view',compact('medicineLeaf'));
     }
 
     /**
@@ -26,7 +26,7 @@ class MedicineTypeController extends Controller
      */
     public function create()
     {
-        return view('frontend.dashboard.pages.medicine.type.create');
+        return view('frontend.dashboard.pages.medicine.leaf.create');
     }
 
     /**
@@ -39,14 +39,14 @@ class MedicineTypeController extends Controller
     {
         // dd($request);
         $request->validate([
-            'type' => 'required|unique:medicine_types',
-            'status' => 'required'
+            'leaf_type' => 'required|unique:medicine_leaves',
+            'total_number' => 'required'
         ]);
-        $data = new MedicineType();
-        $data->type = $request->type;
-        $data->status = $request->status;
+        $data = new MedicineLeaf();
+        $data->leaf_type = $request->leaf_type;
+        $data->total_number = $request->total_number;
         $data->save();
-        session()->flash('success',"<b class='text-danger'>$request->name</b> has been added successfully !!! ");
+        session()->flash('success',"<b class='text-danger'>$request->leaf_type</b> has been added successfully !!! ");
         return back();
     }
 
@@ -69,8 +69,8 @@ class MedicineTypeController extends Controller
      */
     public function edit($id)
     {
-        $medicineType = MedicineType::find($id);
-        return view('frontend.dashboard.pages.medicine.type.edit',compact('medicineType'));
+        $medicineLeaf = MedicineLeaf::find($id);
+        return view('frontend.dashboard.pages.medicine.leaf.edit',compact('medicineLeaf'));
     }
 
     /**
@@ -83,14 +83,14 @@ class MedicineTypeController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'type' => 'required|unique:medicine_types,type,'.$id,
-            'status' => 'required'
+            'leaf_type' => 'required|unique:medicine_leaves,leaf_type,'.$id,
+            'total_number' => 'required'
         ]);
-        $data = MedicineType::find($id);
-        $data->type = $request->type ;
-        $data->status = $request->status;
+        $data = MedicineLeaf::find($id);
+        $data->leaf_type = $request->leaf_type ;
+        $data->total_number = $request->total_number;
         $data->save();
-        session()->flash('success',"<b class='text-danger'>$request->type</b> has been Updated successfully !!! ");
+        session()->flash('success',"<b class='text-danger'>$request->leaf_type</b> has been Updated successfully !!! ");
         return back();
     }
 
@@ -102,9 +102,9 @@ class MedicineTypeController extends Controller
      */
     public function destroy($id)
     {
-        $data = MedicineType::find($id);
+        $data = MedicineLeaf::find($id);
         $data->delete();
-        session()->flash('success',"<b style='color:red'> $data->type </b> Manufacture has been Deleted Successfully  This ");
+        session()->flash('success',"<b style='color:red'> $data->leaf_type </b> Manufacture has been Deleted Successfully  This ");
         return back();
     }
 }

@@ -1,7 +1,7 @@
 @extends('frontend.dashboard.master')
 
 @section('title')
-GLOBAL PHARMA
+    Medicine Unit List 
 @endsection
 
 @section('style')
@@ -29,7 +29,7 @@ GLOBAL PHARMA
             <div class="panel-heading row col-12">
                 <div class="col-md-6 col-lg-6 col-xl-6 col-sm-6"><h3 class="panel-title">Datatable</h3></div>
                 <div class="col-md-6 text-right text-md-left"> 
-                    <a href="{{ route('manufacturer.create') }}" class="btn btn-primary">Add Manufacturer </a>
+                    <a href="{{ route('medicineType.create') }}" class="btn btn-primary">Add Medicine Type </a>
                 </div>
                 
                
@@ -41,40 +41,30 @@ GLOBAL PHARMA
                         <table id="datatable" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
-                                    <th>Manufacturer Name</th>
-                                    <th>Manufacturer Email </th>
-                                    <th>Mobile Nu </th>
-                                    <th>City</th>
-                                    <th>state</th>
-                                    <th>Country</th>
+                                    <th>Sl No </th>
+                                    <th>Medicine Type  Name</th>
+                                    <th>Medicine Type  Status </th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
 
                      
                             <tbody>
-                                @foreach($manufacturer as $manufacture)
+                                @foreach($medicineType as $key => $type)
                                 <tr>
-                                    <td>{{ $manufacture->manufacturer_name }} </td>
-                                    <td>{{ $manufacture->manufacturer_email }}</td>
-                                    <td>{{ $manufacture->manufacturer_mobile }}</td>
-                                    <td>{{ $manufacture->city }}</td>
-                                    <td>{{ $manufacture->state }}</td>
-                                    <td>{{ $manufacture->country }}</td>
+                                    <td>{{ ++$key }} </td>
+                                    <td>{{ $type->type }} </td>
+                                    <td> @if($type->status == 1) <span class="badge badge-success" >Active</span> @else <span class="badge badge-danger" >Inactive</span> @endif </td>
                                     <td>
-                                        <a href="{{ route('manufacturer.edit',$manufacture->id) }}"><i class="fa fa-edit"></i></a> &nbsp; &nbsp; 
-                                        <a onclick="event.preventDefault();document.getElementById('delete-form').submit();" href="{{ route('manufacturer.destroy',$manufacture->id) }}" class="text-danger"><i class="fa fa-trash"></i></a> &nbsp; &nbsp; 
-                                        <form id="delete-form" action="{{ route('manufacturer.destroy',$manufacture->id) }}" method="POST" class="d-none">
+                                        <a href="{{ route('medicineType.edit',$type->id) }}"><i class="fa fa-edit"></i></a> &nbsp; &nbsp; 
+                                        <a onclick="event.preventDefault();document.getElementById('delete-form').submit();" href="{{ route('medicineType.destroy',$type->id) }}" class="text-danger"><i class="fa fa-trash"></i></a> &nbsp; &nbsp; 
+                                        <form id="delete-form" action="{{ route('medicineType.destroy',$type->id) }}" method="POST" class="d-none">
                                             @csrf
                                         </form>
                                     </td>
                                 </tr>
                                 @endforeach
-                                {{-- <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                              document.getElementById('logout-form').submit();">
-                                 {{ __('Logout') }}
-                             </a> --}}
+                                
 
                             
                             </tbody>
@@ -92,7 +82,7 @@ GLOBAL PHARMA
 
 @section('script')
     <!-- CUSTOM JS -->
-    {{-- <script src="{{ asset('frontend/js/jquery.app.js') }}"></script> --}}
+    <script src="{{ asset('frontend/js/jquery.app.js') }}"></script>
 
     <script src="{{ asset('frontend/assets/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('frontend/assets/datatables/dataTables.bootstrap.js') }}"></script>

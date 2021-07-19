@@ -46,7 +46,7 @@
                          </li>
 
                          <li class="has_sub">
-                             <a href="#" class="waves-effect {{ Route::is('medicineCategory.create') || Route::is('medicineCategory.index') || Route::is('medicineCategory.edit')||Route::is('medicineUnit.create') || Route::is('medicineUnit.index')|| Route::is('medicineUnit.edit')  ? 'active' : '' }} "><i class="fa fa-user"></i><span> Medicine  </span><span
+                             <a href="#" class="waves-effect {{ Route::is('medicineCategory.create') || Route::is('medicineCategory.index') || Route::is('medicineCategory.edit')||Route::is('medicineUnit.create') || Route::is('medicineUnit.index')|| Route::is('medicineUnit.edit')||Route::is('medicineType.create') || Route::is('medicineType.index')|| Route::is('medicineType.edit')||Route::is('medicineLeaf.create') || Route::is('medicineLeaf.index')|| Route::is('medicineLeaf.edit') ||Route::is('medicine.create') || Route::is('medicine.index')|| Route::is('medicine.edit')  ? 'active' : '' }} "><i class="fa fa-user"></i><span> Medicine  </span><span
                                      class="pull-right"><i class="md md-add"></i></span></a>
                              <ul class="list-unstyled">
                                 
@@ -55,7 +55,20 @@
 
                                 <li class="{{ Route::is('medicineUnit.create') ? 'active' : '' }}"  ><a href="{{ route('medicineUnit.create') }}"> Unit Add </a></li>
                                 <li class="{{ Route::is('medicineUnit.index') ? 'active' : '' }}"> <a  href="{{ route('medicineUnit.index') }}"> Unit List </a></li>
-                             </ul>
+                            
+
+                                <li class="{{ Route::is('medicineType.create') ? 'active' : '' }}"  ><a href="{{ route('medicineType.create') }}"> Add Type </a></li>
+                                <li class="{{ Route::is('medicineType.index') ? 'active' : '' }}"> <a  href="{{ route('medicineType.index') }}"> Type List </a></li>
+                            
+
+                                <li class="{{ Route::is('medicineLeaf.create') ? 'active' : '' }}"  ><a href="{{ route('medicineLeaf.create') }}"> Add Leaf </a></li>
+                                <li class="{{ Route::is('medicineLeaf.index') ? 'active' : '' }}"> <a  href="{{ route('medicineLeaf.index') }}"> Leaf List </a></li>
+                            
+
+                                <li class="{{ Route::is('medicine.create') ? 'active' : '' }}"  ><a href="{{ route('medicine.create') }}"> Medicine Add  </a></li>
+                                <li class="{{ Route::is('medicine.index') ? 'active' : '' }}"> <a  href="{{ route('medicine.index') }}"> Medicine List </a></li>
+                            
+                            </ul>
                          </li>
 
                          @endif

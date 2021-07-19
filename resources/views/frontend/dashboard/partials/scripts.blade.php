@@ -40,7 +40,7 @@
 
      <!-- Dashboard -->
      <script src="{{ asset('frontend/js/jquery.dashboard.js') }}"></script>
-
+     
      <!-- Chat -->
      <script src="{{ asset('frontend/js/jquery.chat.js') }}"></script>
 
@@ -58,3 +58,8 @@
              });
          });
      </script>
+      <script>
+        var resizefunc = [];
+    </script>
+
+   

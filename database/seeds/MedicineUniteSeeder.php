@@ -16,7 +16,7 @@ class MedicineUniteSeeder extends Seeder
        foreach (range(1,10) as  $value) {
             MedicineUnit::create([
                 'unit' => $faker->name ,
-                'status' => $faker->boolean,
+                'status' => "1",
             ]);
             
         }

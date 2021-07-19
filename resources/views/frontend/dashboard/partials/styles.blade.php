@@ -16,7 +16,9 @@
  <!-- sweet alerts -->
  <link href="{{ asset('frontend/assets/sweet-alert/sweet-alert.min.css') }}" rel="stylesheet">
 
- <!-- Custom Files -->
+ 
+
+ {{-- <!-- Custom Files -->
  <link href="{{ asset('frontend/css/helper.css') }}" rel="stylesheet" type="text/css" />
  <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet" type="text/css" />
 
@@ -27,4 +29,6 @@
  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
  <![endif]-->
 
- <script src="{{ asset('frontend/js/modernizr.min.js') }}"></script>
+ <script src="{{ asset('frontend/js/modernizr.min.js') }}"></script> --}}
+ 
+

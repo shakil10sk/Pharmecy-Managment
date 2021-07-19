@@ -1,6 +1,7 @@
 <?php
 
 // use App\Models\Manufacturer as ModelsManufacturer;
+
 use Database\Seeders\Manufacturer;
 use Illuminate\Database\Seeder;
 
@@ -20,6 +21,8 @@ class DatabaseSeeder extends Seeder
             MedicineCategorySeeder::class,
             MedicineTypeSeeder::class,
             MedicineUniteSeeder::class,
+            MedicineLeafSeeder::class,
+            MedicineSeeder::class,
         ]);
     }
 }
