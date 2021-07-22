@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Dashboard\Bank\BankController;
 use App\Http\Controllers\Dashboard\Customer\CustomerController;
+use App\Http\Controllers\Dashboard\Human_resource\Designation\DesignationController;
 use App\Http\Controllers\Dashboard\ManufacturerController;
 use App\Http\Controllers\Dashboard\Medicine\MedicineCategoryController;
 use App\Http\Controllers\Dashboard\Medicine\MedicineController;
@@ -111,4 +113,24 @@ Route::prefix('customer')->name('customer.')->group(function(){
     Route::post('{id}/destroy',[CustomerController::class,'destroy'])->name('destroy');
     Route::get('{id}/edit',[CustomerController::class,'edit'])->name('edit');
     Route::put('{id}/update',[CustomerController::class,'update'])->name('update');
+});
+
+// Route For Bank
+Route::prefix('bank')->name('bank.')->group(function(){
+    Route::get('/view',[BankController::class,'index'])->name('index');
+    Route::get('/add',[BankController::class,'create'])->name('create');
+    Route::post('/store',[BankController::class,'store'])->name('store');
+    Route::post('{id}/destroy',[BankController::class,'destroy'])->name('destroy');
+    Route::get('{id}/edit',[BankController::class,'edit'])->name('edit');
+    Route::put('{id}/update',[BankController::class,'update'])->name('update');
+});
+
+// Route For designation
+Route::prefix('designation')->name('designation.')->group(function(){
+    Route::get('/view',[DesignationController::class,'index'])->name('index');
+    Route::get('/add',[DesignationController::class,'create'])->name('create');
+    Route::post('/store',[DesignationController::class,'store'])->name('store');
+    Route::post('{id}/destroy',[DesignationController::class,'destroy'])->name('destroy');
+    Route::get('{id}/edit',[DesignationController::class,'edit'])->name('edit');
+    Route::put('{id}/update',[DesignationController::class,'update'])->name('update');
 });
