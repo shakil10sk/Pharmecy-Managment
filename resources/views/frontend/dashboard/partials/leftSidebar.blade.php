@@ -123,59 +123,37 @@
                          {{-- Route For Bank  --}}
                          <li class="has_sub">
                              <a href="#"
-                                 class="waves-effect {{ Route::is('designation.create') || Route::is('designation.index')|| Route::is('designation.edit')  ? 'active' : '' }}" ><i
-                                     class="fa fa-users"></i><span> Human Resource </span><span class="pull-right"><i
+                                 class="waves-effect {{ Route::is('designation.create') || Route::is('designation.index')|| Route::is('designation.edit') || Route::is('employee.create') || Route::is('employee.index')|| Route::is('employee.edit') ? 'active' : '' }} "><i
+                                     class="fa fa-bank"></i><span> Employee </span><span class="pull-right"><i
                                          class="md md-add"></i></span></a>
                              <ul class="list-unstyled">
-                                
-                                 <li class="has_sub">
-                                    <a href="#"
-                                        class="waves-effect subdrop "><i
-                                            class="fa fa-user"></i><span> Employee</span><span class="pull-right"><i
-                                                class="md md-add"></i></span></a>
-                                     <ul style="">
-                                        
-                                         <li class="{{ Route::is('designation.create') ? 'active' : '' }}"><a
-                                                 href="{{ route('designation.create') }}"> designation Add </a></li>
-                                         <li class="{{ Route::is('designation.index') ? 'active' : '' }}"> <a
-                                                 href="{{ route('designation.index') }}"> designation List </a></li>
 
-                                     </ul>
-                                     <a href="javascript:void(0);" class="waves-effect"><span>Menu Level 1.1</span> <span class="pull-right"><i class="md md-add"></i></span></a>
-                                    <ul style="">
-                                        <li class="active"><a href="javascript:void(0);"><span>Menu Level 2.1</span></a></li>
-                                        <li><a href="javascript:void(0);"><span>Menu Level 2.2</span></a></li>
-                                        <li><a href="javascript:void(0);"><span>Menu Level 2.3</span></a></li>
-                                    </ul>
-                                 </li>
-
+                                 <li class="{{ Route::is('designation.create') ? 'active' : '' }}"><a
+                                         href="{{ route('designation.create') }}"> Designation Add </a></li>
+                                 <li class="{{ Route::is('designation.index') ? 'active' : '' }}"> <a
+                                         href="{{ route('designation.index') }}"> Designation List </a></li>
+                                 <li class="{{ Route::is('employee.create') ? 'active' : '' }}"><a
+                                         href="{{ route('employee.create') }}"> Employee Add </a></li>
+                                 <li class="{{ Route::is('employee.index') ? 'active' : '' }}"> <a
+                                         href="{{ route('employee.index') }}"> Employee List </a></li>
                              </ul>
                          </li>
-                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="md md-share"></i><span>Multi Level </span><span class="pull-right"><i class="md md-add"></i></span></a>
-                            <ul>
-                                <li class="has_sub">
-                                    <a href="javascript:void(0);" class="waves-effect"><span>Menu Level 1.1</span> <span class="pull-right"><i class="md md-add"></i></span></a>
-                                    <ul style="">
-                                        <li><a href="javascript:void(0);"><span>Menu Level 2.1</span></a></li>
-                                        <li><a href="javascript:void(0);"><span>Menu Level 2.2</span></a></li>
-                                        <li><a href="javascript:void(0);"><span>Menu Level 2.3</span></a></li>
-                                    </ul>
-                                </li>
-                                <li class="has_sub">
-                                    <a href="javascript:void(0);" class="waves-effect"><span>Menu Level 1.1</span> <span class="pull-right"><i class="md md-add"></i></span></a>
-                                    <ul style="">
-                                        <li><a href="javascript:void(0);"><span>Menu Level 2.1</span></a></li>
-                                        <li><a href="javascript:void(0);"><span>Menu Level 2.2</span></a></li>
-                                        <li><a href="javascript:void(0);"><span>Menu Level 2.3</span></a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);"><span>Menu Level 1.2</span></a>
-                                </li>
+                         
+                        {{-- Route For Purchase  --}}
+                        <li class="has_sub">
+                            <a href="#"
+                                class="waves-effect {{ Route::is('purchase.create') || Route::is('purchase.index')|| Route::is('purchase.edit')  ? 'active' : '' }} "><i
+                                    class="fa fa-cart-plus"></i><span> Purchase </span><span class="pull-right"><i
+                                        class="md md-add"></i></span></a>
+                            <ul class="list-unstyled">
+
+                                <li class="{{ Route::is('purchase.create') ? 'active' : '' }}"><a
+                                        href="{{ route('purchase.create') }}"> Purchase Add </a></li>
+                                <li class="{{ Route::is('purchase.index') ? 'active' : '' }}"> <a
+                                        href="{{ route('purchase.index') }}"> Purchase List </a></li>
                             </ul>
                         </li>
-                        
+
 
 
 

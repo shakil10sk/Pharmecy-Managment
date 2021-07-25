@@ -4,12 +4,14 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Dashboard\Bank\BankController;
 use App\Http\Controllers\Dashboard\Customer\CustomerController;
 use App\Http\Controllers\Dashboard\Human_resource\Designation\DesignationController;
+use App\Http\Controllers\Dashboard\Human_resource\Employee\EmployeeController;
 use App\Http\Controllers\Dashboard\ManufacturerController;
 use App\Http\Controllers\Dashboard\Medicine\MedicineCategoryController;
 use App\Http\Controllers\Dashboard\Medicine\MedicineController;
 use App\Http\Controllers\Dashboard\Medicine\MedicineLeafController;
 use App\Http\Controllers\Dashboard\Medicine\MedicineTypeController;
 use App\Http\Controllers\Dashboard\Medicine\MedicineUnitController;
+use App\Http\Controllers\Dashboard\PurchaseController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\User\UserController;
@@ -124,6 +126,15 @@ Route::prefix('bank')->name('bank.')->group(function(){
     Route::get('{id}/edit',[BankController::class,'edit'])->name('edit');
     Route::put('{id}/update',[BankController::class,'update'])->name('update');
 });
+// Route For Purchase
+Route::prefix('purchase')->name('purchase.')->group(function(){
+    Route::get('/view',[PurchaseController::class,'index'])->name('index');
+    Route::get('/add',[PurchaseController::class,'create'])->name('create');
+    Route::post('/store',[PurchaseController::class,'store'])->name('store');
+    Route::post('{id}/destroy',[PurchaseController::class,'destroy'])->name('destroy');
+    Route::get('{id}/edit',[PurchaseController::class,'edit'])->name('edit');
+    Route::put('{id}/update',[PurchaseController::class,'update'])->name('update');
+});
 
 // Route For designation
 Route::prefix('designation')->name('designation.')->group(function(){
@@ -133,4 +144,13 @@ Route::prefix('designation')->name('designation.')->group(function(){
     Route::post('{id}/destroy',[DesignationController::class,'destroy'])->name('destroy');
     Route::get('{id}/edit',[DesignationController::class,'edit'])->name('edit');
     Route::put('{id}/update',[DesignationController::class,'update'])->name('update');
+});
+// Route For employee
+Route::prefix('employee')->name('employee.')->group(function(){
+    Route::get('/view',[EmployeeController::class,'index'])->name('index');
+    Route::get('/add',[EmployeeController::class,'create'])->name('create');
+    Route::post('/store',[EmployeeController::class,'store'])->name('store');
+    Route::post('{id}/destroy',[EmployeeController::class,'destroy'])->name('destroy');
+    Route::get('{id}/edit',[EmployeeController::class,'edit'])->name('edit');
+    Route::put('{id}/update',[EmployeeController::class,'update'])->name('update');
 });

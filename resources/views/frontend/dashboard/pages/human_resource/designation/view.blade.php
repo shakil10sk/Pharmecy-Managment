@@ -1,7 +1,7 @@
 @extends('frontend.dashboard.master')
 
 @section('title')
-Category View 
+Designation View 
 @endsection
 
 @section('style')
@@ -33,7 +33,7 @@ Category View
                         <h3 class="panel-title">Datatable</h3>
                     </div>
                     <div class="col-md-6 text-right text-md-left">
-                        <a href="{{ route('designation.create') }}" class="btn btn-primary">Add Medicine Category
+                        <a href="{{ route('designation.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> &nbsp;Add Designation
                         </a>
                     </div>
 
@@ -47,8 +47,8 @@ Category View
                                 <thead>
                                     <tr>
                                         <th>Sl No </th>
-                                        <th>Medicine Category Name</th>
-                                        <th>Medicine Category Status </th>
+                                        <th>Designation Name</th>
+                                        <th>Details </th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -59,7 +59,7 @@ Category View
                                     <tr>
                                         <td>{{ ++$key }} </td>
                                         <td>{{ $value->name }} </td>
-                                        <td> {!! substr($value->deatils, 0 , 10 ) !!} </td>
+                                        <td>{!! substr($value->details, 0 , 15  ) !!} ...</td>
                                         <td>
                                             <a href="{{ route('designation.edit',$value->id) }}"><i
                                                     class="fa fa-edit"></i></a> &nbsp; &nbsp;

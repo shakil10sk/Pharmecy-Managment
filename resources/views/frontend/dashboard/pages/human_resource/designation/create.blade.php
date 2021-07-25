@@ -1,6 +1,6 @@
 @extends('frontend.dashboard.master')
 @section('title')
-   Add -> Medicine Category 
+   Add Designation
 @endsection
 
 @section('content')
@@ -43,15 +43,12 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="status" class="col-md-3 text-right col-form-label">Status<i class="text-danger"> * </i>:</label>
+                                <label for="status" class="col-md-3 text-right col-form-label">Details<i class="text-danger"> * </i>:</label>
                                 <div class="col-md-5">
                                     <div class="">
-                                        <input type="radio" name="status" 
-                                            id="status" placeholder="Medicine Category  Name" value="1" checked > Active  &nbsp; &nbsp;
-                                        <input type="radio" name="status" 
-                                            id="status" placeholder="Medicine Category  Name" value="0"> InActive 
+                                        <textarea name="details" class="form-control" id="details" cols="30" rows="5"></textarea>
                                     </div>
-                                    @error('manufacturer_name')
+                                    @error('details')
                                         <div class="alert text-danger m-b-0">
                                             <span>{{ $message }}</span>
                                         </div>

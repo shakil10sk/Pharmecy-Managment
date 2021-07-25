@@ -23,6 +23,9 @@ class DatabaseSeeder extends Seeder
             MedicineUniteSeeder::class,
             MedicineLeafSeeder::class,
             MedicineSeeder::class,
+            DesignationSeeder::class,
+            CustomerSeeder::class,
+            BankSeeder::class,
         ]);
     }
 }

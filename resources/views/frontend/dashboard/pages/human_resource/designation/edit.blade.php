@@ -1,6 +1,6 @@
 @extends('frontend.dashboard.master')
 @section('title')
-   Add -> Medicine Category 
+ Update Designation
 @endsection
 
 @section('content')
@@ -12,19 +12,19 @@
                     <div class="card-header py-2" >
                         <div class="row m-b-10">
                             <div class="text-left col-md-6 col-lg-6 col-sm-6">
-                                <h4 class="fs-17 font-weight-600 mb-0 pt-2 pb-2">Add Medicine Category </h4>
+                                <h4 class="fs-17 font-weight-600 mb-0 pt-2 pb-2">Update Designation </h4>
                             </div>
                             <div class="text-right col-md-6 col-lg-6 col-sm-6">
-                                <a href="{{ route('medicineCategory.index') }}"
+                                <a href="{{ route('designation.index') }}"
                                     class="btn btn-success btn-sm mr-1"><i
-                                        class="fa fa-align-justify m-r-10"></i>Medicine Category  List</a>
+                                        class="fa fa-align-justify m-r-10"></i>Designation  List</a>
                             </div>
                         </div>
                         <hr>
                     </div>
                     <div class="card-body">
                         @include('message.success')
-                        <form action="{{ route('medicineCategory.update',$medicineCategory->id) }}"
+                        <form action="{{ route('designation.update',$designation->id) }}"
                             enctype="multipart/form-data" method="post" accept-charset="utf-8">
                             @csrf 
                             @method('put')
@@ -34,7 +34,7 @@
                                 <div class="col-md-5">
                                     <div class="">
                                         <input type="text" name="name" class="form-control"
-                                            id="manufacturer_name" placeholder="Medicine Category  Name" value="{{ $medicineCategory->name }}">
+                                            id="manufacturer_name" placeholder="Medicine Category  Name" value="{{ $designation->name }}">
                                     </div>
                                     @error('name')
                                         <div class="alert text-danger m-b-0">
@@ -47,20 +47,28 @@
                                 <label for="status" class="col-md-3 text-right col-form-label">Status<i class="text-danger"> * </i>:</label>
                                 <div class="col-md-5">
                                     <div class="">
-                                        <input type="radio" name="status" 
-                                            id="status" placeholder="Medicine Category  Name" value="1" {{ ($medicineCategory->status=="1")? "checked" : "" }} > Active  &nbsp; &nbsp;
-                                        <input type="radio" name="status" 
-                                            id="status" placeholder="Medicine Category  Name" value="0" {{ ($medicineCategory->status=="0")? "checked" : "" }}> InActive 
-                                    </div>
-                                    @error('manufacturer_name')
-                                        <div class="alert text-danger m-b-0">
-                                            <span>{{ $message }}</span>
+                                        <div class="">
+                                            <textarea name="details" class="form-control text-left" id="details" cols="30" rows="5">{!! $designation->details !!}
+                                            </textarea>
                                         </div>
-                                    @enderror
+                                        @error('details')
+                                            <div class="alert text-danger m-b-0">
+                                                <span>{{ $message }}</span>
+                                            </div>
+                                        @enderror
+                                        
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-success">
-                                Update </button>
+                            </div>
+                            <div class="col-md-8 text-right">
+                                <button type="submit" class="btn btn-success">
+                                    Update </button>
+                            </div>
+                            <div class="form-group-row text-right">
+                                
+                                
+                            </div>
+                            <br><br>
                             
                         </form>
                     </div>

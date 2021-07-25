@@ -76,7 +76,7 @@ class DesignationController extends Controller
     public function edit($id)
     {
         $designation = Designation::find($id);
-        return view('frontend.dashboard.pages.human_resource.designation.edit',compact('bank'));
+        return view('frontend.dashboard.pages.human_resource.designation.edit',compact('designation'));
     }
 
     /**
