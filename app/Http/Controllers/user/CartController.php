@@ -69,18 +69,12 @@ class CartController extends Controller
           $insert=DB::table('order_details')->insert($odata);
        }
        if($insert){
-        $notification= array(
-            'message'=>'Successfully Invoice Created ',
-            'alert-type'=>'success'
-        );
+
         Cart::destroy();
-        return Redirect('/')->with($notification);
+        return Redirect('/pos')->with('success','Successfully Invoice Created');
     }else{
-        $notification= array(
-            'message'=>'error exception',
-            'alert-type'=>'success'
-        );
-        return Redirect()->back()->with($notification);
+
+        return Redirect()->back()->with('error','error exception');
     }
     }
 

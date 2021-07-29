@@ -10,6 +10,8 @@ class Employee extends Model
         'firstname',
         'lastname',
         'username',
+        'password',
+        'confirm_password',
         'email',
         'phone',
         'address',

@@ -23,10 +23,11 @@ class CreateMedicinesTable extends Migration
             $table->string('qty');
             $table->string('strength');
             $table->string('sell_price');
-            $table->string('buy_price');
+            $table->string('manufecture_price');
             $table->string('Images');
             $table->string('Product_code');
             $table->string('buy_date');
+            $table->string('manufecturer_date');
             $table->string('expire_date');
             $table->timestamps();
         });

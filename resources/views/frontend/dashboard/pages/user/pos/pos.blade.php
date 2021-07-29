@@ -82,7 +82,7 @@ GLOBAL PHARMA
             <div class=" bg-primary">
                 <p style="font-size:19px;"> Quantity: {{ Cart::count() }}</p>
                 <p style="font-size:19px;"> SubTotal: {{ Cart::subtotal() }}</p>
-                <p style="font-size:19px;"> Vat: {{ Cart::tax(2) }}</p>
+                <p style="font-size:19px;"> Vat: {{ Cart::tax(0) }}</p>
                 <hr>
             </div>
             <h2 class="text-white text-center m-0">Total:- {{ Cart::total() }} </h2>
@@ -163,7 +163,7 @@ GLOBAL PHARMA
                                         <input type="hidden" name="id" value="{{ $value->id }}">
                                         <input type="hidden" name="name" value="{{ $value->medicine_name }}">
                                         <input type="hidden" name="qty" value="1">
-                                        <input type="hidden" name="price" value="{{ $value->medicine_price }}">
+                                        <input type="hidden" name="price" value="{{ $value->sell_price }}">
                                         <td>
                                             {{-- <a href="#"></a> --}}
                                             <img src="{{ asset('images/'.$value->Images) }}"
@@ -171,7 +171,7 @@ GLOBAL PHARMA
                                         </td>
                                         <td>{{ $value->medicine_name }}</td>
                                         <td>{{ $value->category }}</td>
-                                        <td>{{ $value->medicine_price }}</td>
+                                        <td>{{ $value->sell_price }}</td>
                                         <td> <button type="submit" class="btn btn-sm"><i
                                                     class="fa fa-plus-square fa-2x text-info"></i></button> </td>
                                     </form>
@@ -179,7 +179,7 @@ GLOBAL PHARMA
                             @endforeach
                         </tbody>
                     </table>
-                    {{ $medicine->links() }}
+                    {{-- {{ $medicine->links() }} --}}
                 </div>
             </div>
         </div>

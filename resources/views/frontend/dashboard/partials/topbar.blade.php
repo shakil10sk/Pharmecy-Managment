@@ -2,7 +2,7 @@
     <!-- LOGO -->
     <div class="topbar-left">
         <div class="text-center d-inline-block">
-            <a href="/" class="logo "><span class="bg-info">GLOBAL PHARMA</span></a>
+            <a href="{{ route('admin.dashboard') }}" class="logo "><span class="bg-info">GLOBAL PHARMA</span></a>
             {{-- <a href="/" class="logo "><img class="myimage" src="{{ asset('frontend/images/logo.PNG') }}" alt="Global"  ></span></a> --}}
             {{-- <a href="index.html" class="logo"><i class="md md-terrain"></i> <span>abc </span></a> --}}
         </div>
@@ -94,7 +94,22 @@
                             <li><a href="javascript:void(0)"><i class="md md-face-unlock"></i> Profile</a></li>
                             <li><a href="javascript:void(0)"><i class="md md-settings"></i> Settings</a></li>
                             <li><a href="javascript:void(0)"><i class="md md-lock"></i> Lock screen</a></li>
-                            <li><a href="javascript:void(0)"><i class="md md-settings-power"></i> Logout</a></li>
+                            <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                    <i class="md md-settings-power"></i>
+                                    Logout</a>
+
+                                    {{-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a> --}}
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    {{-- </div> --}}</li>
                         </ul>
                     </li>
                 </ul>

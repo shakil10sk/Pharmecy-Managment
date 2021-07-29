@@ -16,7 +16,8 @@ class POSController extends Controller
      */
     public function index()
     {
-        $medicine=Medicine::orderBy('id','desc')->paginate(4);
+        $medicine=Medicine::join('categories','medicines.category_id','=','categories.id')
+        ->select('medicines.*','categories.category')->get();
         $customar=Customar::all();
         return view('frontend.dashboard.pages.user.pos.pos',compact('medicine','customar'));
     }

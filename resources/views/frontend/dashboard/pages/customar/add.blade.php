@@ -6,6 +6,7 @@
 <h3>Add Customar</h3>
 <form class="container" action="/customar/store" method="post" enctype="multipart/form-data">
     @csrf
+    @include('message.alert')
 <div class="modal-body">
     <div class="row">
         <div class="col-md-4">

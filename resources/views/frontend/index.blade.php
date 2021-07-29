@@ -5,17 +5,17 @@ GLOBAL PHARMA
 @endsection
 
 
-    @section('title-section')
-        <div class="row">
-            <div class="col-sm-12">
-                <h4 class="pull-left page-title">Welcome Adminastrator!</h4>
-                <ol class="breadcrumb pull-right">
-                    <li><a href="#">GLOBAL PHRMA</a></li>
-                    <li class="active">ADMIN Dashboard</li>
-                </ol>
-            </div>
+@section('title-section')
+    <div class="row">
+        <div class="col-sm-12">
+            <h4 class="pull-left page-title">Welcome Adminastrator!</h4>
+            <ol class="breadcrumb pull-right">
+                <li><a href="#">GLOBAL PHRMA</a></li>
+                <li class="active">ADMIN Dashboard</li>
+            </ol>
         </div>
-    @endsection
+    </div>
+@endsection
 
 @section('content-section')
 

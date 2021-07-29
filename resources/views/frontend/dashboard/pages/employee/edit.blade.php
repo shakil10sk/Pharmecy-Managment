@@ -62,6 +62,20 @@ ADD Employee
                             </div>
                         </div>
                         <div class="form-group ">
+                            <label for="pass" class="control-label col-lg-2">Password <span
+                                    class="text-danger">*</span></label>
+                            <div class="col-lg-10">
+                                <input class="form-control " id="password" name="password" type="password" value="{{ $employee->password }}">
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label for="cpass" class="control-label col-lg-2">Confirm Password <span
+                                    class="text-danger">*</span></label>
+                            <div class="col-lg-10">
+                                <input class="form-control " id="password" name="confirm_password" type="password" value="{{ $employee->confirm_password }}">
+                            </div>
+                        </div>
+                        <div class="form-group ">
                             <label for="phone" class="control-label col-lg-2">Phone <span
                                     class="text-danger">*</span></label>
                             <div class="col-lg-10">

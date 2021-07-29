@@ -38,17 +38,23 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        // $category=Category;
+        // $request->validate([
+        //     'category'=> 'required',
+        // ]);
+        // $cat=new Category();
+        // $cat->category=$request->category;
+        // if($cat->save()){
+        //     return redirect()->back()->with('success','Successfully Category Add');
+        // }else{
+        //     return redirect()->back()->with('error','Failed to add Category');
+        // }
+       
         $category=$request->all();
         $notify=Category::create($category);
         if($notify){
-            $notification=array(
-                'message'=>'Category Add Successfully',
-                'alert-type'=>'success'
-            );
-            return Redirect(url('/add/category'))->with($notification);
+            return redirect()->back()->with('success','Successfully Category Add');
         }else{
-            return Redirect()->back();
+            return redirect()->back()->with('error','Failed to add Category');
         }
 
     }

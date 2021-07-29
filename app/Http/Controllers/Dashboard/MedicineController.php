@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -22,8 +23,11 @@ class MedicineController extends Controller
      */
     public function index()
     {
-        $data= Medicine::orderby('id','desc')->paginate(10);
-        return view('frontend.dashboard.pages.view_medicine',compact('data'));
+        $data=Medicine::join('categories','medicines.category_id','=','categories.id')
+        ->select('medicines.*','categories.category')->get();
+
+        // $data= Medicine::orderby('id','desc')->paginate(10);
+        return view('frontend.dashboard.pages.medicine.view_medicine',compact('data'));
 
     }
 
@@ -34,7 +38,8 @@ class MedicineController extends Controller
      */
     public function create()
     {
-        return view('frontend.dashboard.pages.add_medicine');
+        $category=Category::all();
+        return view('frontend.dashboard.pages.medicine.add_medicine',compact('category'));
     }
 
     /**
@@ -73,12 +78,17 @@ class MedicineController extends Controller
         $value->qty=$request->qty;
         $value->strength=$request->strength;
         $value->sell_price=$request->sell_price;
-        $value->buy_price=$request->buy_price;
+        $value->manufecture_price=$request->manufecture_price;
         $value->Product_code=$request->Product_code;
         $value->buy_date=$request->buy_date;
+        $value->manufecturer_date=$request->manufecturer_date;
         $value->expire_date=$request->expire_date;
-        $value->save();
-        return Redirect()->back();
+        if(  $value->save()){
+            return redirect()->back()->with('success','Successfully Medicine Added');
+        }else{
+            return redirect()->back()->with('error','Somtheing is Wrong .Please give information again');
+        }
+
     }
 
     /**
@@ -127,13 +137,15 @@ class MedicineController extends Controller
     }
 
     public function importMedicine(){
-        return view('frontend.dashboard.pages.importMedicine');
+        return view('frontend.dashboard.pages.medicine.importMedicine');
     }
 
     public function export()
     {
         return Excel::download(new MedicinesExport, 'Medicines.xlsx');
     }
+
+
     public function import(Request $request)
     {
         $import= Excel::import(new MedicinesImport, $request->file('import_file'));

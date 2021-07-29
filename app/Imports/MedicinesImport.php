@@ -23,11 +23,12 @@ class MedicinesImport implements ToModel
             'qty'=>$row[5],
             'strength'=>$row[6],
             'sell_price'=>$row[7],
-            'buy_price'=>$row[8],
+            'manufecture_price'=>$row[8],
             'Images'=>$row[9],
             'Product_code'=>$row[10],
             'buy_date'=>$row[11],
-            'expire_date'=>$row[12]
+            'manufecturer_date'=>$row[12],
+            'expire_date'=>$row[13]
         ]);
     }
 }

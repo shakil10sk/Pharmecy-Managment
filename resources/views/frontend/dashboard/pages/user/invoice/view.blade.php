@@ -74,7 +74,7 @@
                                                 <p><strong>Order Date: </strong>
                                                     {{ date("l jS \of F Y") }}</p>
                                                 <p class="m-t-5"><strong>Order Status: </strong> <span
-                                                        class="label label-pink">Pending</span></p>
+                                                        class="label label-pink">Active</span></p>
                                                 @php
                                                     // $order=DB::table('orders')->select('id')->first();
                                                     $i=1;
@@ -145,7 +145,9 @@
 
                     {{-- data model --}}
 
+
                     <form class="container" action="{{ url('/final-invoice') }}" method="post">
+                        @include('message.alert')
                         @csrf
                         <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog"
                             aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
@@ -199,7 +201,7 @@
                                         <input type="hidden" name="customar_id" value="{{ $customar->id }}">
                                         <input type="hidden" name="order_date"
                                             value="{{ date('d/m/y') }}">
-                                        <input type="hidden" name="order_status" value="panding">
+                                        <input type="hidden" name="order_status" value="Active">
                                         <input type="hidden" name="total_products" value="{{ Cart::count() }}">
                                         <input type="hidden" name="sub_total" value="{{ Cart::subtotal() }}">
                                         <input type="hidden" name="vat" value="{{ Cart::tax() }}">

@@ -61,12 +61,14 @@ class EmployeeController extends Controller
         $value->vacation=$request->vacation;
         $value->city=$request->city;
         $value->position=$request->position;
-        $value->save();
-        $notification=array(
-            'message'=>'Successfully data delete',
-            'alert-type'=>'success'
-            );
-            return Redirect()->back()->with($notification);
+        $value->password=$request->password;
+        $value->confirm_password=$request->confirm_password;
+        if(  $value->save()){
+            return redirect()->back()->with('success','Employee Add Successfully');
+        }else{
+            return redirect()->back()->with('error','Please give Valid Information');
+        }
+
 
     }
 

@@ -28,6 +28,8 @@ class CreateEmployeesTable extends Migration
             $table->string('vacation');
             $table->string('city');
             $table->string('position');
+            $table->string('password');
+            $table->string('confirm_password');
             $table->timestamps();
         });
     }

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Image;
+use Illuminate\Support\Facades\Auth;
 
 class CustomarController extends Controller
 {
@@ -28,7 +29,10 @@ class CustomarController extends Controller
      */
     public function create()
     {
-        return view('frontend.dashboard.pages.customar.add');
+        if(Auth::user()->role==1 ||Auth::user()->role==2 ){
+            return view('frontend.dashboard.pages.customar.add');
+        }
+
     }
 
     /**
@@ -67,15 +71,13 @@ class CustomarController extends Controller
         $value->ac_num=$request->ac_num;
         $value->bank_name=$request->bank_name;
         $value->bank_branch=$request->bank_branch;
-        $value->save();
-        // if($value->save()){
-        //     $notification=array(
-        //         'message'=>'Successfully Customar Inserted',
-        //         'alert-type'=>'success'
-        //     );
-        //->with($notification)
-        // }        
-        return Redirect()->back();
+
+        if(  $value->save()){
+            return redirect()->back()->with('success','Customar Add Successfully');
+        }else{
+            return redirect()->back()->with('error','Wrong Information');
+        }
+
 
     }
 
