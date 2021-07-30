@@ -1,125 +1,89 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
-        <meta name="author" content="Coderthemes">
+<html lang="en">
 
-        <link rel="shortcut icon" href="images/favicon_1.ico">
-
-        <title>Moltran - Responsive Admin Dashboard Template</title>
-
-        {{-- <!-- Base Css Files -->
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-
-        <!-- Font Icons -->
-        <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-        <link href="assets/ionicon/css/ionicons.min.css" rel="stylesheet" />
-        <link href="css/material-design-iconic-font.min.css" rel="stylesheet">
-
-        <!-- animate css -->
-        <link href="css/animate.css" rel="stylesheet" />
-
-        <!-- Waves-effect -->
-        <link href="css/waves-effect.css" rel="stylesheet">
-
-        <!-- Custom Files -->
-        <link href="css/helper.css" rel="stylesheet" type="text/css" />
-        <link href="css/style.css" rel="stylesheet" type="text/css" />
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-
-        <script src="js/modernizr.min.js"></script> --}}
-        @include('frontend.dashboard.partials.style');
-
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="{{ asset('frontend/style2.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Simonetta&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Trade+Winds&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
 
-        <div class="wrapper-page">
-            <div class="panel panel-color panel-primary panel-pages">
-                <div class="panel-heading bg-img">
-                    <div class="bg-overlay"></div>
-
-                    <h3 class="text-center m-t-10 text-white"> SAPAHAR <strong>Pharmasist</strong> </h3>
-                </div>
-
-
-                <div class="panel-body">
-                <form class="form-horizontal m-t-20" method="POST" action="{{ route('login') }}">
-                    @csrf
-                    <div class="form-group ">
-                        <div class="col-xs-12">
-                            <input class="form-control input-lg " type="email"name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Username">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-xs-12">
-                            <input class="form-control input-lg" type="password" name="password" required="" autocomplete="current-password" placeholder="Password">
-                        </div>
-                    </div>
-
-                    <div class="form-group ">
-                        <div class="col-xs-12">
-                            <div class="checkbox checkbox-primary">
-                                <input id="checkbox-signup" type="checkbox">
-                                <label for="checkbox-signup">
-                                    {{ __('Remember Me') }}
-                                </label>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="form-group text-center m-t-40">
-                        <div class="col-xs-12">
-                            <button class="btn btn-primary btn-lg w-lg waves-effect waves-light" type="submit">{{ __('Login') }}</button>
-
-                        </div>
-                    </div>
-
-                    <div class="form-group m-t-30">
-                        @if (Route::has('password.request'))
-                            <a class="btn btn-link" href="{{ route('password.request') }}">
-                                {{ __('Forgot Your Password?') }}
-                            </a>
-                        @endif
-                        <div class="col-sm-5 text-right">
-                            <a href="register.html">Create an account</a>
-                        </div>
-                    </div>
-                </form>
-                </div>
-
+<body>
+    <div class="header">
+        <div class="page-headline bg-info">
+            <h1>GLOBAL PHARMA</h1>
+        </div>
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"> </div>
+                <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                <button type="button" class="toggle-btn" onclick="register()">Register</button>
             </div>
+            <form class="input-group" id="login" method="POST" action="{{ route('login') }}">
+                @csrf
+                <input type="email" class="input-field" name="email" placeholder="Email" required>
+                <input type="password" class="input-field" name="password" placeholder="Enter Password" required>
+                <input type="checkbox" class="check-box">
+                <span> {{ __('Remember Me') }}</span>
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+            {{-- Registration section --}}
+            <form class="input-group " id="register" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+                @csrf
+                <input type="text" class="input-field" name="name" placeholder="Your Full Name" required>
+                <input type="email" class="input-field" name="email" placeholder=" Email Address" required>
+                <input type="password" class="input-field" name="password" placeholder="Password" required>
+                <input type="password" class="input-field" name="password_confirmation" placeholder="Confirm Password"
+                    required>
+                <input type="tel" class="input-field" name="phone" placeholder="Phone Number" required>
+                <textarea class="input-field" name="address" cols="20" rows="2"
+                    placeholder="Enter Your Address"></textarea>
+
+                <input class="input-field " accept="image/*" name="photo" type="file">
+                <input type="number" class="input-field" name="nid_number" placeholder="NID Number" required>
+                <input type="text" class="input-field"  name="city" placeholder="Your City Name" required>
+                <input type="text" class="input-field" name="position" placeholder="joining Position - Ex.sellsman" required>
+
+                <input type="checkbox" class="check-box">
+                <span>I agree<a href="#"> to the terms & conditions</a></span>
+                <button type="submit" class="submit-btn">Registration</button>
+            </form>
         </div>
 
-{{--
-    	<script>
-            var resizefunc = [];
+
+        <script>
+            var show = document.getElementById("nav-link");
+
+            function showMenu() {
+                show.style.right = "0";
+            }
+
+            function closeMenu() {
+                show.style.right = "-220px";
+            }
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            var z = document.getElementById("btn");
+
+            function register() {
+                x.style.left = "-400px";
+                y.style.left = "50px";
+                z.style.left = "110px";
+            }
+
+            function login() {
+                x.style.left = "50px";
+                y.style.left = "450px";
+                z.style.left = "0";
+            }
         </script>
-    	<script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/waves.js"></script>
-        <script src="js/wow.min.js"></script>
-        <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
-        <script src="js/jquery.scrollTo.min.js"></script>
-        <script src="assets/jquery-detectmobile/detect.js"></script>
-        <script src="assets/fastclick/fastclick.js"></script>
-        <script src="assets/jquery-slimscroll/jquery.slimscroll.js"></script>
-        <script src="assets/jquery-blockui/jquery.blockUI.js"></script>
+        {{-- @include('frontend.dashboard.partials.script') --}}
+    </div>
+</body>
 
-
-        <!-- CUSTOM JS -->
-        <script src="js/jquery.app.js"></script> --}}
-        @include('frontend.dashboard.partials.script')
-
-	</body>
 </html>

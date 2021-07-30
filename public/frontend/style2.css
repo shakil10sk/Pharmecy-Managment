@@ -1,0 +1,501 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: simonetta;
+    box-sizing: border-box;
+  }
+
+  .body {
+    overflow: hidden;
+  }
+
+  iframe {
+    display: none;
+  }
+
+
+  .banner-title {
+    width: 60%;
+    color: white;
+    transform: translate(34%, 65%);
+    position: relative;
+    text-align: center;
+  }
+
+  .banner-title h1 {
+    border-radius: 20px;
+    background-color: rgba(235, 235, 235, 0.404);
+    font-size: 60px;
+  }
+
+  .banner-title h1 span {
+    color: yellow;
+  }
+
+
+  .header {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url(images/pharmacy.jpg);
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+
+  .btn {
+    border: 3px solid yellow;
+    border-radius: 20px;
+    padding: 10px 20px;
+    background: yellow;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    color: white;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+  }
+
+
+  @media(max-width: 1370px) {
+    .banner-title {}
+    .banner-title h1 {
+      font-size: 50px;
+    }
+  }
+
+  .form-box {
+    width: 29%;
+    height: 82%;
+    position: relative;
+    margin: 3% auto;
+    background: #fff;
+    padding: 5px;
+    overflow: auto;
+  }
+  /* .form-box2{
+
+    overflow: hidden;
+  } */
+  .button-box {
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 30px;
+  }
+
+  .toggle-btn {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+  }
+
+  #btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    border-radius: 30px;
+    transition: .5s;
+  }
+
+
+  .input-group {
+    top: 180px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+  }
+
+  .input-field {
+    border-radius: 20px;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border: 1px solid #999;
+    outline: none;
+    background: transparent;
+  }
+
+  .submit-btn {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+  }
+
+  .submit-btn:hover {
+    background: linear-gradient(to right, #ffad06, #ff105f);
+  }
+
+  .check-box {
+    margin: 30px 10px 30px 0;
+  }
+
+  .span {
+    color #777;
+    font-size: 12px;
+    bottom: 68px;
+    position: absolute;
+  }
+
+  #login {
+    left: 50px;
+  }
+
+  #register {
+    left: 450px;
+  }
+
+  .page-headline {
+    text-align: center;
+    color: white;
+  }
+
+  .page-headline h1 {
+    font-family: Trade Winds;
+    font-size: 50px;
+    margin-bottom: 10px;
+  }
+
+  .page-headline h1::after {
+    content: '';
+    width: 0;
+    height: 2PX;
+    background: yellow;
+    display: block;
+    margin: auto;
+    transition: .5s;
+  }
+
+  .page-headline h1:hover::after {
+    width: 75%;
+  }
+
+
+  .form-container {
+    background-color: rgba(75, 75, 75, 0.438);
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    box-shadow: 10px 15px 20px rgb(0, 0, 0, .1);
+    display: grid;
+    grid-template-columns: 40% 60%;
+  }
+
+
+
+  @media(max-width: 850px) {
+
+  .form {
+    font-weight: 600;
+  }
+
+  .form-field {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  input, select {
+    pad: 10px 15px;
+  }
+
+  /* width */
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px yellow;
+    border-radius: 5px;
+  }
+
+  /* Handle */
+
+  ::-webkit-scrollbar-thumb {
+    background: yellow;
+    border-radius: 5px;
+  }
+
+  /* Handle on hover */
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to right, #ff105f, #ffad06);
+  }
+
+  .label-color {
+    color: yellow;
+  }
+
+  ::selection {
+    color: black;
+    background: yellow;
+  }
+
+  .main-body {
+    margin: 30px 10px;
+    color: white;
+  }
+
+  .content-details {
+    margin: auto;
+    color: #fff;
+    font-size: 14px;
+  }
+
+  .main-body {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    border: 2px dotted yellow;
+    border-radius: 20px;
+    margin: 20px 40px;
+  }
+
+  .main-body h2 {
+    margin: 10px;
+    margin-bottom: 100px;
+    text-align: center;
+    border-bottom: 2px solid yellow;
+    border-radius: 20px;
+  }
+
+  .special-menu-item {
+    margin: 80px 0px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .special-menu-item>div {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 32%;
+    text-align: center;
+    line-height: 30px;
+    font-size: 25px;
+    background-color: #e0e0e0c9;
+    border: 5px solid white;
+    margin-bottom: 40px;
+  }
+
+  .left-item {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    color: black;
+  }
+
+  .middle-item {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    color: black;
+  }
+
+  .right-item {
+    color: black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  .item-img {
+    float: top;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
+  .item-img img {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    border: 3px solid yellow;
+    margin-top: -70px;
+  }
+
+  .item-text-title {
+    text-align: center;
+    float: bottom;
+  }
+
+  .item-text-title h6 {
+    color: black;
+    font-size: 30px;
+  }
+
+  .item-text-title p {
+    color: yellow;
+    font-size: 18px;
+  }
+
+  .item-text {
+    font-size: 20px;
+    margin-top: 5px;
+    margin-left: 14px;
+    float: left;
+    text-align: left;
+  }
+
+  .item-text ol {
+    text-transform: capitalize;
+    padding: 20px;
+    font-size: 20px;
+  }
+
+  .offer {
+    margin: 15px auto;
+    word-spacing: 15px;
+    height: 48px;
+    width: 100%;
+    padding: 10px 9px;
+    display: flex;
+    text-align: left;
+    text-transform: uppercase;
+    background-color: black;
+    color: yellow;
+    font-size: 19px;
+    border: 1px solid yellow;
+    border-radius: 20px;
+  }
+
+  .about-div-container {
+    text-transform: capitalize;
+    width: 95%;
+    margin: 10px auto;
+    height: 60%;
+    border: 3px solid yellow;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .image-container {
+    display: inherit;
+    width: 30%;
+    color: black;
+  }
+
+  .image-container img {
+    width: 100%;
+  }
+
+  .text-container {
+    margin-left: 5px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #e0e0e0c9;
+    color: black;
+    width: 70%;
+  }
+
+  .text-container h3 {
+    font-size: 25px;
+    margin: 2px auto;
+    display: inline;
+    border-bottom: 2px solid black;
+  }
+
+  .text-container ul {
+    margin-top: 5px;
+    margin-left: 20px;
+  }
+
+  .welcome-message {
+    word-spacing: 10px;
+    display: block;
+    color: white;
+    margin: 0px 10px;
+    padding: 10px;
+    border: 2px solid yellow;
+  }
+
+  .welcome-message h1 {
+    color: yellow;
+    display: inline;
+    border-bottom: 2px dotted yellow;
+  }
+
+  .welcome-message p {
+    font-size: 25px;
+    padding: 5px 0px;
+    color: white;
+  }
+
+  .reservation-message {
+    width: 90%;
+    font-size: 20px;
+    padding: 10px;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 20px;
+    color: red;
+  }
+
+  .service {
+    border: 2px solid yellow;
+    margin: 100px 15px;
+    width: 95%;
+    color: white;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .service-title {
+    color: yellow;
+  }
+
+  .service-subtitle {
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+    margin: 30px auto;
+  }
+
+  .services {
+    font-size: 25px;
+    text-align: left;
+    margin: auto 25%;
+  }
+
+  .footer {
+    display: block;
+    text-align: center;
+    padding: 10px 20px;
+    background: black;
+    color: yellow;
+  }
+
+  .footer a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .footer a:hover {
+    color: red;
+  }

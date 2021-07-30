@@ -140,9 +140,6 @@ ADD Employee
                             </div>
                         </div>
 
-
-
-
                         <div class="form-group">
                             <div class="col-lg-offset-2 col-lg-10">
                                 <button class="btn btn-success waves-effect waves-light" type="submit">Save</button>

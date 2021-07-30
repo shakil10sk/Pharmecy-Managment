@@ -9,4 +9,7 @@ class UserController extends Controller
     public function index(){
         return view('frontend.index');
     }
+    public function profile(){
+        return view('dashboard.user.userProfile');
+    }
 }

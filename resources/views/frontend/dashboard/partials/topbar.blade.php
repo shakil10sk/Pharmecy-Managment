@@ -91,7 +91,8 @@
                     <li class="dropdown">
                         <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true"><img src="{{asset('/frontend/images/admin.jpg')}}" alt="user-img" class="img-circle"> </a>
                         <ul class="dropdown-menu">
-                            <li><a href="javascript:void(0)"><i class="md md-face-unlock"></i> Profile</a></li>
+                            <li><a href="{{ route('user.profile') }}"><i class="md md-face-unlock"></i> Profile</a></li>
+                            {{-- <li><a href="javascript:void(0)"><i class="md md-face-unlock"></i> Profile</a></li> --}}
                             <li><a href="javascript:void(0)"><i class="md md-settings"></i> Settings</a></li>
                             <li><a href="javascript:void(0)"><i class="md md-lock"></i> Lock screen</a></li>
                             <li><a href="{{ route('logout') }}" onclick="event.preventDefault();

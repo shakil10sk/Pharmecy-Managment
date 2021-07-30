@@ -27,6 +27,7 @@
         <link href="{{ asset('frontend/css/helper.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('frontend/css/style.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('frontend/style.css')}}" rel="stylesheet" type="text/css" />
+        {{-- <link href="{{ asset('frontend/style2.css')}}" rel="stylesheet" type="text/css" /> --}}
 
 
 

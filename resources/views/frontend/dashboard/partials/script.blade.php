@@ -76,3 +76,4 @@
                 $('#datatable').dataTable();
             } );
         </script>
+
