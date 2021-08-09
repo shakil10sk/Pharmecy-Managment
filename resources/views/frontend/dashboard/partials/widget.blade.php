@@ -43,9 +43,10 @@
             <span class="counter">
                 @php
                     $table=DB::table('customars')->get();
-                    $count=1;
+                    $count=0;
                     foreach ($table as $user) {
-                        $count=$count = $user->id;
+                        $user->customar_name;
+                        $count++;
                     }
                     echo $count;
                 @endphp
@@ -56,11 +57,11 @@
             <div class="m-t-20">
                 <h5 class="text-uppercase">Total Customar
                     <span class="pull-right">
-                        @php
+                        {{-- @php
                             $target=500;
                             $percent=($count/$target)*100;
                             // echo $percent."%";
-                        @endphp
+                        @endphp --}}
                     </span>
                 </h5>
                 <div class="progress progress-sm m-0">
@@ -106,9 +107,10 @@
                 <span class="counter">
                     @php
                         $table=DB::table('users')->get();
-                        $count=1;
+                        $count=0;
                         foreach ($table as $user) {
-                            $count=$count = $user->id;
+                            $user->name;
+                            $count++;
                         }
                         echo $count;
                     @endphp
