@@ -36,44 +36,34 @@ GLOBAL PHARMA
                 <thead>
                     <tr>
                         <th>S.I</th>
-                        <th>Firstname</th>
-                        <th>Lastname</th>
-                        <th>Username(s)</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Address</th>
-                        <th>Experience</th>
+                        <th>name</th>
+                        <th>email</th>
+                        <th>phone</th>
+                        <th>address</th>
+                        <th>nid_number</th>
+                        <th>city</th>
+                        <th>position</th>
                         <th>Photo</th>
-                        <th>Salary</th>
-                        <th>NID NUmbe</th>
-                        <th>Vacation</th>
-                        <th>City</th>
-                        <th>Position</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($employee as $key => $value)
+                    @foreach($view_user as $key => $value)
                         <tr class="gradeX">
                             <td>{{ ++$key }}</td>
-                            <td>{{ $value->firstname }}</td>
-                            <td>{{ $value->lastname }}</td>
-                            <td>{{ $value->username }}</td>
+                            <td>{{ $value->name }}</td>
                             <td>{{ $value->email }}</td>
                             <td>{{ $value->phone }}</td>
                             <td>{{ $value->address }}</td>
-                            <td>{{ $value->experience }}</td>
-                            <td><img src="{{ asset('images/employee/'.$value->photo) }}" alt="Emplyoee images" width="50" height="50"></td>
-                            <td>{{ $value->salary }}</td>
                             <td>{{ $value->nid_number }}</td>
-                            <td>{{ $value->vacation }}</td>
                             <td>{{ $value->city }}</td>
                             <td>{{ $value->position }}</td>
+                            <td><img src="{{ asset('images/users/'.$value->photo) }}" alt="" width="50" height="50"></td>
                             <td class="actions">
                                 {{-- <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a> --}}
                                 {{-- <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a> --}}
-                                <a href="/employee/edit/{{$value->id}}" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                <a href="/employee/delete/{{$value->id}}" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                                <a href="/employee/{{$value->id}}/edit" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
+                                <a href="/employee/{{$value->id}}/delete" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
                             </td>
 
                         </tr>

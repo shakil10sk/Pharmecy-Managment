@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Image;
 use Illuminate\Support\Facades\Auth;
+use App\POS\Order;
 
 class CustomarController extends Controller
 {
@@ -16,6 +17,11 @@ class CustomarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // public function Today_Sell(){
+
+    //     $today_sells = Order::whereDate('created_at', Carbon::today())->get();
+    //     return view('frontend.index',compact('today_sells'));
+    // }
     public function index()
     {
         $customar= Customar::orderby('id','desc')->paginate(5);
@@ -60,7 +66,7 @@ class CustomarController extends Controller
             $img_name=time().'.'.$img->getClientOriginalExtension();
             $img_resize=Image::make($img->getRealPath());
             $img_resize->resize(100,100);
-            $img_resize->save('images/'.$img_name);
+            $img_resize->save('images/customar/'.$img_name);
             $value->photo=$img_name;
         }
         $value->customar_name=$request->customar_name;
@@ -113,10 +119,31 @@ class CustomarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $oldData=Customar::find($id);
-        $newData=$request->all();
-        $oldData->update($newData);
-        return Redirect('/customar/view')->back();
+        $update=Customar::find($id);
+        if($request->hasFile('photo')){
+            $img=$request->file('photo');
+            $img_name=time().'.'.$img->getClientOriginalExtension();
+            $img_resize=Image::make($img->getRealPath());
+
+            $img_resize->resize(400,300);
+            $old_img=$update->photo;
+            if(!empty($old_img)){
+                $path=("images/customar/$old_img");
+            }
+
+            $img_resize->save('images/customar/'.$img_name);
+            $update->photo=$img_name;
+        }
+        $update->customar_name=$request->customar_name;
+        $update->email=$request->email;
+        $update->phone=$request->phone;
+        $update->custoamr_city=$request->custoamr_city;
+        $update->address=$request->address;
+        $update->ac_num=$request->ac_num;
+        $update->bank_name=$request->bank_name;
+        $update->bank_branch=$request->bank_branch;
+        $update->update();
+        return redirect('/customar/view')->with('success','Update successfull');
     }
 
     /**
@@ -127,6 +154,8 @@ class CustomarController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete=Customar::find($id);
+        $delete->delete();
+        return redirect('/customar/view')->with('success','Delete successfull');
     }
 }

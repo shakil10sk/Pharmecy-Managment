@@ -2,9 +2,11 @@
     <!-- LOGO -->
     <div class="topbar-left">
         <div class="text-center d-inline-block">
-            <a href="{{ route('admin.dashboard') }}" class="logo "><span class="bg-info">GLOBAL PHARMA</span></a>
-            {{-- <a href="/" class="logo "><img class="myimage" src="{{ asset('frontend/images/logo.PNG') }}" alt="Global"  ></span></a> --}}
-            {{-- <a href="index.html" class="logo"><i class="md md-terrain"></i> <span>abc </span></a> --}}
+            <a href="{{ route('admin.dashboard') }}" class="logo ">
+                <img class="myimage img-fluid" src="{{ asset('frontend/images/Global_Pharma.png') }}" alt="Global Pharma">
+            </a>
+            {{-- <a href="/" class="logo "><img class="myimage" src="{{ asset('frontend/images/logo.PNG') }}" alt="Global"  ></span></a>
+            <a href="index.html" class="logo"><i class="md md-terrain"></i> <span>abc </span></a> --}}
         </div>
     </div>
     <!-- Button mobile view to collapse sidebar menu -->
@@ -25,7 +27,7 @@
                 </form>
 
                 <ul class="nav navbar-nav navbar-right pull-right">
-                    <li class="dropdown hidden-xs">
+                    {{-- <li class="dropdown hidden-xs">
                         <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
                             <i class="md md-notifications"></i> <span class="badge badge-xs badge-danger">3</span>
                         </a>
@@ -81,13 +83,13 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li> --}}
                     <li class="hidden-xs">
                         <a href="#" id="btn-fullscreen" class="waves-effect waves-light"><i class="md md-crop-free"></i></a>
                     </li>
-                    <li class="hidden-xs">
+                    {{-- <li class="hidden-xs">
                         <a href="#" class="right-bar-toggle waves-effect waves-light"><i class="md md-chat"></i></a>
-                    </li>
+                    </li> --}}
                     <li class="dropdown">
                         <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true"><img src="{{asset('/frontend/images/admin.jpg')}}" alt="user-img" class="img-circle"> </a>
                         <ul class="dropdown-menu">

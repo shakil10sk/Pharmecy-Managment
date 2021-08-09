@@ -4,7 +4,7 @@
 @section('content-section')
 
 
-<form class="container" action="/customar/store" method="post" enctype="multipart/form-data">
+<form class="container" action="/customar/{{ $customar->id }}" method="post" enctype="multipart/form-data">
     @csrf
 <div class="modal-body">
     <div class="row">
@@ -75,7 +75,7 @@
 
     <div class="modal-footer">
         <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-info waves-effect waves-light">Save changes</button>
+        <button type="submit" value="Update" class="btn btn-info waves-effect waves-light">Save changes</button>
     </div>
 </div>
 </form>

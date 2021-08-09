@@ -59,7 +59,6 @@
 
 
   @media(max-width: 1370px) {
-    .banner-title {}
     .banner-title h1 {
       font-size: 50px;
     }
@@ -67,12 +66,12 @@
 
   .form-box {
     width: 29%;
-    height: 82%;
+    height: 100%;
     position: relative;
     margin: 3% auto;
     background: #fff;
     padding: 5px;
-    overflow: auto;
+    overflow-x: hidden;
   }
   /* .form-box2{
 
@@ -108,10 +107,11 @@
 
 
   .input-group {
-    top: 180px;
+    top: 30%;
     position: absolute;
     width: 280px;
     transition: .5s;
+    padding-bottom: 25px;
   }
 
   .input-field {
@@ -129,7 +129,7 @@
 
   .submit-btn {
     width: 85%;
-    padding: 10px 30px;
+    padding: 10px 30px ;
     cursor: pointer;
     display: block;
     margin: auto;
@@ -148,7 +148,7 @@
   }
 
   .span {
-    color #777;
+    color: #777;
     font-size: 12px;
     bottom: 68px;
     position: absolute;
@@ -496,6 +496,5 @@
     color: white;
   }
 
-  .footer a:hover {
-    color: red;
   }
+

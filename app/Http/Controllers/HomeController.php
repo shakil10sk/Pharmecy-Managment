@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\POS\Order;
+use Carbon\Carbon;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('frontend.index');
+        $today_sells = Order::whereDate('created_at', Carbon::today())->get();
+       return view('frontend.index',compact('today_sells'));
+        // return view('frontend.index');
     }
 }

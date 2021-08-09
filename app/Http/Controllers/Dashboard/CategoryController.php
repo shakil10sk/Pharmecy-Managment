@@ -48,7 +48,7 @@ class CategoryController extends Controller
         // }else{
         //     return redirect()->back()->with('error','Failed to add Category');
         // }
-       
+
         $category=$request->all();
         $notify=Category::create($category);
         if($notify){
@@ -77,7 +77,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $edit=Category::find($id);
+        return view('frontend.dashboard.pages.category.edit',compact('edit'));
     }
 
     /**
@@ -89,7 +90,10 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $update=Category::find($id);
+        $update->category=$request->category;
+        $update->save();
+        return redirect('/category')->with('success','Update successfull');
     }
 
     /**
@@ -100,6 +104,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete=Category::find($id);
+
+        $delete->delete();
+        return redirect('/category')->with('success','Delete successfull');
     }
 }

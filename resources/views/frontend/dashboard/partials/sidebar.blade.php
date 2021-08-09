@@ -50,7 +50,7 @@
                     @if(Auth::user()->role==1)
                     Adminsatrator
                     @elseif(Auth::user()->role==2)
-                    Sellsman(User)
+                    Salesman(User)
                     @endif</p>
             </div>
         </div>
@@ -116,7 +116,7 @@
                     </a>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="/employee/add">Create Employee</a>
+                            <a href="{{ route('register') }}">Create Employee</a>
                         </li>
 
                         <li>
@@ -124,14 +124,7 @@
                         </li>
                     </ul>
                 </li>
-                @elseif(Auth::user()->role==2)
-                <li>
-                    <a href="/employee/add" class="waves-effect">
-                        <i class="md md-redeem"></i>
-                    <span>Create Employee</span>
-                    </a>
-                </li>
-                @endif
+             @endif
 
 
             @if(Auth::user()->role==1)
@@ -207,10 +200,17 @@
                     </ul>
                 </li>
             @endif
-
             </ul>
+            <div class="mx-auto text-center">
+                <img  src="{{asset('frontend/images/Global_Pharma.gif')}}" alt="Pharmacy Photo" height="auto" width="85%" >
+            </div>
             <div class="clearfix"></div>
         </div>
         <div class="clearfix"></div>
     </div>
 </div>
+<script>
+    $(function() {
+        $('nav a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('current');
+    });
+</script>

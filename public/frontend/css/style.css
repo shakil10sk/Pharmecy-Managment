@@ -1540,8 +1540,14 @@ body.fixed-left .side-menu.left {
 }
 /* Leftbar Profile */
 #wrapper.enlarged .left.side-menu .user-details {
+  display: block;
+  padding: 0px;
+  margin-top: -65px;
+}
+#wrapper.enlarged .left.side-menu .user-details .user-info{
   display: none;
 }
+
 #wrapper.enlarged .left.side-menu {
   padding-top: 80px;
 }
@@ -3361,8 +3367,12 @@ div.dataTables_info {
 }
 
 .myimage{
-    height: 150px;
-    width: auto;
-    margin-top: -37px;
+    height: auto;
+    width: 90%;
+    /* margin-top: -37px; */
 
+
+}
+.current{
+  background-color: rgba(25, 125, 255, 0.404);
 }

@@ -30,109 +30,123 @@ ADD Employee
                 <div class=" form">
                     @include('message.alert')
                     <a class="btn btn-primary" href="/employee/add">Refresh</a>
-                    <form class="cmxform form-horizontal tasi-form " id="register" method="POST"
-                        action="{{ route('register') }}" enctype="multipart/form-data">
+                    <form class="cmxform form-horizontal tasi-form"  method="post" action="/employee/view"
+                    enctype="multipart/form-data">
                         @csrf
                         <div class="form-group ">
-                            <label for="name" class="control-label col-lg-2">Name <span
+                            <label for="firstname" class="control-label col-lg-2">Firstname <span
                                     class="text-danger">*</span></label>
                             <div class="col-lg-10">
-                                <input type="text" id="name" class="form-control" name="name"
-                                    placeholder="Your Full Name" required="required">
+                                <input class=" form-control" id="firstname" name="firstname" type="text">
                             </div>
                         </div>
+                        <div class="form-group ">
+                            <label for="lastname" class="control-label col-lg-2">Lastname</label>
+                            <div class="col-lg-10">
+                                <input class=" form-control" id="lastname" name="lastname" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label for="username" class="control-label col-lg-2">Username <span
+                                    class="text-danger">*</span></label>
+                            <div class="col-lg-10">
+                                <input class="form-control " id="username" name="username" type="text">
+                            </div>
+                        </div>
+
                         <div class="form-group ">
                             <label for="email" class="control-label col-lg-2">Email <span
                                     class="text-danger">*</span></label>
                             <div class="col-lg-10">
-                                <input type="email" id="email" class="form-control" name="email"
-                                    placeholder=" Email Address" required="required">
+                                <input class="form-control " id="email" name="email" type="email">
                             </div>
-
                         </div>
                         <div class="form-group ">
-                            <label for="password" class="control-label col-lg-2">Password <span
+                            <label for="pass" class="control-label col-lg-2">Password <span
                                     class="text-danger">*</span></label>
                             <div class="col-lg-10">
-                                <input type="password" id="password" class="form-control" name="password"
-                                    placeholder="Password" required="required">
+                                <input class="form-control " id="password" name="password" type="password" placeholder="enter password">
                             </div>
-
                         </div>
                         <div class="form-group ">
                             <label for="cpass" class="control-label col-lg-2">Confirm Password <span
                                     class="text-danger">*</span></label>
                             <div class="col-lg-10">
-                                <input type="password" id="cpass" class="form-control" name="password_confirmation"
-                                    placeholder="Confirm Password" required="required">
+                                <input class="form-control " id="password" name="confirm_password" type="password" placeholder="enter Confirm password">
                             </div>
                         </div>
                         <div class="form-group ">
-                            <label for="phone_number" class="control-label col-lg-2">Phone Number <span
+                            <label for="phone" class="control-label col-lg-2">Phone <span
                                     class="text-danger">*</span></label>
                             <div class="col-lg-10">
-                                <input type="tel" id="phone_number" class="form-control" name="phone"
-                                    placeholder="Phone Number" required="required">
+                                <input class="form-control" id="phone" name="phone" type="tel">
                             </div>
                         </div>
                         <div class="form-group ">
                             <label for="address" class="control-label col-lg-2">Address <span
                                     class="text-danger">*</span></label>
                             <div class="col-lg-10">
-                                <textarea type="text" id="address" class="form-control" name="address" cols="20"
-                                    rows="2" placeholder="Enter Your Address"></textarea>
+                                <textarea class="form-control" name="address" id="address" cols="20"
+                                    rows="2"></textarea>
                             </div>
                         </div>
-
+                        <div class="form-group ">
+                            <label for="experience" class="control-label col-lg-2">Experience </label>
+                            <div class="col-lg-10">
+                                <input class="form-control " id="experience" name="experience" type="text">
+                            </div>
+                        </div>
                         <div class="form-group ">
                             <img src="#" id="image" alt=""><br>
                             <label for="photo" class="control-label col-lg-2">Photo <span
                                     class="text-danger">*</span></label>
                             <div class="col-lg-10">
-                                <input class="form-control " id="photo" onchange="readURL(this);" accept="image/*"
-                                    name="photo" type="file">
+                                <input class="form-control " id="photo" onchange="readURL(this);"  accept="image/*" name="photo" type="file">
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label for="salary" class="control-label col-lg-2">Salary <span
+                                    class="text-danger">*</span></label>
+                            <div class="col-lg-10">
+                                <input class="form-control " id="salary" name="salary" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label for="nid_number" class="control-label col-lg-2">NID NUmber <span
+                                    class="text-danger">*</span></label>
+                            <div class="col-lg-10">
+                                <input class="form-control " id="nid_number" name="nid_number" type="number">
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label for="vacation" class="control-label col-lg-2">Vacation <span
+                                    class="text-danger">*</span></label>
+                            <div class="col-lg-10">
+                                <input class="form-control " id="vacation" name="vacation" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label for="city" class="control-label col-lg-2">City <span
+                                    class="text-danger">*</span></label>
+                            <div class="col-lg-10">
+                                <input class="form-control " id="city" name="city" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label for="position" class="control-label col-lg-2">Position <span
+                                    class="text-danger">*</span></label>
+                            <div class="col-lg-10">
+                                <input class="form-control " id="position" name="position" type="text">
                             </div>
                         </div>
 
-
-                        <div class="form-group ">
-                            <label for="nid" class="control-label col-lg-2">NID Number <span
-                                    class="text-danger">*</span></label>
-                            <div class="col-lg-10">
-                                <input type="number" id="nid" class="input-field" name="nid_number"
-                                    placeholder="NID Number" required="required">
-                            </div>
-                        </div>
-                        <div class="form-group ">
-                            <label for="city" class="control-label col-lg-2">City<span
-                                    class="text-danger">*</span></label>
-                            <div class="col-lg-10">
-                                <input type="text" id="city" class="form-control" name="city"
-                                    placeholder="Your City Name" required="required">
-                            </div>
-                        </div>
-                        <div class="form-group ">
-                            <label for="position" class="control-label col-lg-2">Position<span
-                                    class="text-danger">*</span></label>
-                            <div class="col-lg-10">
-                                <input type="text" id="position" class="form-control" name="position"
-                                    placeholder="joining Position - Ex.sellsman" required="required">
-                            </div>
-                        </div>
-                        <div class="form-group ">
-                            <div class="col-lg-offset-2 col-lg-10">
-                                <input type="checkbox" class="check-box">
-                                <span>I agree<a href="#">
-                                        to the terms & conditions</a>
-                                </span>
-                            </div>
-                        </div>
                         <div class="form-group">
                             <div class="col-lg-offset-2 col-lg-10">
-                                <button type="submit" class="submit-btn btn btn-purple">Registration</button>
+                                <button class="btn btn-success waves-effect waves-light" type="submit">Save</button>
+                                <button class="btn btn-default waves-effect" type="button">Cancel</button>
+                                <button class="btn btn-default waves-effect" type="reset">Reset</button>
                             </div>
                         </div>
-
                     </form>
                 </div> <!-- .form -->
 
@@ -154,7 +168,3 @@ ADD Employee
 </script>
 
 @endsection
-
-
-
-{{-- form --}}

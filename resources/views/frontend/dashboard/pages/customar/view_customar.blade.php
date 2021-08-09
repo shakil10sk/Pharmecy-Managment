@@ -57,7 +57,7 @@
                         <td>{{ $value->email }}</td>
                         <td>{{ $value->phone }}</td>
                         <td>{{ $value->custoamr_city }}</td>
-                        <td><img src="{{ asset('images/'.$value->photo) }}" alt="" width="50" height="50"></td>
+                        <td><img src="{{ asset('images/customar/'.$value->photo) }}" alt="" width="50" height="50"></td>
                         <td>{{ $value->address }}</td>
                         <td>{{ $value->ac_num }}</td>
                         <td>{{ $value->bank_name }}</td>
@@ -65,10 +65,10 @@
                         <td class="actions">
                             {{-- <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a> --}}
                             {{-- <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a> --}}
-                            <a href="/customar/edit/{{ $value->id }}" class="on-default edit-row">
+                            <a href="/customar/{{ $value->id }}/edit" class="on-default edit-row">
                                 <i class="fa fa-pencil"></i>
                             </a>
-                            <a href="/customar/delete/{{ $value->id }}" class="on-default remove-row">
+                            <a href="/customar/{{ $value->id }}/delete" class="on-default remove-row">
                                 <i class="fa fa-trash-o"></i>
                             </a>
                         </td>

@@ -7,6 +7,7 @@ use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Image;
 
@@ -37,10 +38,10 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('isAdmin');
+    // }
 
     /**
      * Get a validator for an incoming registration request.
@@ -71,7 +72,8 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         // return User::create([
-        $user=  User::create([
+
+           $user=  User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'role' => 2,
@@ -98,6 +100,9 @@ class RegisterController extends Controller
             $user->update(['photo'=>$file_name]);
 
         }
-        return $user;
+
+         return $user;
+        //  return redirect('employee/view')->with('success','register success');
+
     }
 }
