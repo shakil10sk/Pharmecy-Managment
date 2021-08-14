@@ -38,7 +38,7 @@
 {{-- Total Customar Section --}}
 <div class="col-md-6 col-sm-6 col-lg-3">
     <div class="mini-stat clearfix bx-shadow">
-        <span class="mini-stat-icon bg-info"><i class="ion-social-usd"></i></span>
+        <span class="mini-stat-icon bg-info"><i class="fa fa-user" aria-hidden="true"></i></span>
         <div class="mini-stat-info text-right text-muted">
             <span class="counter">
                 @php
