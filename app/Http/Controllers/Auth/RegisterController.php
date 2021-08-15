@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -31,6 +32,14 @@ class RegisterController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
+    protected function redirectTo(){
+        if(Auth()->user()->role == 1 ){
+            return route('admin.dashboard');
+        }
+        elseif(Auth()->user()->role == 2 ){
+            return route('user.dashboard');
+        }
+    }
     /**
      * Create a new controller instance.
      *
@@ -52,7 +61,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
         ]);
     }
 
@@ -64,9 +73,23 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // $data = new User(); 
+        // $data->name = $request->name;
+        // $data->email = $request->email;
+        // $data->role = $request->role;
+        // $data->password = $request->password;
+
+        // $save = $data->save();
+        // if($save){
+        //     return back()->with('success' , "Registration Has been Successfully Created ");
+        // }else{
+        //     return back()->with('error',"Registration Can not Successfully Submitted something went wrong");
+        // }
+        // return $data ;
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'role'  => 2 ,
             'password' => Hash::make($data['password']),
         ]);
     }

@@ -50,7 +50,7 @@
           $(".pull-right i",$(this).parents(".has_sub:last")).removeClass("md-add").addClass("md-remove");
           $(".pull-right i",$(this).siblings("ul")).removeClass("md-remove").addClass("md-add");
         }else if($(this).hasClass("subdrop")) {
-          $(this).removeClass("subdrop");
+          // $(this).removeClass("subdrop");
           $(this).next("ul").slideUp(350);
           $(".pull-right i",$(this).parent()).removeClass("md-remove").addClass("md-add");
         }
