@@ -36,9 +36,9 @@ Route::group(['prefix'=>'medicine','middleware'=>['isAdmin','auth','PreventBackH
     Route::get('/view','Dashboard\MedicineController@index');
     Route::get('/add','Dashboard\MedicineController@create');
     Route::post('/post','Dashboard\MedicineController@store');
-    Route::get('/post/{id}/edit','Dashboard\MedicineController@edit');
+    Route::get('/post/edit/{id}','Dashboard\MedicineController@edit');
     Route::post('/post/{id}/','Dashboard\MedicineController@update');
-    Route::get('/post/{id}/delete/','Dashboard\MedicineController@destroy');
+    Route::get('/post/delete/{id}','Dashboard\MedicineController@destroy');
     Route::get('/show/{id}','Dashboard\MedicineController@show');
 
 });
@@ -54,10 +54,15 @@ Route::group(['middleware'=>['isAdmin','auth','PreventBackHistory']],function(){
 });
     // for Employee
 Route::group(['prefix'=>'employee','middleware'=>['isAdmin','auth','PreventBackHistory']],function(){
+
     Route::get('/view','UserController@view');
-    Route::get('{id}/edit','UserController@edit');
+
+    Route::get('edit/{id}/','UserController@edit');
+
     Route::post('/{id}','UserController@update');
-    Route::get('{id}/delete','UserController@delete');
+
+    Route::get('/delete/{id}','UserController@delete');
+
     // Route::get('/add','Dashboard\EmployeeController@create');
     // Route::post('/view','Dashboard\EmployeeController@store');
     // Route::get('/edit/{id}','Dashboard\EmployeeController@edit');
@@ -66,19 +71,31 @@ Route::group(['prefix'=>'employee','middleware'=>['isAdmin','auth','PreventBackH
 });
 // Customar Section
 Route::group(['middleware'=>['isAdmin','auth','PreventBackHistory']],function(){
+
     Route::get('/customar/view','Dashboard\CustomarController@index');
-    Route::get('/customar/{id}/edit','Dashboard\CustomarController@edit');
+
+    Route::get('/customar/edit/{id}','Dashboard\CustomarController@edit');
+
     Route::post('/customar/{id}','Dashboard\CustomarController@update');
-    Route::get('/customar/{id}/delete','Dashboard\CustomarController@destroy');
+
+    Route::get('/customar/delete/{id}','Dashboard\CustomarController@destroy');
 });
+
 // Category section
 Route::group(['middleware'=>['isAdmin','auth','PreventBackHistory']],function(){
+
     Route::get('/category/','Dashboard\CategoryController@index');
+
     Route::get('/add/category','Dashboard\CategoryController@create');
+
     Route::post('/store/category','Dashboard\CategoryController@store')->name('store.category');
-    Route::get('/category/{id}/edit','Dashboard\CategoryController@edit');
+
+    Route::get('/category/edit/{id}','Dashboard\CategoryController@edit');
+
     Route::post('/category/{id}/','Dashboard\CategoryController@update');
-    Route::get('/category/{id}/delete','Dashboard\CategoryController@destroy');
+
+    Route::get('/category/delete/{id}','Dashboard\CategoryController@destroy');
+
 // Manufacturer  section
     Route::get('/manufacturer','Dashboard\ManufacturerController@index');
 });
@@ -88,21 +105,28 @@ Route::group(['middleware'=>['isAdmin','auth','PreventBackHistory']],function(){
             //====================== USer Authintication Routes==============
 
 Route::group(['prefix'=>'user','middleware'=>['isUser','auth','PreventBackHistory']],function(){
+
     Route::get('dashboard',[UserController::class,'index'])->name('user.dashboard');
+
     Route::get('profile',[UserController::class,'profile'])->name('user.profile');
 });
 
 Route::group(['middleware'=>['isUser','auth','PreventBackHistory']],function(){
     // pos Section
         Route::get('/pos','user\POSController@index');
+
     // Invoice Section
         Route::get('/invoice','user\InvoiceController@index');
 
     // Cart Controller section
         Route::post('/add-cart','user\CartController@index');
+
         Route::post('/cart-update/{rowId}','user\CartController@CartUpdate');
+
         Route::get('/cart-remove/{rowId}','user\CartController@CartRemove');
+
         Route::post('/create-invoice','user\CartController@CreateInvoice');
+
         Route::post('/final-invoice','user\CartController@FinalInvoice');
 });
 
@@ -113,12 +137,22 @@ Route::group(['middleware'=>['isUser','auth','PreventBackHistory']],function(){
 
 Route::group(['middleware'=>['auth','PreventBackHistory']],function(){
     Route::get('customar/add','Dashboard\CustomarController@create')->name('add');
-    Route::post('customar/store','Dashboard\CustomarController@store');
+
+    Route::post('customar','Dashboard\CustomarController@store');
+
     // Route::post('dashboard','Dashboard\CustomarController@Today_Sell');
     // Route::get('dashboard',[UserController::class,'index'])->name('user.dashboard');
+
+
+// Employee Profile edit
+    Route::get('{id}/edit','UserController@edit');
+
+    Route::post('/{id}','UserController@update');
 
 });
 
   // =====================Common Route For User And Admin finis======================
 
 //    Route::get('/user/dashboard','OrderController@index');
+
+// Route::get('cus/post','Dashboard\CustomarController@store');

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\user;
 
 use App\Customar;
 use App\Http\Controllers\Controller;
-use App\medicine;
+use App\Medicine;
 use Illuminate\Http\Request;
 
 class POSController extends Controller

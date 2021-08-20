@@ -19,8 +19,11 @@ class UserController extends Controller
         return view('frontend.index',compact('today_sells'));
     }
     public function profile(){
-        $value=Employee::get();
+
+        $value=User::get();
+
         return view('dashboard.user.userProfile',compact('value'));
+
     }
     public function view(){
         $view_user=User::get();

@@ -91,12 +91,12 @@
                         <a href="#" class="right-bar-toggle waves-effect waves-light"><i class="md md-chat"></i></a>
                     </li> --}}
                     <li class="dropdown">
-                        <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true"><img src="{{asset('/frontend/images/admin.jpg')}}" alt="user-img" class="img-circle"> </a>
+                        <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true"><img src="{{asset('/images/users/'.Auth::User()->photo)}}" alt="user-img" class="img-circle"> </a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('user.profile') }}"><i class="md md-face-unlock"></i> Profile</a></li>
                             {{-- <li><a href="javascript:void(0)"><i class="md md-face-unlock"></i> Profile</a></li> --}}
-                            <li><a href="javascript:void(0)"><i class="md md-settings"></i> Settings</a></li>
-                            <li><a href="javascript:void(0)"><i class="md md-lock"></i> Lock screen</a></li>
+                            {{-- <li><a href="javascript:void(0)"><i class="md md-settings"></i> Settings</a></li>
+                            <li><a href="javascript:void(0)"><i class="md md-lock"></i> Lock screen</a></li> --}}
                             <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
                                     <i class="md md-settings-power"></i>

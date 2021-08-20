@@ -46,8 +46,13 @@ GLOBAL PHARMA
            <td>{{$value->manufecturer_date}}</td>
            <td>{{$value->expire_date}}</td>
            <td><img src="{{ asset('images/'.$value->Images) }}" alt="" width="50" height="50"></td>
-           <td><a href="/medicine/post/{{ $value->id }}/edit">Edit</a> | <a href="/medicine/post/{{ $value->id }}/delete/">Delete</a>|
-            <br><a href="/medicine/show/{{ $value->id }}">Show</a> </td>
+           <td>
+               <a href="{{ asset('/medicine/post/edit/'. $value->id ) }}">Edit</a> |
+               {{--  /medicine/post/{{ $value->id }}/edit --}}
+
+                <a href="{{ asset('/medicine/post/delete/'. $value->id ) }}">Delete</a> |
+            <br>
+            <a href="{{ asset('/medicine/show/'. $value->id ) }}">Show</a> </td>
         </tr>
         @endforeach
 

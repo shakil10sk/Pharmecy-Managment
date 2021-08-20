@@ -94,9 +94,6 @@ class CartController extends Controller
         $customar=DB::table('customars')->where('id',$cus_id)->first();
         $contents=Cart::content();
         return view('frontend.dashboard.pages.user.invoice.view',compact('customar','contents'));
-
-
-
     }
 
     /**

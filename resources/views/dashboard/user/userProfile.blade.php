@@ -23,13 +23,18 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div id="content" class="content content-full-width">
-                                <a href="\home" class="btn btn-toolbar btn-success">Global Pharma</a>
+                                <a href="\home" class="p-3 btn btn-toolbar btn-success d-block text-center">GLOBAL PHARMA</a>
+
+                                <br>
+                                <br>
+
                                 <!-- begin profile -->
                                 <div class="profile">
                                     <div class="profile-header">
                                         <!-- BEGIN profile-header-cover -->
                                         <div class="profile-header-cover"></div>
                                         <!-- END profile-header-cover -->
+
                                         <!-- BEGIN profile-header-content -->
                                         <div class="profile-header-content">
                                             <!-- BEGIN profile-header-img -->
@@ -38,35 +43,35 @@
                                                     alt="">
                                             </div>
                                             <!-- END profile-header-img -->
+
                                             <!-- BEGIN profile-header-info -->
                                             <div class="profile-header-info">
                                                 <h4 class="m-t-10 m-b-5">{{ Auth::user()->name }}</h4>
                                                 <p class="m-b-10">{{ Auth::user()->position }}</p>
-                                                <a href="#" class="btn btn-xs btn-success">Edit Profile</a>
+                                                {{-- <a href="#" class="btn btn-xs btn-success">Edit Profile</a> --}}
                                             </div>
                                             <!-- END profile-header-info -->
                                         </div>
                                         <!-- END profile-header-content -->
+
                                         <!-- BEGIN profile-header-tab -->
                                         <ul class="profile-header-tab nav nav-tabs">
                                             {{-- <li class="nav-item">
                                                     <a href="#profile-post" class="nav-link" data-toggle="tab">POSTS</a>
                                                 </li> --}}
-                                            <li class="nav-item">
-                                                <a href="#profile-about" class="nav-link active show"
-                                                    data-toggle="tab">ABOUT</a>
-                                            </li>
-                                            {{-- <li class="nav-item">
-                                                    <a href="#profile-photos" class="nav-link" data-toggle="tab">PHOTOS</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="#profile-videos" class="nav-link" data-toggle="tab">VIDEOS</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="#profile-friends" class="nav-link" data-toggle="tab">FRIENDS</a>
+                                                <a href="\home" class="btn btn-toolbar btn-success" style="background-color: rgb(243, 82, 230)">HOME</a>
+                                                {{-- <li class="nav-item" >
+                                                    <a href="\home"  class="nav-link active show"
+                                                        data-toggle="tab" >HOME</a>
                                                 </li> --}}
+                                                <br>
+                                            <li class="nav-item" >
+                                                <a href="#profile-about"  class="nav-link active show"
+                                                    data-toggle="tab" style="background-color: rgb(0, 140, 255)">ABOUT ME</a>
+                                            </li>
                                         </ul>
                                         <!-- END profile-header-tab -->
+
                                     </div>
                                 </div>
                                 <!-- end profile -->
@@ -94,40 +99,38 @@
                                                         <td colspan="2"></td>
                                                     </tr>
                                                     <tbody>
-                                                        {{-- <tr class="highlight">
-                                                                <td class="field">Mood</td>
-                                                                <td>
-                                                                    <a href="javascript:;">Add Mood Message</a>
-                                                                </td>
-                                                            </tr> --}}
-
                                                         <tr>
                                                             <td class="field">Mobile</td>
                                                             <td>
                                                                 <i class="fa fa-mobile fa-lg m-r-5"></i>
                                                                 {{ Auth::user()->phone }}
-                                                                <a href="javascript:;" class="m-l-5">Edit</a>
+                                                                <a href="javascript:;" class="m-l-5">
+
+                                                                </a>
                                                             </td>
                                                         </tr>
                                                         <tr>
-                                                            <td class="field">Home</td>
+                                                            <td class="field">Email</td>
                                                             <td>
-                                                                <a href="javascript:;">Add Number</a>
+                                                                {{-- <a href="javascript:;"></a> --}}
+                                                                {{ Auth::user()->email }}
                                                             </td>
                                                         </tr>
                                                         <tr>
-                                                            <td class="field">Office</td>
+                                                            <td class="field">Photo</td>
                                                             <td>
-                                                                <a href="javascript:;">Add Number</a>
+                                                                {{-- <a href="javascript:;">Add Number</a> --}}
+                                                                <img src="{{ asset('images/users/'.Auth::user()->photo) }}" alt="">
                                                             </td>
                                                         </tr>
                                                         <tr class="divider">
                                                             <td colspan="2"></td>
                                                         </tr>
                                                         <tr class="highlight">
-                                                            <td class="field">About Me</td>
+                                                            <td class="field">NID Number</td>
                                                             <td>
-                                                                <a href="javascript:;">Add Description</a>
+                                                                {{-- <a href="javascript:;"></a> --}}
+                                                                {{ Auth::user()->nid_number }}
                                                             </td>
                                                         </tr>
                                                         <tr class="divider">
@@ -137,18 +140,6 @@
                                                             <td class="field">Country/Region</td>
                                                             <td>
                                                                 Bangladesh
-                                                                {{-- <select class="form-control input-inline input-xs" name="region">
-                                                                        <option value="US" selected="">United State</option>
-                                                                        <option value="AF">Afghanistan</option>
-                                                                        <option value="AL">Albania</option>
-                                                                        <option value="DZ">Algeria</option>
-                                                                        <option value="AS">American Samoa</option>
-                                                                        <option value="AD">Andorra</option>
-                                                                        <option value="AO">Angola</option>
-                                                                        <option value="AI">Anguilla</option>
-                                                                        <option value="AQ">Antarctica</option>
-                                                                        <option value="AG">Antigua and Barbuda</option>
-                                                                    </select> --}}
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -158,52 +149,15 @@
                                                         <tr>
                                                             <td class="field">Address</td>
                                                             <td>
-                                                                <a href="javascript:;">{{ Auth::user()->address }}</a>
+                                                                {{-- <a href="javascript:;"></a> --}}
+                                                                {{ Auth::user()->address }}
                                                             </td>
                                                         </tr>
-                                                        {{-- <tr>
-                                                                <td class="field">Website</td>
-                                                                <td>
-                                                                    <a href="javascript:;">Add Webpage</a>
-                                                                </td>
-                                                            </tr> --}}
-                                                        {{-- <tr>
-                                                                <td class="field">Gender</td>
-                                                                <td>
-                                                                    <select class="form-control input-inline input-xs" name="gender">
-                                                                        <option value="male">Male</option>
-                                                                        <option value="female">Female</option>
-                                                                    </select>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="field">Birthdate</td>
-                                                                <td>
-                                                                    <select class="form-control input-inline input-xs" name="day">
-                                                                        <option value="04" selected="">04</option>
-                                                                    </select>
-                                                                    -
-                                                                    <select class="form-control input-inline input-xs" name="month">
-                                                                        <option value="11" selected="">11</option>
-                                                                    </select>
-                                                                    -
-                                                                    <select class="form-control input-inline input-xs" name="year">
-                                                                        <option value="1989" selected="">1989</option>
-                                                                    </select>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="field">Language</td>
-                                                                <td>
-                                                                    <select class="form-control input-inline input-xs" name="language">
-                                                                        <option value="" selected="">English</option>
-                                                                    </select>
-                                                                </td>
-                                                            </tr> --}}
+
                                                         <tr class="divider">
                                                             <td colspan="2"></td>
                                                         </tr>
-                                                        <tr class="highlight">
+                                                        {{-- <tr class="highlight">
                                                             <td class="field">&nbsp;</td>
                                                             <td class="p-t-10 p-b-10">
                                                                 <button type="submit"
@@ -211,7 +165,7 @@
                                                                 <button type="submit"
                                                                     class="btn btn-white btn-white-without-border width-150 m-l-5">Cancel</button>
                                                             </td>
-                                                        </tr>
+                                                        </tr> --}}
                                                     </tbody>
                                                 </table>
                                             </div>

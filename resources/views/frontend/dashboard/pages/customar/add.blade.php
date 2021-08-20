@@ -4,7 +4,7 @@
 @section('content-section')
 
 <h3>Add Customar</h3>
-<form class="container" action="/customar/store" method="post" enctype="multipart/form-data">
+<form class="container" action="{{ asset('/customar') }}" method="post" enctype="multipart/form-data">
     @csrf
     @include('message.alert')
 <div class="modal-body">
@@ -73,9 +73,7 @@
         </div>
 
     </div>
-
     <div class="modal-footer">
-        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-info waves-effect waves-light">Save changes</button>
     </div>
 </div>

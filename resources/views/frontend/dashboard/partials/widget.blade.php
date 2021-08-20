@@ -82,6 +82,7 @@
                 <span class="counter">
                     {{ count($today_sells) }}
                 </span>
+                Todays Sales
                 {{-- <span class="counter">0</span> --}}
             </div>
             <div class="tiles-progress">

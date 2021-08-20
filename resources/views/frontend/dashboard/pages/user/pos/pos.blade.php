@@ -87,6 +87,7 @@ GLOBAL PHARMA
             </div>
             <h2 class="text-white text-center m-0">Total:- {{ Cart::total() }} </h2>
 
+            {{-- Create Invoice --}}
             <form action="{{ url('/create-invoice') }}" method="post">
                 @csrf
                 <div class="panel"><br><br>
@@ -190,7 +191,7 @@ GLOBAL PHARMA
 
 {{-- Customar Add Section --}}
 
-<form class="container" action="/customar/store" method="post" enctype="multipart/form-data">
+<form class="container" action="{{ asset('/customar') }}" method="post" enctype="multipart/form-data">
     @csrf
     <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true" style="display: none;">
@@ -249,6 +250,7 @@ GLOBAL PHARMA
                                 <label for="field-10" class="control-label">Photo</label>
                             </div>
                         </div>
+
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="field-10" class="control-label">Photo</label>
@@ -297,7 +299,7 @@ GLOBAL PHARMA
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-info waves-effect waves-light">Save changes</button>
+                        <button type="submit" value=" Save Changes" class="btn btn-info waves-effect waves-light">Save changes</button>
                     </div>
                 </div>
 

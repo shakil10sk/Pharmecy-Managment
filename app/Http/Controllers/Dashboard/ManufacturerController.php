@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\medicine;
+use App\Medicine;
 use Illuminate\Http\Request;
 
 class ManufacturerController extends Controller

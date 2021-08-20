@@ -193,7 +193,8 @@ class MedicineController extends Controller
              unlink($path);
           }
         $delete->delete();
-        return back()->with('success','Data Deleted successfully');
+         return back()->with('success','Data Deleted successfully');
+
     }
 
 

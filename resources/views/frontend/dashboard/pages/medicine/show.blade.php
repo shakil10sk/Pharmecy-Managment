@@ -54,6 +54,7 @@ GLOBAL PHARMA
     </div>
 
   </div>
+  
 {{-- <div class="table-responsive">
     <table class="table table-striped">
         <tr>

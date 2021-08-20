@@ -30,9 +30,9 @@ ADD Employee
                 <div class=" form">
                     @include('message.alert')
                     <a class="btn btn-primary" href="/employee/add">Refresh</a>
-                    
+
                     <form class="cmxform form-horizontal tasi-form " id="register" method="POST"
-                        action="/employee/{{ $edit->id }}/" enctype="multipart/form-data">
+                        action="{{ asset('/employee/'. $edit->id ) }}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group ">
                             <label for="name" class="control-label col-lg-2">Name <span

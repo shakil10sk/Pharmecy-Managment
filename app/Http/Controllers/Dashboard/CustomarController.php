@@ -49,7 +49,9 @@ class CustomarController extends Controller
      */
     public function store(Request $request)
     {
+
         $value=new Customar;
+
         $request->validate([
             'customar_name'=>'required|max:255',
             'email'=>'required|unique:customars|max:255',
@@ -78,7 +80,7 @@ class CustomarController extends Controller
         $value->bank_name=$request->bank_name;
         $value->bank_branch=$request->bank_branch;
 
-        if(  $value->save()){
+        if($value->save()){
             return redirect()->back()->with('success','Customar Add Successfully');
         }else{
             return redirect()->back()->with('error','Wrong Information');
@@ -93,6 +95,10 @@ class CustomarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+     public function posts(Request $request){
+         return "Done";
+     }
     public function show($id)
     {
         //
