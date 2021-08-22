@@ -96,7 +96,7 @@ class RegisterController extends Controller
             $file_name=time().'.'.$photo->getClientOriginalExtension();
             $photo_resize=Image::make($photo->getRealPath());
             $photo_resize->resize(150,150);
-            $photo_resize->save('images/users/'.$file_name);
+            $photo_resize->save('public/images/users/'.$file_name);
             $user->update(['photo'=>$file_name]);
 
         }

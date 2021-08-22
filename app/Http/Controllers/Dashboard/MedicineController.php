@@ -69,7 +69,7 @@ class MedicineController extends Controller
 
             $image_resize->resize(300,400);
 
-            $image_resize->save('images/'.$file_name);
+            $image_resize->save('public/images/'.$file_name);
 
             $value->Images=$file_name;
         }
@@ -152,11 +152,11 @@ class MedicineController extends Controller
             $old_file=$data->Images;
             // dd($old_file);
            if(!empty($old_file)){
-             $path=("images/$old_file");
+             $path=("public/images/".$old_file);
             unlink($path);
           }
 
-            $image_resize->save('images/'.$file_name);
+            $image_resize->save('public/images/'.$file_name);
             $data->Images=$file_name;
         }
 
@@ -189,7 +189,7 @@ class MedicineController extends Controller
         $delete=Medicine::find($id);
         $old_file=$delete->Images;
            if(!empty($old_file)){
-             $path=("images/$old_file");
+             $path=("public/images/$old_file");
              unlink($path);
           }
         $delete->delete();

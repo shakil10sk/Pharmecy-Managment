@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-6 col-sm-6 col-lg-3">
+    <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="mini-stat clearfix bx-shadow">
             <span class="mini-stat-icon bg-info"><i class="ion-social-usd"></i></span>
             <div class="mini-stat-info text-right text-muted">
@@ -36,7 +36,7 @@
         </div>
     </div>
 {{-- Total Customar Section --}}
-<div class="col-md-6 col-sm-6 col-lg-3">
+<div class="col-md-6 col-sm-12 col-lg-6">
     <div class="mini-stat clearfix bx-shadow">
         <span class="mini-stat-icon bg-info"><i class="fa fa-user" aria-hidden="true"></i></span>
         <div class="mini-stat-info text-right text-muted">
@@ -51,11 +51,11 @@
                     echo $count;
                 @endphp
             </span>
-            Total Customar
+            Total Customer
         </div>
         <div class="tiles-progress">
             <div class="m-t-20">
-                <h5 class="text-uppercase">Total Customar
+                <h5 class="text-uppercase">Total Customer
                     <span class="pull-right">
                         {{-- @php
                             $target=500;
@@ -74,20 +74,21 @@
     </div>
 </div>
 {{-- End totaL CUSTOMAR section --}}
-
-    <div class="col-md-6 col-sm-6 col-lg-3">
+</div>
+<div class="row">
+    <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="mini-stat clearfix bx-shadow">
             <span class="mini-stat-icon bg-info"><i class="ion-ios7-cart"></i></span>
             <div class="mini-stat-info text-right text-muted">
                 <span class="counter">
                     {{ count($today_sells) }}
                 </span>
-                Todays Sales
+                Today's Sales
                 {{-- <span class="counter">0</span> --}}
             </div>
             <div class="tiles-progress">
                 <div class="m-t-20">
-                    <h5 class="text-uppercase">Todays Sales
+                    <h5 class="text-uppercase">Today's Sales
                         <span class="pull-right">
                         </span>
                     </h5>
@@ -100,7 +101,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-6 col-sm-6 col-lg-3">
+    <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="mini-stat clearfix bx-shadow">
             <span class="mini-stat-icon bg-primary"><i class="ion-android-contacts"></i></span>
             <div class="mini-stat-info text-right text-muted">
@@ -132,7 +133,7 @@
             </div>
         </div>
     </div>
-
+</div>
     {{-- <div class="col-md-6 col-sm-6 col-lg-3">
         <div class="mini-stat clearfix bx-shadow">
             <span class="mini-stat-icon bg-purple"><i class="ion-ios7-cart"></i></span>

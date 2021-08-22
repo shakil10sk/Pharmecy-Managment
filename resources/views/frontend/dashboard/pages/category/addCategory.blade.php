@@ -41,7 +41,7 @@ ADD Category
 
                     <div class="form-group">
                         <div class="form-group">
-                            <label for="cat">Add Category</label>
+                            <label for="cat">Add Category :</label>
                             <input type="text" name="category" id="cat" placeholder="Add Category" required>
                         </div>
                         <button type="submit" class="btn btn-success waves-effect eaves-light">Submit</button>

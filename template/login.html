@@ -6,7 +6,8 @@
         <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
         <meta name="author" content="Coderthemes">
 
-        <link rel="shortcut icon" href="images/favicon_1.ico">
+    <link rel="shortcut icon" href="{{ asset('favicon.jpg') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('favicon.jpg') }}" type="image/x-icon">
 
         <title>Moltran - Responsive Admin Dashboard Template</title>
 

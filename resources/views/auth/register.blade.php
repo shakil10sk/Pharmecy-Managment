@@ -99,7 +99,7 @@ ADD Employee
                             <label for="nid" class="control-label col-lg-2">NID Number <span
                                     class="text-danger">*</span></label>
                             <div class="col-lg-10">
-                                <input type="number" id="nid" class="input-field" name="nid_number"
+                                <input type="number" id="nid" class="input-field btn" name="nid_number"
                                     placeholder="NID Number" required="required">
                             </div>
                         </div>
@@ -116,14 +116,14 @@ ADD Employee
                                     class="text-danger">*</span></label>
                             <div class="col-lg-10">
                                 <input type="text" id="position" class="form-control" name="position"
-                                    placeholder="joining Position - Ex.sellsman" required="required">
+                                    placeholder="Joining Position - Ex.salesman" required="required">
                             </div>
                         </div>
                         <div class="form-group ">
                             <div class="col-lg-offset-2 col-lg-10">
                                 <input type="checkbox" class="check-box">
-                                <span>I agree<a href="#">
-                                        to the terms & conditions</a>
+                                <span>I Agree<a href="#">
+                                        To The Terms & Conditions</a>
                                 </span>
                             </div>
                         </div>

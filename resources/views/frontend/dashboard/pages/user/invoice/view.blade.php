@@ -66,7 +66,7 @@
                                                     <strong>Name: {{ $customar->customar_name }}</strong><br>
                                                     Address: {{ $customar->address }}<br>
                                                     City: {{ $customar->custoamr_city }}<br>
-                                                    <abbr title="Phone">P:</abbr> {{ $customar->phone }}
+                                                    <abbr title="Phone">Phone:</abbr> {{ $customar->phone }}
                                                 </address>
 
                                             </div>

@@ -1,5 +1,5 @@
-<div class="row">
-    <div class="col-lg-8">
+{{--<div class="row">
+    <div class="col-lg-12">
         <div class="portlet"><!-- /portlet heading -->
             <div class="portlet-heading">
                 <h3 class="portlet-title text-dark text-uppercase">
@@ -39,11 +39,8 @@
             </div>
         </div> <!-- /Portlet -->
     </div> <!-- end col -->
-    <div class="col-md-4">
-        <img src="{{asset('frontend/images/Global_Pharma.gif')}}" alt="Pharmacy Photo" height="350px" width="350px">
-    </div>
 
-    {{-- <div class="col-lg-4">
+    <div class="col-lg-4">
         <div class="portlet"><!-- /portlet heading -->
             <div class="portlet-heading">
                 <h3 class="portlet-title text-dark text-uppercase">
@@ -82,5 +79,6 @@
                 </div>
             </div>
         </div> <!-- /Portlet -->
-    </div> <!-- end col --> --}}
+    </div> <!-- end col --> 
 </div> <!-- End row -->
+--}}

@@ -6,8 +6,8 @@ ADD Medicine
 
 
 @section('content-section')
-<h1>ADD Medicine <a href="/import-medicine" class="btn btn-danger pull-right btn-sm">Import Excell File</a></h1><br>
-@include('message.alert');
+<h1>ADD Medicine <a href="{{asset('/import-medicine')}}" class="btn btn-danger pull-right btn-sm">Import Excell File</a></h1><br>
+@include('message.alert')
 
 <form class="m-5" action="{{ asset('/medicine/post' ) }}" method="POST" enctype="multipart/form-data">
     @csrf
@@ -25,8 +25,8 @@ ADD Medicine
     </div>
 
     <div class="form-group">
-        <Select name="category_id">
-            <option value="">==Select Category==</option>
+        <Select class="btn btn-primary" name="category_id">
+            <option value="">Select Category</option>
             @foreach($category as $key => $value)
             <option value="{{ $value->id }}">{{ $value->category }}</option>
             @endforeach
@@ -51,21 +51,21 @@ ADD Medicine
         <small id="emailHelp" class="form-text text-muted">Quentity</small>
     </div>
     <div class="form-group">
-        <label for="strength">strength
+        <label for="strength">Strength
         </label>
         <input type="text" class="form-control" id="strength" aria-describedby="emailHelp" name="strength"
             placeholder="Enter strenth lavel">
-        <small id="emailHelp" class="form-text text-muted">strength</small>
+        <small id="emailHelp" class="form-text text-muted">Strength</small>
     </div>
     <div class="form-group">
-        <label for="price">Selling price
+        <label for="price">Selling Price
         </label>
         <input type="number" class="form-control" id="price" aria-describedby="emailHelp" name="sell_price"
-            placeholder="Enter Medicine selling price">
+            placeholder="Enter Medicine Selling Price">
         <small id="price" class="form-text text-muted">Selling price</small>
     </div>
     <div class="form-group">
-        <label for="manufecture_price">Manufecture price
+        <label for="manufecture_price">Manufecture Price
         </label>
         <input type="number" class="form-control" id="manufecture_price" aria-describedby="emailHelp"
             name="manufecture_price" placeholder="Enter Medicine manufecture price">
@@ -73,7 +73,7 @@ ADD Medicine
     </div>
 
     <div class="form-group">
-        <img id="image" src="#"><br>
+        <img id="image" src="{{ asset('/formimage.png' ) }}"><br>
         <label for="images">Images</label>
         <input type="file" class="form-control upload" name="Images" accept="image/*" required
             onchange="readURL(this);">
