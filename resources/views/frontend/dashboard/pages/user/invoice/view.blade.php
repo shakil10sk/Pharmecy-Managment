@@ -184,7 +184,7 @@
                                                     <label for="field-2" class="control-label">Pay<span
                                                             class="text-danger">
                                                             *</span></label>
-                                                    <input type="text" class="form-control" id="field-2" name="pay"
+                                                    <input type="text" class="form-control" required id="field-2" name="pay"
                                                         placeholder="payment amount">
                                                 </div>
                                             </div>
@@ -193,8 +193,8 @@
                                                     <label for="field-3" class="control-label">Due<span
                                                             class="text-danger">
                                                             *</span></label>
-                                                    <input type="text" class="form-control" id="field-3" name="due"
-                                                        placeholder="+8801700-000000">
+                                                    <input type="text" class="form-control" required id="field-3" name="due"
+                                                        placeholder="Enter Due Ammount">
                                                 </div>
                                             </div>
                                         </div>
