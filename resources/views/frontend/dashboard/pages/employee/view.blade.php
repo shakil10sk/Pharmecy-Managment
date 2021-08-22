@@ -36,13 +36,13 @@ GLOBAL PHARMA
                 <thead>
                     <tr>
                         <th>S.I</th>
-                        <th>name</th>
-                        <th>email</th>
-                        <th>phone</th>
-                        <th>address</th>
-                        <th>nid_number</th>
-                        <th>city</th>
-                        <th>position</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Nid Number</th>
+                        <th>City</th>
+                        <th>Position</th>
                         <th>Photo</th>
                         <th>Action</th>
                     </tr>

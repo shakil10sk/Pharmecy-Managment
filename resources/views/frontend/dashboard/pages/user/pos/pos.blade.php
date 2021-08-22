@@ -33,7 +33,7 @@ GLOBAL PHARMA
                         data-target="#con-close-modal">Add New</a>
                 </h4>
                 <select name="" id="" class="form-control">
-                    <option value="" disabled="" selected="">===Select Customar===</option>
+                    <option value="" disabled="" selected="">Select Customar</option>
 @foreach($customar as $cus)
                         <option value="{{ $cus->id }}">{{ $cus->customar_name }}</option>
         @endforeach
@@ -108,7 +108,7 @@ GLOBAL PHARMA
                         $customar=DB::table('customars')->get();
                     @endphp
                     <select name="cus_id" id="" class="form-control">
-                        <option value="" disabled="" selected="">===Select Customar===</option>
+                        <option value="" disabled="" selected="">Select Customar</option>
                         @foreach($customar as $cus)
                             <option value="{{ $cus->id }}">{{ $cus->customar_name }}</option>
                         @endforeach
@@ -265,7 +265,7 @@ GLOBAL PHARMA
                                 <label for="field-4" class="control-label">Address<span class="text-danger">
                                         *</span></label>
                                 <input type="text" class="form-control" id="field-4" required name="address"
-                                    placeholder="Rajshahi">
+                                    placeholder="Dhaka">
                             </div>
                         </div>
                     </div>
@@ -291,7 +291,7 @@ GLOBAL PHARMA
                                 <label for="field-9" class="control-label">Bank Branch<span class="text-danger">
                                         *</span></label>
                                 <input type="text" class="form-control" id="field-9" required name="bank_branch"
-                                    placeholder="sapahar">
+                                    placeholder="Dhaka">
                             </div>
                         </div>
 

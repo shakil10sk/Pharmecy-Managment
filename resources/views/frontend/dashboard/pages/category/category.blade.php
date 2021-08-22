@@ -24,7 +24,7 @@ GLOBAL PHARMA
         <div class="row">
             <div class="col-sm-6">
                 <div class="m-b-30">
-                    <button id="addToTable" onclick="window.location.href='/add/category'"
+                    <button id="addToTable" onclick="window.location.href='{{asset('/add/category')}}'"
                         class="btn btn-primary waves-effect text-light waves-light">Add
                         <i class="fa fa-plus"></i></button>
                 </div>

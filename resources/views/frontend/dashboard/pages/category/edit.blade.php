@@ -23,7 +23,7 @@ ADD Category
             @endif
             @include('message.alert') --}}
             <div class="panel-body">
-                <form action="/category/{{ $edit->id }}/" role="form" method="POST" enctype="multipart/form-data">
+                <form action="{{asset('/category/'.$edit->id)}}" role="form" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     @if(Session::get('success'))

@@ -68,10 +68,10 @@
 
                 @if(Auth::user()->role==2)
                 <li>
-                    <a href="/pos" class="waves-effect ">
+                    <a href="{{ asset('/pos')}}" class="waves-effect ">
                         <i class="md md-palette"></i>
                         <span>
-                            POS
+                        Point Of Sale (POS)
                         </span>
                     </a>
                 </li>
@@ -91,13 +91,13 @@
                     </a>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="/medicine/add">Add Medicine</a>
+                            <a href="{{ asset('/medicine/add')}}">Add Medicine</a>
                         </li>
                         <li>
-                            <a href="/import-medicine">Import Medicine</a>
+                            <a href="{{ asset('/import-medicine')}}">Import Medicine</a>
                         </li>
                         <li>
-                            <a href="/medicine/view">View Medicine</a>
+                            <a href="{{ asset('/medicine/view')}}">View Medicine</a>
                         </li>
                     </ul>
                 </li>
@@ -116,11 +116,11 @@
                     </a>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="{{ route('register') }}">Create Employee</a>
+                            <a href="{{ route('register')}}">Create Employee</a>
                         </li>
 
                         <li>
-                            <a href="/employee/view">View Employee</a>
+                            <a href="{{ asset('/employee/view')}}">View Employee</a>
                         </li>
                     </ul>
                 </li>
@@ -132,7 +132,7 @@
                     <a href="#" class="waves-effect">
                         <i class="fa fa-sellsy"></i>
                         <span>
-                            Customar
+                            Customer
                         </span>
                         <span class="pull-right">
                             <i class="md md-add"></i>
@@ -140,10 +140,10 @@
                     </a>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="{{ route('add') }}">Add Customar</a>
+                            <a href="{{ route('add') }}">Add Customer</a>
                         </li>
                         <li>
-                            <a href="/customar/view">View Customar</a>
+                            <a href="{{ asset('/customar/view')}}">View Customer</a>
                         </li>
                     </ul>
                 </li>
@@ -152,7 +152,7 @@
                     <a href="{{ route('add') }}" class="waves-effect">
                         <i class="fa fa-sellsy"></i>
                         <span>
-                            Add New Customar
+                            Add New Customer
                         </span>
                     </a>
                 </li>
@@ -164,19 +164,19 @@
                     <a href="#" class="waves-effect">
                         <i class="md md-invert-colors-on"></i>
                         <span>
-                            category
+                            Category
                         </span>
                         <span class="pull-right">
                             <i class="md md-add"></i>
                         </span>
                     </a>
                     <ul class="list-unstyled">
-                        {{-- <li><a href="/create-employee">Add category</a></li> --}}
+                        {{-- <li><a href="{{ asset('/create-employee')}}">Add Category</a></li> --}}
                         <li>
-                            <a href="/add/category">Add category</a>
+                            <a href="{{ asset('/add/category')}}">Add Category</a>
                         </li>
                         <li>
-                            <a href="/category">View category</a>
+                            <a href="{{ asset('/category')}}">View Category</a>
                         </li>
                     </ul>
                 </li>
@@ -192,9 +192,9 @@
                         </span>
                     </a>
                     <ul class="list-unstyled">
-                        {{-- <li><a href="/create-employee">Manufecturer</a></li> --}}
+                        {{-- <li><a href="{{ asset('/create-employee')}}">Manufecturer</a></li> --}}
                         <li>
-                            <a href="/manufacturer ">Manufacturer
+                            <a href="{{ asset('/manufacturer')}} ">Manufacturer
                             </a>
                         </li>
                     </ul>

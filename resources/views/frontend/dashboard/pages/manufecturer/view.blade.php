@@ -37,7 +37,7 @@ GLOBAL PHARMA
                     <tr>
                         <th>S.I</th>
                         <th>Manufacturer</th>
-                        <th>Action</th>
+                       
                     </tr>
                 </thead>
                 <tbody>
@@ -45,13 +45,7 @@ GLOBAL PHARMA
                         <tr class="gradeX">
                             <td>{{ ++$key }}</td>
                             <td>{{ $value->manufecture }}</td>
-                            <td class="actions">
-                                {{-- <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a> --}}
-                                {{-- <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a> --}}
-                                <a href="/manufacturer" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                <a href="/manufacturer" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
-                            </td>
-
+                           
                         </tr>
                     @endforeach
                 </tbody>

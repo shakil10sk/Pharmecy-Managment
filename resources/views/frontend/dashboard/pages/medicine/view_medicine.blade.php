@@ -18,11 +18,11 @@ GLOBAL PHARMA
             <td>Shelf</td>
             <td>Quentity</td>
             <td>Strength</td>
-            <td>selling price</td>
+            <td>Selling Price</td>
             <td>Manufacturer price</td>
             <td>Product Code</td>
             <td>Buying Date</td>
-            <td>manufecture Date</td>
+            <td>Manufecture Date</td>
             <td>Expire Date</td>
             <td>Images</td>
 
