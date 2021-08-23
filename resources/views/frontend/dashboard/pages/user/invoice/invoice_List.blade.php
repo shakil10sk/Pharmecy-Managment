@@ -38,13 +38,13 @@ GLOBAL PHARMA
                         <th>S.I</th>
                         <th>Customar Name</th>
                         <th>Total Products</th>
-                        <th>sub total</th>
-                        <th>vat</th>
+                        <th>Sub total</th>
+                        <th>Vat</th>
                         <th>Total</th>
-                        <th>pay</th>
-                        <th>due</th>
-                        <th>order id</th>
-                        <th>product</th>
+                        <th>Pay</th>
+                        <th>Due</th>
+                        <th>Order id</th>
+                        <th>Product</th>
                         <th>Action</th>
                     </tr>
                 </thead>

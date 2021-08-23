@@ -63,24 +63,24 @@
                                             <div class="pull-left m-t-5">
 
                                                 <address>
-                                                    <strong>Name: {{ $customar->customar_name }}</strong><br>
-                                                    Address: {{ $customar->address }}<br>
-                                                    City: {{ $customar->custoamr_city }}<br>
-                                                    <abbr title="Phone">Phone:</abbr> {{ $customar->phone }}
+                                                    <strong>Name : {{ $customar->customar_name }}</strong><br>
+                                                    Address : {{ $customar->address }}<br>
+                                                    City : {{ $customar->custoamr_city }}<br>
+                                                    Phone : {{ $customar->phone }}
                                                 </address>
 
                                             </div>
                                             <div class="pull-right m-t-5">
-                                                <p><strong>Order Date: </strong>
+                                                <p><strong>Order Date : </strong>
                                                     {{ date("l jS \of F Y") }}</p>
-                                                <p class="m-t-5"><strong>Order Status: </strong> <span
+                                                <p class="m-t-5"><strong>Order Status : </strong> <span
                                                         class="label label-pink">Active</span></p>
                                                 @php
                                                     // $order=DB::table('orders')->select('id')->first();
                                                     $i=1;
                                                 @endphp
 
-                                                <p class="m-t-5"><strong>Order ID: </strong> #202100{{ ++$i }}
+                                                <p class="m-t-5"><strong>Order ID : </strong> #202100{{ ++$i }}
                                                     {{-- {{ $order++ }} --}}
 
                                                 </p>
@@ -109,9 +109,9 @@
                                                             <tr>
                                                                 <td>{{ ++$sl }}</td>
                                                                 <td>{{ $row->name }}</td>
-                                                                <td>{{ $row->qty }}</td>
-                                                                <td>{{ $row->price }}</td>
-                                                                <td>{{ $row->price*$row->qty }}</td>
+                                                                <td>{{ $row->qty }} pcs</td>
+                                                                <td>৳ {{ $row->price }}</td>
+                                                                <td>৳ {{ $row->price*$row->qty }}</td>
                                                             </tr>
                                                         @endforeach
                                                     </tbody>
@@ -121,11 +121,11 @@
                                     </div>
                                     <div class="row" style="border-radius: 0px;">
                                         <div class="col-md-3 col-md-offset-9">
-                                            <p class="text-right"><b>Sub-total:</b> {{ Cart::subtotal() }}</p>
+                                            <h4 class="text-right"><b>Sub-total :</b> ৳{{ Cart::subtotal() }}</h4>
                                             {{-- <p class="text-right">Discout: 12.9%</p> --}}
-                                            <p class="text-right">VAT: {{ Cart::tax(0) }}</p>
+                                            {{--<p class="text-right">Service Charge: {{ Cart::tax(2) }}</p>--}}
                                             <hr>
-                                            <h3 class="text-right">Total:- {{ Cart::total() }}</h3>
+                                            <h3 class="text-right">Total : ৳{{ Cart::total(2) }}</h3>
                                         </div>
                                     </div>
 

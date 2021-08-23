@@ -48,7 +48,7 @@
                 </div>
                 <p class="text-muted m-0">
                     @if(Auth::user()->role==1)
-                    Adminsatrator
+                    Administrator
                     @elseif(Auth::user()->role==2)
                     Salesman(User)
                     @endif</p>
@@ -71,7 +71,7 @@
                     <a href="{{ asset('/pos')}}" class="waves-effect ">
                         <i class="md md-palette"></i>
                         <span>
-                        Point Of Sale (POS)
+                        My Shop
                         </span>
                     </a>
                 </li>

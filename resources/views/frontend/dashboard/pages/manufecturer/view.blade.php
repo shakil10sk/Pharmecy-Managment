@@ -21,7 +21,7 @@ GLOBAL PHARMA
 <div class="panel">
 
     <div class="panel-body">
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-sm-6">
                 <div class="m-b-30">
                     <button id="addToTable" onclick="window.location.href='/employee/add'"
@@ -29,7 +29,7 @@ GLOBAL PHARMA
                         <i class="fa fa-plus"></i></button>
                 </div>
             </div>
-        </div>
+        </div> -->
         @include('message.alert')
         <div class="table-responsive">
             <table class="table table-bordered table-striped" id="datatable-Manufecturer">
