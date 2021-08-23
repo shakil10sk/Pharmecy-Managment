@@ -7,7 +7,7 @@ GLOBAL PHARMA
 @section('title-section')
 <div class="row">
     <div class="col-sm-12 bg-info">
-        <h4 class="pull-left page-title">POS(Point Of Sale)</h4>
+        <h4 class="pull-left page-title">My Shop</h4>
         <ol class="breadcrumb pull-right">
             <li>
                 <a href="/">GLOBAL PHRMA</a>
@@ -45,7 +45,7 @@ GLOBAL PHARMA
                 <thead class="bg-info">
                     <tr>
                         <th class="text-center text-white">Name</th>
-                        <th class="text-center text-white">QTY</th>
+                        <th class="text-center text-white">Quantity</th>
                         <th class="text-center text-white">Price</th>
                         <th class="text-center text-white">Sub Total</th>
                         <th class="text-center text-white">Action</th>
@@ -67,8 +67,8 @@ GLOBAL PHARMA
                                         <i class="fa fa-check "></i></button>
                                 </form>
                             </td>
-                            <td class="text-center">{{ $shop->price }}</td>
-                            <td class="text-center">{{ $shop->price*$shop->qty }}</td>
+                            <td class="text-center">৳ {{ $shop->price }}</td>
+                            <td class="text-center">৳ {{ $shop->price*$shop->qty }}</td>
                             <td class="text-center"><a
                                     href="{{ url('/cart-remove/'.$shop->rowId) }}"><i
                                         class="fa fa-trash fa-2x text-danger"></a></i>
@@ -80,12 +80,12 @@ GLOBAL PHARMA
         </ul>
         <div class="pricing-footer  bg-info">
             <div class=" bg-primary">
-                <p style="font-size:19px;"> Quantity: {{ Cart::count() }}</p>
-                <p style="font-size:19px;"> SubTotal: {{ Cart::subtotal() }}</p>
-                <p style="font-size:19px;"> Vat: {{ Cart::tax(0) }}</p>
+                <p style="font-size:19px;"> Quantity : {{ Cart::count(2) }} pcs</p>
+                <p style="font-size:19px;"> SubTotal : {{ Cart::subtotal(2) }} Taka</p>
+               {{-- <p style="font-size:19px;"> Service Charge : {{ Cart::tax(2) }}</p>--}}
                 <hr>
             </div>
-            <h2 class="text-white text-center m-0">Total:- {{ Cart::total() }} </h2>
+            <h2 class="text-white text-center m-0">Total : {{ Cart::total(2) }} Taka</h2>
 
             {{-- Create Invoice --}}
             <form action="{{ url('/create-invoice') }}" method="post">
@@ -172,7 +172,7 @@ GLOBAL PHARMA
                                         </td>
                                         <td>{{ $value->medicine_name }}</td>
                                         <td>{{ $value->category }}</td>
-                                        <td>{{ $value->sell_price }}</td>
+                                        <td>৳ {{ $value->sell_price }}</td>
                                         <td> <button type="submit" class="btn btn-sm"><i
                                                     class="fa fa-plus-square fa-2x text-info"></i></button> </td>
                                     </form>
