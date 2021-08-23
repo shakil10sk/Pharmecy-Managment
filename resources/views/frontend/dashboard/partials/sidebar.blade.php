@@ -50,7 +50,7 @@
                     @if(Auth::user()->role==1)
                     Administrator
                     @elseif(Auth::user()->role==2)
-                    Salesman(User)
+                    {{ Auth::user()->position }}
                     @endif</p>
             </div>
         </div>

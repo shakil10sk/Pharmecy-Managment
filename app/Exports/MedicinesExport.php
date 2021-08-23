@@ -12,7 +12,8 @@ class MedicinesExport implements FromCollection
     */
     public function collection()
     {
-        return Medicine::select('medicine_name','genric_name','category_id','manufecture','self_number','qty','strength','sell_price','manufecture_price','Images','Product_code','buy_date','manufecturer_date','expire_date',)->get();
+        return Medicine::select('medicine_name','genric_name','category_id','manufecture','self_number','qty','strength','sell_price','manufecture_price','Images','Product_code','buy_date','manufecturer_date','expire_date')->get();
+
     }
 
 }

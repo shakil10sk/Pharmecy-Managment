@@ -294,6 +294,7 @@ GLOBAL PHARMA
                                     placeholder="Dhaka">
                             </div>
                         </div>
+                        {{-- <input type="hidden" value="{{ Auth::user()->id }}"> --}}
 
                     </div>
 

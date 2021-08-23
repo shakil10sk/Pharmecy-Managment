@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/',function(){
     return view('auth.login');
 });
+
 Route::middleware(['middleware'=>'PreventBackHistory'])->group(function(){
     Auth::routes();
 });
@@ -45,13 +46,20 @@ Route::group(['prefix'=>'medicine','middleware'=>['isAdmin','auth','PreventBackH
     // import and Export Medicine By Excell
 Route::group(['middleware'=>['isAdmin','auth','PreventBackHistory']],function(){
         Route::get('/import-medicine','Dashboard\MedicineController@importMedicine');
-        Route::get('/export','Dashboard\MedicineController@export');
+
         Route::post('/import','Dashboard\MedicineController@import')->name('import');
+
         // Emplyoee section
         // Route::get('/employee/add','Dashboard\EmployeeController@create');
         // Route::post('/employee/view','Dashboard\EmployeeController@store');
         // Route::get('register',[UserController::class,'index']);
 });
+Route::group(['middleware'=>['isAdmin','auth']],function(){
+
+    Route::get('/export','Dashboard\MedicineController@export');
+});
+
+
     // for Employee
 Route::group(['prefix'=>'employee','middleware'=>['isAdmin','auth','PreventBackHistory']],function(){
 
