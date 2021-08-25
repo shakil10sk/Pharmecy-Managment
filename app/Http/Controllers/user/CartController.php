@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
+use App\medicine;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -68,8 +69,8 @@ class CartController extends Controller
 
           $insert=DB::table('order_details')->insert($odata);
        }
-       if($insert){
 
+    if($insert){
         Cart::destroy();
         return Redirect('/pos')->with('success','Successfully Invoice Created');
     }else{

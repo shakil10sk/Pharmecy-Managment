@@ -129,12 +129,14 @@ GLOBAL PHARMA
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 ">
             <div class="portfolioFilter">
-                @foreach($medicine as $key => $value)
-                    {{-- <a href="#" data-filter="*" class="current">{{ $value->category }}</a>
-                    --}}
-                    <a href="#" data-filter=".webdesign"><span
-                            class="h5 text-uppercase">{{ $value->category }}</span></a>
-                @endforeach
+
+                <select name="cus_id" id="" class="form-control">
+                    <option value="" disabled="" selected="">Select Medicine Category</option>
+                    @foreach($medicine as $value)
+                        <option value="{{ $value->id }}">{{ $value->category }}</option>
+                    @endforeach
+                </select>
+
             </div>
         </div>
     </div>
@@ -167,7 +169,7 @@ GLOBAL PHARMA
                                         <input type="hidden" name="price" value="{{ $value->sell_price }}">
                                         <td>
                                             {{-- <a href="#"></a> --}}
-                                            <img src="{{ asset('images/'.$value->Images) }}"
+                                            <img src="{{ asset('public/images/'.$value->Images) }}"
                                                 alt="" width="50" height="50"><br>{{ ++$key }}
                                         </td>
                                         <td>{{ $value->medicine_name }}</td>
