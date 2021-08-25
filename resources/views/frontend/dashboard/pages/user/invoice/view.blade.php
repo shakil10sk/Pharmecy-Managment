@@ -174,8 +174,7 @@
                                                             *</span></label>
                                                     <select name="payment_status" id="" class="form-control">
                                                         <option value="handcash"> Hand Cash </option>
-                                                        <option value="cheack"> Cheack </option>
-                                                        <option value="due"> Due </option>
+                                                        <option value="cheack"> Cheack </option>                                                        
                                                     </select>
                                                 </div>
                                             </div>
@@ -190,11 +189,8 @@
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label for="field-3" class="control-label">Due<span
-                                                            class="text-danger">
-                                                            *</span></label>
-                                                    <input type="text" class="form-control" required id="field-3" name="due"
-                                                        placeholder="Enter Due Ammount">
+                                                    <input type="hidden" class="form-control" required id="field-3" name="due"
+                                                        value="0">
                                                 </div>
                                             </div>
                                         </div>
