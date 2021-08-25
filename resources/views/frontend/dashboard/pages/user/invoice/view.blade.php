@@ -39,6 +39,9 @@
                         </div>
                     </div>
                     {{-- @yield('content-section') --}}
+                    <form class="container" action="{{ url('/final-invoice') }}" method="post">
+                        @include('message.alert')
+                        @csrf
                     <div class="row">
                         <div class="col-md-12">
                             <div class="panel panel-default">
@@ -109,6 +112,9 @@
                                                             <tr>
                                                                 <td>{{ ++$sl }}</td>
                                                                 <td>{{ $row->name }}</td>
+                                                                {{-- <form action="post" action="{{ asset('update/qty') }}"> --}}
+                                                                    <input type="hidden" name="medicine_id" value="{{ $row->id }}">
+                                                                {{-- </form> --}}
                                                                 <td>{{ $row->qty }} pcs</td>
                                                                 <td>৳ {{ $row->price }}</td>
                                                                 <td>৳ {{ $row->price*$row->qty }}</td>
@@ -146,9 +152,9 @@
                     {{-- data model --}}
 
 
-                    <form class="container" action="{{ url('/final-invoice') }}" method="post">
+                    {{-- <form class="container" action="{{ url('/final-invoice') }}" method="post">
                         @include('message.alert')
-                        @csrf
+                        @csrf --}}
                         <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog"
                             aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                             <div class="modal-dialog">
@@ -193,7 +199,12 @@
                                                         value="0">
                                                 </div>
                                             </div>
+
                                         </div>
+                                        {{-- <input type="text" name="medicine_id" value=""> --}}
+                                        @foreach($contents as $key => $value)
+                                        <input type="hidden" value="{{ $value->id }}" name="medicine_id">
+                                        @endforeach
                                         <input type="hidden" name="customar_id" value="{{ $customar->id }}">
                                         <input type="hidden" name="order_date"
                                             value="{{ date('d/m/y') }}">

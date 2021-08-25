@@ -155,9 +155,11 @@ class MedicineController extends Controller
              $path=("public/images/".$old_file);
             unlink($path);
           }
-
+          
             $image_resize->save('public/images/'.$file_name);
             $data->Images=$file_name;
+
+
         }
 
         $data->medicine_name=$request->medicine_name;

@@ -106,6 +106,10 @@ Route::group(['middleware'=>['isAdmin','auth','PreventBackHistory']],function(){
 
 // Manufacturer  section
     Route::get('/manufacturer','Dashboard\ManufacturerController@index');
+
+    // Report
+    Route::get('/report/see','ReportController@index')->name('report.see');
+    Route::post('/report','ReportController@Report')->name('report');
 });
             // ==============Admin Authentication Finish===================
 
@@ -136,6 +140,8 @@ Route::group(['middleware'=>['isUser','auth','PreventBackHistory']],function(){
         Route::post('/create-invoice','user\CartController@CreateInvoice');
 
         Route::post('/final-invoice','user\CartController@FinalInvoice');
+
+
 });
 
           //==================== USer Authintication Finish ================

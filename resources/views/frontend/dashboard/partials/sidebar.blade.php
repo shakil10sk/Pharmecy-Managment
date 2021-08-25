@@ -199,6 +199,25 @@
                         </li>
                     </ul>
                 </li>
+
+                <li class="has_sub">
+                    <a href="#" class="waves-effect">
+                        <i class="md md-invert-colors-on"></i>
+                        <span>
+                            Report
+                        </span>
+                        <span class="pull-right">
+                            <i class="md md-add"></i>
+                        </span>
+                    </a>
+                    <ul class="list-unstyled">
+                        {{-- <li><a href="{{ asset('/create-employee')}}">Manufecturer</a></li> --}}
+                        <li>
+                            <a href="{{ asset('/report/see')}} ">Report
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             @endif
             </ul>
             <div class="mx-auto text-center">

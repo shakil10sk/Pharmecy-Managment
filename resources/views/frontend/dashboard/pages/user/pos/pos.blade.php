@@ -161,7 +161,7 @@ GLOBAL PHARMA
                         <tbody>
                             @foreach($medicine as $key=>$value)
                                 <tr class="text-center">
-                                    <form action="/add-cart" method="post">
+                                    <form action="{{ asset('/add-cart') }}" method="post">
                                         @csrf
                                         <input type="hidden" name="id" value="{{ $value->id }}">
                                         <input type="hidden" name="name" value="{{ $value->medicine_name }}">
