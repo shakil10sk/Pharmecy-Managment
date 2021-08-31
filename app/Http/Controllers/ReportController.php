@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\POS\Order;
 use App\POS\OrderDetails;
+use Carbon\Carbon;
 class ReportController extends Controller
 {
     public function index(){
@@ -16,14 +17,22 @@ class ReportController extends Controller
 
     public function Report(Request $request){
 
+
+
+
         // $company_id = GlobalHelper::getCompanyId();
         // $customar_id = $request->customar_id;
         $from_date = \request('from_date',0);
         $to_date = \request('to_date',0);
 
+
+
+
+
         $data=Order::join('customars','orders.customar_id','=','customars.id')
-        ->select('orders.total_products','orders.total','orders.order_date','customars.customar_name', 'customars.email','customars.address','customars.phone')
-        ->whereBetween(DB::raw('DATE(orders.order_date)'), array($from_date, $to_date))->get();
+        ->select('orders.total_products','orders.total','orders.order_date','customars.customar_name', 'customars.email','customars.address','customars.phone')->get();
+        // ->whereBetween(DB::raw('DATE(orders.order_date)'), array($from_date, $to_date))->get();
+
 
 
         // $order=OrderDetails::join('orders','order_details.order_id','=','orders.id')
