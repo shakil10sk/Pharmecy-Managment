@@ -142,9 +142,10 @@
                 <span class="counter">
                     @php
                        $table=DB::table('medicines')->get();
-                        $count=1;
+                        $count=0;
                         foreach ($table as $user) {
-                            $count=$count = $user->id;
+                           $user->id;
+                            $count++;
                         }
                         echo $count;
                     @endphp
