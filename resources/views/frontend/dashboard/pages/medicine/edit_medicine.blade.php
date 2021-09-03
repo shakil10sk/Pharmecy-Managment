@@ -83,6 +83,7 @@ Edit Medicine
         <label for="images">Images</label>
         <input type="file" class="form-control upload" name="Images"
             accept="image/*"  onchange="readURL(this);">
+            <input type="text" name="Images" value="{{ asset('images/'.$edit_id->Images) }}">
     </div>
 
     {{-- <div class="form-group">

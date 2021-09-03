@@ -40,6 +40,7 @@
             <div class="form-group">
                 <label for="field-10" class="control-label">Photo</label>
                 <input class="form-control " id="field-10" name="photo"  value="{{ asset('images/'.$customar->photo) }}" type="file">
+                <input class="form-control " id="field-10" name="photo"  value="{{ asset('images/'.$customar->photo) }}" type="text">
             </div>
         </div>
     </div>

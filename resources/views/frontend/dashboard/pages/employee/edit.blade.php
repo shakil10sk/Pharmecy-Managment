@@ -86,12 +86,13 @@ ADD Employee
                         </div>
 
                         <div class="form-group ">
-                            <img src="#" id="image" alt=""><br>
+                            <img src="{{ asset('images/users'.$edit->photo) }}" id="image" alt=""><br>
                             <label for="photo" class="control-label col-lg-2">Photo <span
                                     class="text-danger">*</span></label>
                             <div class="col-lg-10">
                                 <input class="form-control " id="photo" onchange="readURL(this);" accept="image/*"
                                     name="photo" type="file">
+                                    <input type="text" value="{{ $edit->photo }}">
                             </div>
                         </div>
 
