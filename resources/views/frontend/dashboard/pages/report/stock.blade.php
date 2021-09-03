@@ -8,7 +8,7 @@ GLOBAL PHARMA
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title">Stock Out Medicines List</h3>
+        <h3 class="panel-title">Limited Stock Medicines List</h3>
     </div>
     <div class="panel-body">
         <div class="row">

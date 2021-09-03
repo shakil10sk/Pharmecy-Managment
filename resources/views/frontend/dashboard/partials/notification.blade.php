@@ -29,7 +29,7 @@
                        
                 echo "<div class='media-heading'>".$data->medicine_name."</div>";
                 echo "<p class='m-0'>";
-                echo "<small>You have ".$data->qty." pcs Medicines </small></p>";
+                echo "<small>You have Only ".$data->qty." pcs Medicine </small></p>";
                 echo "<br>";                    
                 
                 echo "</div> </div> </a>";             

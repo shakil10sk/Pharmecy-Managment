@@ -218,7 +218,7 @@
                         </li>
 
                         <li>
-                            <a href="{{ asset('/stock')}} ">Stock Out
+                            <a href="{{ asset('/stock')}} ">Limited Stock
                             </a>
                         </li>
                     </ul>

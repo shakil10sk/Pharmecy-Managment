@@ -137,7 +137,7 @@
 <div class="row">
     <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="mini-stat clearfix bx-shadow">
-            <span class="mini-stat-icon bg-info"><i class="ion-ios7-cart"></i></span>
+            <span class="mini-stat-icon bg-info"><i class="fa fa-plus-square"></i></span>
             <div class="mini-stat-info text-right text-muted">
                 <span class="counter">
                     @php
