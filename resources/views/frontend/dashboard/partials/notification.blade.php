@@ -22,8 +22,8 @@
             foreach ($stock as $data) {   
                 
                 echo '<a href="javascript:void(0);"  class="list-group-item">';
-                echo '<div class="media">';
-                echo '<div class="pull-left"><em onclick="error();" class="fa fa-user-plus fa-2x text-info"></em> </div>';
+                echo '<div class="media" onclick="error();">';
+                echo '<div class="pull-left"><em  class="fa fa-user-plus fa-2x text-info"></em> </div>';
                     
                 echo '<div class="media-body clearfix">';                                   
                        
