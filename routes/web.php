@@ -109,7 +109,12 @@ Route::group(['middleware'=>['isAdmin','auth','PreventBackHistory']],function(){
 
     // Report
     Route::get('/report/see','ReportController@index')->name('report.see');
+
     Route::get('/report','ReportController@Report')->name('report');
+
+    Route::get('/stock','ReportController@stock')->name('stock');
+
+    // Route::get('/notifiaction','HomeController@notify')->name('notifiaction');
 });
             // ==============Admin Authentication Finish===================
 
@@ -121,6 +126,8 @@ Route::group(['prefix'=>'user','middleware'=>['isUser','auth','PreventBackHistor
     Route::get('dashboard',[UserController::class,'index'])->name('user.dashboard');
 
     Route::get('profile',[UserController::class,'profile'])->name('user.profile');
+
+      Route::get('/notifiaction','HomeController@notify')->name('notifiaction');
 });
 
 Route::group(['middleware'=>['isUser','auth','PreventBackHistory']],function(){

@@ -132,7 +132,7 @@ GLOBAL PHARMA
 
                 <select name="cus_id" id="" class="form-control">
                     <option value="" disabled="" selected="">Select Medicine Category</option>
-                    @foreach($medicine as $value)
+                    @foreach($category as $value)
                         <option value="{{ $value->id }}">{{ $value->category }}</option>
                     @endforeach
                 </select>
@@ -153,6 +153,7 @@ GLOBAL PHARMA
                                 <th>Image</th>
                                 <th>Name</th>
                                 <th>Category</th>
+                                <th>Quantity</th>
                                 <th>Price</th>
                                 <th>ADD</th>
                             </tr>
@@ -174,6 +175,7 @@ GLOBAL PHARMA
                                         </td>
                                         <td>{{ $value->medicine_name }}</td>
                                         <td>{{ $value->category }}</td>
+                                        <td>{{ $value->qty }}</td>
                                         <td>৳ {{ $value->sell_price }}</td>
                                         <td> <button type="submit" class="btn btn-sm"><i
                                                     class="fa fa-plus-square fa-2x text-info"></i></button> </td>

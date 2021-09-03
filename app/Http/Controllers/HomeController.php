@@ -28,4 +28,10 @@ class HomeController extends Controller
        return view('frontend.index',compact('today_sells'));
         // return view('frontend.index');
     }
+    // public function notify(){
+    //     $stock=DB::table('medicines')->select('*')->where('qty','<',50)->get();
+
+    //     return view('frontend.dashboard.partials.notification',compact('stock'));
+
+    // }
 }

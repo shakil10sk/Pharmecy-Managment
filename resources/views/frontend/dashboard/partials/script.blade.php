@@ -90,3 +90,13 @@
     });
 
     </script>
+
+
+<script>
+function error(){
+
+    
+    swal("Only Admin Can Do IT !", "Please Contact With Admin!");
+}
+
+</script>

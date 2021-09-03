@@ -27,6 +27,7 @@ class UserController extends Controller
     }
     public function view(){
         $view_user=User::get();
+        
         return view('frontend.dashboard.pages.employee.view',compact('view_user'));
     }
 

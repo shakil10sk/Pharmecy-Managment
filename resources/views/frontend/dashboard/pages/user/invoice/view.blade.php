@@ -115,9 +115,14 @@
                                                                 {{-- <form action="post" action="{{ asset('update/qty') }}"> --}}
                                                                     <input type="hidden" name="medicine_id" value="{{ $row->id }}">
                                                                 {{-- </form> --}}
-                                                                <td>{{ $row->qty }} pcs</td>
+                                                                <td>{{ $row->qty }}
+                                                                    @php
+                                                                        DB::table('medicines')->decrement('qty', $row->qty);
+                                                                    @endphp
+                                                                    pcs</td>
                                                                 <td>৳ {{ $row->price }}</td>
                                                                 <td>৳ {{ $row->price*$row->qty }}</td>
+
                                                             </tr>
                                                         @endforeach
                                                     </tbody>
@@ -180,7 +185,7 @@
                                                             *</span></label>
                                                     <select name="payment_status" id="" class="form-control">
                                                         <option value="handcash"> Hand Cash </option>
-                                                        <option value="cheack"> Cheack </option>                                                        
+                                                        <option value="cheack"> Cheack </option>
                                                     </select>
                                                 </div>
                                             </div>

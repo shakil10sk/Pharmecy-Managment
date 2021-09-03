@@ -216,7 +216,13 @@
                             <a href="{{ asset('/report')}} ">Report
                             </a>
                         </li>
+
+                        <li>
+                            <a href="{{ asset('/stock')}} ">Stock Out
+                            </a>
+                        </li>
                     </ul>
+
                 </li>
             @endif
             </ul>

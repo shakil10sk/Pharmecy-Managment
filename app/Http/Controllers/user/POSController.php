@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\user;
 
+use App\Category;
 use App\Customar;
 use App\Http\Controllers\Controller;
 use App\Medicine;
@@ -19,7 +20,8 @@ class POSController extends Controller
         $medicine=Medicine::join('categories','medicines.category_id','=','categories.id')
         ->select('medicines.*','categories.category')->get();
         $customar=Customar::all();
-        return view('frontend.dashboard.pages.user.pos.pos',compact('medicine','customar'));
+        $category= Category::all();
+        return view('frontend.dashboard.pages.user.pos.pos',compact('medicine','customar','category'));
     }
 
     /**
