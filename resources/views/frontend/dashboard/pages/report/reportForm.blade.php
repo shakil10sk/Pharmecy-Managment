@@ -22,15 +22,15 @@ GLOBAL PHARMA
             <div class="col-md-12 col-sm-12 col-xs-12 table-responsive">
                 <table id="datatable" class="table table-striped table-bordered table-responsive">
                     <thead>
-                        <tr class="text-center">
-                            <td class="">SI</td>
-                            <td>Customar Name</td>
-                            <td>Customar phone</td>
-                            <td>Customar email</td>
+                        <tr class="text-left">
+                        <td class="">SI</td>
+                            <td>Customer Name</td>
+                            <td>Customer email</td>
                             <td>address</td>
+                            <td>Customer phone</td>
                             <td>Total Quantity</td>
-                            <td>payment_total</td>
-                            <td>order_date</td>
+                            <td>total payment</td>
+                            <td>order date</td>
                         </tr>
                     </thead>
 

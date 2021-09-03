@@ -87,6 +87,11 @@
                                                     {{-- {{ $order++ }} --}}
 
                                                 </p>
+
+                                                <p class="m-t-5"><strong>Sold By : </strong>
+                                                {{ Auth::user()->name }}
+
+                                                </p>
                                             </div>
                                         </div>
                                     </div>

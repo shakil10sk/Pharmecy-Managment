@@ -54,7 +54,7 @@
                                             {{-- <li class="nav-item">
                                                     <a href="#profile-post" class="nav-link" data-toggle="tab">POSTS</a>
                                                 </li> --}}
-                                                <a href="\home" class="btn btn-toolbar btn-secondary mx-1">HOME</a>
+                                                <a href="{{route('home')}}" class="btn btn-toolbar btn-secondary mx-1">HOME</a>
                                                 {{-- <li class="nav-item" >
                                                     <a href="\home"  class="nav-link active show"
                                                         data-toggle="tab" >HOME</a>
