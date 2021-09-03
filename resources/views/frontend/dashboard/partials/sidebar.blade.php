@@ -48,7 +48,7 @@
                 </div>
                 <p class="text-muted m-0">
                     @if(Auth::user()->role==1)
-                    Administrator
+                    {{ Auth::user()->position }}
                     @elseif(Auth::user()->role==2)
                     {{ Auth::user()->position }}
                     @endif</p>
@@ -181,7 +181,7 @@
                     </ul>
                 </li>
 
-                <li class="has_sub">
+                <!-- <li class="has_sub">
                     <a href="#" class="waves-effect">
                         <i class="md md-invert-colors-on"></i>
                         <span>
@@ -198,7 +198,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
 
                 <li class="has_sub">
                     <a href="#" class="waves-effect">
@@ -213,7 +213,7 @@
                     <ul class="list-unstyled">
                         {{-- <li><a href="{{ asset('/create-employee')}}">Manufecturer</a></li> --}}
                         <li>
-                            <a href="{{ asset('/report/see')}} ">Report
+                            <a href="{{ asset('/report')}} ">Report
                             </a>
                         </li>
                     </ul>

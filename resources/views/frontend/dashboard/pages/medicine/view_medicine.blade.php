@@ -31,7 +31,7 @@ GLOBAL PHARMA
                             <td>Manufecture Date</td>
                             <td>Expire Date</td>
                             <td>Images</td>
-                            <td>Action</td>
+                            <td style="width: 75px">Action</td>
                         </tr>
                     </thead>
 
@@ -53,13 +53,14 @@ GLOBAL PHARMA
                            <td>{{$value->manufecturer_date}}</td>
                            <td>{{$value->expire_date}}</td>
                            <td><img src="{{ asset('images/'.$value->Images) }}" alt="" width="50" height="50"></td>
-                           <td>
-                               <a href="{{ asset('/medicine/post/edit/'. $value->id ) }}">Edit</a> |
+                           <td style="width:75px">
+                               <a href="{{ asset('/medicine/post/edit/'. $value->id ) }}"><i class="fa fa-pencil"></i></a> |
                                {{--  /medicine/post/{{ $value->id }}/edit --}}
 
-                                <a href="{{ asset('/medicine/post/delete/'. $value->id ) }}">Delete</a> |
-                            <br>
-                            <a href="{{ asset('/medicine/show/'. $value->id ) }}">Show</a> </td>
+                                <a href="{{ asset('/medicine/post/delete/'. $value->id ) }}"><i class="fa fa-trash" aria-hidden="true"></i>
+</a> |
+                                <a href="{{ asset('/medicine/show/'. $value->id ) }}"><i class="fa fa-eye" aria-hidden="true"></i>
+</a> </td>
                         </tr>
                         @endforeach
                     </tbody>

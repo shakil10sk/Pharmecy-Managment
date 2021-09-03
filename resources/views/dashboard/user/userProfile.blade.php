@@ -23,11 +23,6 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div id="content" class="content content-full-width">
-                                <a href="\home" class="p-3 btn btn-toolbar btn-success d-block text-center">GLOBAL PHARMA</a>
-
-                                <br>
-                                <br>
-
                                 <!-- begin profile -->
                                 <div class="profile">
                                     <div class="profile-header">
@@ -59,15 +54,15 @@
                                             {{-- <li class="nav-item">
                                                     <a href="#profile-post" class="nav-link" data-toggle="tab">POSTS</a>
                                                 </li> --}}
-                                                <a href="\home" class="btn btn-toolbar btn-success" style="background-color: rgb(243, 82, 230)">HOME</a>
+                                                <a href="\home" class="btn btn-toolbar btn-secondary mx-1">HOME</a>
                                                 {{-- <li class="nav-item" >
                                                     <a href="\home"  class="nav-link active show"
                                                         data-toggle="tab" >HOME</a>
                                                 </li> --}}
                                                 <br>
                                             <li class="nav-item" >
-                                                <a href="#profile-about"  class="nav-link active show"
-                                                    data-toggle="tab" style="background-color: rgb(0, 140, 255)">ABOUT ME</a>
+                                                <a href="#profile-about"  class="nav-link btn btn-toolbar btn-secondary active show mx-1"
+                                                    data-toggle="tab">ABOUT ME</a>
                                             </li>
                                         </ul>
                                         <!-- END profile-header-tab -->
@@ -337,10 +332,9 @@
         }
 
         .profile-header .profile-header-tab {
-            background: #fff;
             list-style-type: none;
             margin: -10px 0 0;
-            padding: 0 0 0 140px;
+            padding: 0 0 0 20px;
             white-space: nowrap;
             border-radius: 0;
         }

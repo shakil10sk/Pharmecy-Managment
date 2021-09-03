@@ -142,9 +142,10 @@
                 <span class="counter">
                     @php
                        $table=DB::table('medicines')->get();
-                        $count=1;
+                        $count=0;
                         foreach ($table as $user) {
-                            $count=$count = $user->id;
+                           $user->id;
+                            $count++;
                         }
                         echo $count;
                     @endphp
@@ -154,7 +155,7 @@
             </div>
             <div class="tiles-progress">
                 <div class="m-t-20">
-                    <h5 class="text-uppercase">Today's Total Medicine
+                    <h5 class="text-uppercase">Total Medicine Stock
                         <span class="pull-right">
                         </span>
                     </h5>

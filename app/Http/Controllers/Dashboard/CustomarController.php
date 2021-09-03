@@ -61,7 +61,6 @@ class CustomarController extends Controller
             'ac_num'=>'required',
             'bank_name'=>'required',
             'bank_branch'=>'required',
-            'photo'=>'required',
         ]);
         if($request->hasFile('photo')){
             $img=$request->file('photo');

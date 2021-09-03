@@ -109,7 +109,7 @@ Route::group(['middleware'=>['isAdmin','auth','PreventBackHistory']],function(){
 
     // Report
     Route::get('/report/see','ReportController@index')->name('report.see');
-    Route::post('/report','ReportController@Report')->name('report');
+    Route::get('/report','ReportController@Report')->name('report');
 });
             // ==============Admin Authentication Finish===================
 

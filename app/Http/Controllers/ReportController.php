@@ -22,8 +22,8 @@ class ReportController extends Controller
         $to_date = \request('to_date',0);
 
         $data=Order::join('customars','orders.customar_id','=','customars.id')
-        ->select('orders.total_products','orders.total','orders.order_date','customars.customar_name', 'customars.email','customars.address','customars.phone')
-        ->whereBetween(DB::raw('DATE(orders.order_date)'), array($from_date, $to_date))->get();
+        ->select('orders.total_products','orders.total','orders.order_date','customars.customar_name', 'customars.email','customars.address','customars.phone')->get();
+        // ->whereBetween(DB::raw('DATE(orders.order_date)'), array($from_date, $to_date))->get();
 
 
         // $order=OrderDetails::join('orders','order_details.order_id','=','orders.id')
@@ -43,7 +43,7 @@ class ReportController extends Controller
         //     ->get();
 
 
-            return view('frontend.dashboard.pages.report.report',compact('data'));
+            return view('frontend.dashboard.pages.report.reportForm',compact('data'));
 
         // return view('report.delivery.summary_print')->with([
         //     "company_info" => $request->customar_id,

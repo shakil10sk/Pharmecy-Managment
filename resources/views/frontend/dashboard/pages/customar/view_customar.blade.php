@@ -67,7 +67,7 @@
                             {{-- <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a> --}}
                             <a href="{{ asset('/customar/edit/ '.$value->id) }}" class="on-default edit-row">
                                 <i class="fa fa-pencil"></i>
-                            </a>
+                            </a> | 
                             <a href="{{ asset('/customar/delete/ '.$value->id) }}" class="on-default remove-row">
                                 <i class="fa fa-trash-o"></i>
                             </a>

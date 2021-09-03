@@ -8,15 +8,15 @@ GLOBAL PHARMA
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title">Medicine List</h3>
+        <h3 class="panel-title">Order Details</h3>
     </div>
-    <form action="{{ asset('/report') }}" method="post">
+    <!-- <form action="{{ asset('/report') }}" method="post">
         @csrf
         <input type="date" name="from_date">
         <input type="date" name="to_date">
 
         <button type="submit" class="btn btn-success" value="Submit">Submit</button>
-    </form>
+    </form> -->
     <div class="panel-body">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 table-responsive">
