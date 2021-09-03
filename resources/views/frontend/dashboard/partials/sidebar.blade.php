@@ -11,21 +11,21 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="javascript:void(0)">
+                            <a href="{{ route('user.profile') }}">
                                 <i class="md md-face-unlock"></i>
                                 Profile<div class="ripple-wrapper"></div>
                             </a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="javascript:void(0)">
                                 <i class="md md-settings"></i>
                                 Settings</a>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <a href="javascript:void(0)">
                                 <i class="md md-lock"></i>
                                 Lock screen</a>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="{{ route('logout') }}" onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
@@ -69,7 +69,7 @@
                 @if(Auth::user()->role==2)
                 <li>
                     <a href="{{ asset('/pos')}}" class="waves-effect ">
-                        <i class="md md-palette"></i>
+                        <i class="fa fa-cart-plus"></i>
                         <span>
                         My Shop
                         </span>
@@ -81,7 +81,7 @@
             @if(Auth()->user()->role==1)
                 <li class="has_sub">
                     <a href="#" class="waves-effect">
-                        <i class="md md-invert-colors-on"></i>
+                        <i class="fa fa-plus-square"></i>
                         <span>
                             Medicine
                         </span>
@@ -106,7 +106,7 @@
              @if(Auth::user()->role==1)
                 <li class="has_sub">
                     <a href="#" class="waves-effect">
-                        <i class="md md-redeem"></i>
+                        <i class="fa fa-users"></i>
                         <span>
                             Employee
                         </span>
@@ -130,7 +130,7 @@
             @if(Auth::user()->role==1)
                 <li class="has_sub">
                     <a href="#" class="waves-effect">
-                        <i class="fa fa-sellsy"></i>
+                        <i class="fa fa-user"></i>
                         <span>
                             Customer
                         </span>
@@ -150,7 +150,7 @@
             @elseif(Auth::user()->role==2)
                 <li>
                     <a href="{{ route('add') }}" class="waves-effect">
-                        <i class="fa fa-sellsy"></i>
+                        <i class="fa fa-user"></i>
                         <span>
                             Add New Customer
                         </span>
@@ -202,7 +202,7 @@
 
                 <li class="has_sub">
                     <a href="#" class="waves-effect">
-                        <i class="md md-invert-colors-on"></i>
+                        <i class="fa fa-list-alt"></i>
                         <span>
                             Report
                         </span>
