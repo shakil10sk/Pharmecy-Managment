@@ -122,7 +122,10 @@
                                                                 {{-- </form> --}}
                                                                 <td>{{ $row->qty }}
                                                                     @php
-                                                                        DB::table('medicines')->decrement('qty', $row->qty);
+                                                                        DB::table('medicines')
+                                                                        ->where('id','=',$row->id)
+                                                                        ->decrement('qty', $row->qty);
+                                                                       
                                                                     @endphp
                                                                     pcs</td>
                                                                 <td>৳ {{ $row->price }}</td>
