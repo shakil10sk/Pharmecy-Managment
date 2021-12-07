@@ -10,7 +10,7 @@ GLOBAL PHARMA
         <div class="col-sm-12 bg-success">
             <h4 class="pull-left page-title"><span class="text-uppercase">{{ Auth::user()->name }}'s Profile!</span> </h4>
             <ol class="breadcrumb pull-right">
-                <li><a href="/home" class="btn btn-info">GLOBAL PHRMA</a></li>
+                <li><a href="{{ url('/home') }}" class="btn btn-info">GLOBAL PHRMA</a></li>
 
             </ol>
         </div>

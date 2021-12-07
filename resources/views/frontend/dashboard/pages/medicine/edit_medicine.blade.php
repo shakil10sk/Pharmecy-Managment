@@ -6,11 +6,11 @@ Edit Medicine
 
 
 @section('content-section')
-<h1>Edit Medicine <a href="/medicine/view" class="btn btn-danger pull-right btn-sm">View Medicine list</a></h1><br>
+<h1>Edit Medicine <a href="{{ url('/medicine/view') }}" class="btn btn-danger pull-right btn-sm">View Medicine list</a></h1><br>
 @include('message.alert');
 
 
-<form class="m-5" action="/medicine/post/{{ $edit_id->id }}/" method="post" enctype="multipart/form-data">
+<form class="m-5" action="{{ url('/medicine/post/'.$edit_id->id .'/') }}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="form-group">
         <label for="Medicine_name">Medicine Name</label>
@@ -78,7 +78,7 @@ Edit Medicine
     </div>
 
     <div class="form-group">
-        <img id="image" src="{{ asset('images/'.$edit_id->Images) }}"><br>
+        <img id="image" src="{{ asset('public/images/'.$edit_id->Images) }}"><br>
 
         <label for="images">Images</label>
         <input type="file" class="form-control upload" name="Images"

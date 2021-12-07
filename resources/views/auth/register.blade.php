@@ -29,7 +29,7 @@ ADD Employee
             <div class="panel-body">
                 <div class=" form">
                     @include('message.alert')
-                    <a class="btn btn-primary" href="/employee/add">Refresh</a>
+                    <a class="btn btn-primary" href="{{ url('/employee/add') }}">Refresh</a>
                     <form class="cmxform form-horizontal tasi-form " id="register" method="POST"
                         action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf

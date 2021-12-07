@@ -6,10 +6,10 @@ ADD Medicine
 
 
 @section('content-section')
-<h1>ADD Medicine <a href="/import-medicine" class="btn btn-danger pull-right btn-sm">Import Excell File</a></h1><br>
+<h1>ADD Medicine <a href="{{ url('/import-medicine') }}" class="btn btn-danger pull-right btn-sm">Import Excell File</a></h1><br>
 @include('message.alert');
 
-<form class="m-5" action="/medicine/post" method="POST" enctype="multipart/form-data">
+<form class="m-5" action="{{ url('/medicine/post') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="form-group">
         <label for="Medicine_name">Medicine Name</label>

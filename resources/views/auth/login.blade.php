@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Global Pharma Sign UP</title>
-    <link rel="stylesheet" href="{{ asset('frontend/style2.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/frontend/style2.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Simonetta&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Trade+Winds&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

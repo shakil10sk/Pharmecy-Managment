@@ -40,7 +40,7 @@
         </div> <!-- /Portlet -->
     </div> <!-- end col -->
     <div class="col-md-4">
-        <img src="{{asset('frontend/images/Global_Pharma.gif')}}" alt="Pharmacy Photo" height="350px" width="350px">
+        <img src="{{asset('public/frontend/images/Global_Pharma.gif')}}" alt="Pharmacy Photo" height="350px" width="350px">
     </div>
 
     {{-- <div class="col-lg-4">

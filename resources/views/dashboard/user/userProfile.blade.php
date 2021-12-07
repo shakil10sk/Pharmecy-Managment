@@ -23,7 +23,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div id="content" class="content content-full-width">
-                                <a href="\home" class="btn btn-toolbar btn-success">Global Pharma</a>
+                                <a href="{{ url('\home') }}" class="btn btn-toolbar btn-success">Global Pharma</a>
                                 <!-- begin profile -->
                                 <div class="profile">
                                     <div class="profile-header">
@@ -34,7 +34,7 @@
                                         <div class="profile-header-content">
                                             <!-- BEGIN profile-header-img -->
                                             <div class="profile-header-img">
-                                                <img src="{{ asset('images/users/'.Auth::user()->photo) }}"
+                                                <img src="{{ asset('public/images/users/'.Auth::user()->photo) }}"
                                                     alt="">
                                             </div>
                                             <!-- END profile-header-img -->

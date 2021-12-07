@@ -10,7 +10,7 @@ ADD Category
     <div class="col-md-2"></div>
     <div class="col-md-8">
         <div class="panel panel-success">
-            <div class="panel-heading"><h3 class="panel-title text-white">Add Category <a href="/category/" class="pull-right btn btn-danger btn-sm">View Category</a></h3></div>
+            <div class="panel-heading"><h3 class="panel-title text-white">Add Category <a href="{{ url('/category/') }}" class="pull-right btn btn-danger btn-sm">View Category</a></h3></div>
 
             {{-- @if($errors->any())
                 <div class="alert alert-danger">
@@ -23,7 +23,7 @@ ADD Category
             @endif
             @include('message.alert') --}}
             <div class="panel-body">
-                <form action="/category/{{ $edit->id }}/" role="form" method="POST" enctype="multipart/form-data">
+                <form action="{{ url('/category/'.$edit->id.'/') }}" role="form" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     @if(Session::get('success'))

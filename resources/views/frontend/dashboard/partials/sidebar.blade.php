@@ -2,7 +2,7 @@
     <div class="sidebar-inner slimscrollleft">
         <div class="user-details">
             <div class="pull-left">
-                <img src="{{ asset('/frontend/images/admin.jpg') }}" alt=""
+                <img src="{{ asset('public/frontend/images/admin.jpg') }}" alt=""
                     class="thumb-md img-circle"></div>
             <div class="user-info">
                 <div class="dropdown">
@@ -68,7 +68,7 @@
 
                 @if(Auth::user()->role==2)
                 <li>
-                    <a href="/pos" class="waves-effect ">
+                    <a href="{{ url('/pos') }}" class="waves-effect ">
                         <i class="md md-palette"></i>
                         <span>
                             POS
@@ -91,13 +91,13 @@
                     </a>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="/medicine/add">Add Medicine</a>
+                            <a href="{{ url('/medicine/add') }}">Add Medicine</a>
                         </li>
                         <li>
-                            <a href="/import-medicine">Import Medicine</a>
+                            <a href="{{ url('/import-medicine') }}">Import Medicine</a>
                         </li>
                         <li>
-                            <a href="/medicine/view">View Medicine</a>
+                            <a href="{{ url('/medicine/view') }}">View Medicine</a>
                         </li>
                     </ul>
                 </li>
@@ -120,7 +120,7 @@
                         </li>
 
                         <li>
-                            <a href="/employee/view">View Employee</a>
+                            <a href="{{ url('/employee/view') }}">View Employee</a>
                         </li>
                     </ul>
                 </li>
@@ -143,7 +143,7 @@
                             <a href="{{ route('add') }}">Add Customar</a>
                         </li>
                         <li>
-                            <a href="/customar/view">View Customar</a>
+                            <a href="{{ url('/customar/view') }}">View Customar</a>
                         </li>
                     </ul>
                 </li>
@@ -173,10 +173,10 @@
                     <ul class="list-unstyled">
                         {{-- <li><a href="/create-employee">Add category</a></li> --}}
                         <li>
-                            <a href="/add/category">Add category</a>
+                            <a href="{{ url('/add/category') }}">Add category</a>
                         </li>
                         <li>
-                            <a href="/category">View category</a>
+                            <a href="{{ url('/category') }}">View category</a>
                         </li>
                     </ul>
                 </li>
@@ -194,7 +194,7 @@
                     <ul class="list-unstyled">
                         {{-- <li><a href="/create-employee">Manufecturer</a></li> --}}
                         <li>
-                            <a href="/manufacturer ">Manufacturer
+                            <a href="{{ url('/manufacturer') }} ">Manufacturer
                             </a>
                         </li>
                     </ul>
@@ -202,7 +202,7 @@
             @endif
             </ul>
             <div class="mx-auto text-center">
-                <img  src="{{asset('frontend/images/Global_Pharma.gif')}}" alt="Pharmacy Photo" height="auto" width="85%" >
+                <img  src="{{asset('public/frontend/images/Global_Pharma.gif')}}" alt="Pharmacy Photo" height="auto" width="85%" >
             </div>
             <div class="clearfix"></div>
         </div>

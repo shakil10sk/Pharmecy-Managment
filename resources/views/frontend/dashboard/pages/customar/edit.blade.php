@@ -4,7 +4,7 @@
 @section('content-section')
 
 
-<form class="container" action="/customar/{{ $customar->id }}" method="post" enctype="multipart/form-data">
+<form class="container" action="{{ url('/customar/'.$customar->id) }}" method="post" enctype="multipart/form-data">
     @csrf
 <div class="modal-body">
     <div class="row">
