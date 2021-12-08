@@ -23,10 +23,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div id="content" class="content content-full-width">
-<<<<<<< HEAD
                                 <a href="{{ url('\home') }}" class="btn btn-toolbar btn-success">Global Pharma</a>
-=======
->>>>>>> DemoPharmecy
                                 <!-- begin profile -->
                                 <div class="profile">
                                     <div class="profile-header">

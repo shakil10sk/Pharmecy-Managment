@@ -43,12 +43,4 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
 
-<<<<<<< HEAD
         <script src="{{ asset('public/frontend/js/modernizr.min.js')}}"></script>
-=======
-        <script src="{{ asset('frontend/js/modernizr.min.js')}}"></script>
-
-
-
-
->>>>>>> DemoPharmecy

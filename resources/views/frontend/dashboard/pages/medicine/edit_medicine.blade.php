@@ -10,11 +10,7 @@ Edit Medicine
 @include('message.alert');
 
 
-<<<<<<< HEAD
 <form class="m-5" action="{{ url('/medicine/post/'.$edit_id->id .'/') }}" method="post" enctype="multipart/form-data">
-=======
-<form class="m-5" action="{{ asset('/medicine/post/'. $edit_id->id ) }}" method="post" enctype="multipart/form-data">
->>>>>>> DemoPharmecy
     @csrf
     <div class="form-group">
         <label for="Medicine_name">Medicine Name</label>

@@ -39,12 +39,6 @@
             </div>
         </div> <!-- /Portlet -->
     </div> <!-- end col -->
-<<<<<<< HEAD
-    <div class="col-md-4">
-        <img src="{{asset('public/frontend/images/Global_Pharma.gif')}}" alt="Pharmacy Photo" height="350px" width="350px">
-    </div>
-=======
->>>>>>> DemoPharmecy
 
     <div class="col-lg-4">
         <div class="portlet"><!-- /portlet heading -->
@@ -85,6 +79,6 @@
                 </div>
             </div>
         </div> <!-- /Portlet -->
-    </div> <!-- end col --> 
+    </div> <!-- end col -->
 </div> <!-- End row -->
 --}}

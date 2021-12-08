@@ -4,11 +4,7 @@
 @section('content-section')
 
 
-<<<<<<< HEAD
 <form class="container" action="{{ url('/customar/'.$customar->id) }}" method="post" enctype="multipart/form-data">
-=======
-<form class="container" action="{{ asset('/customar/'. $customar->id ) }}" method="post" enctype="multipart/form-data">
->>>>>>> DemoPharmecy
     @csrf
 <div class="modal-body">
     <div class="row">

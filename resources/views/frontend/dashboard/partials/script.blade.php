@@ -48,7 +48,7 @@
         <script type="text/javascript" src="{{ asset('public/frontend/assets/jquery.validate/jquery.validate.min.js') }}"></script>
 
          <!--wizard initialization-->
-         <script src="{{ asset('assets/form-wizard/wizard-init.js')}}" type="text/javascript"></script>
+         <script src="{{ asset('public/assets/form-wizard/wizard-init.js')}}" type="text/javascript"></script>
 
         <!-- Dashboard -->
         <script src="{{asset('public/frontend/js/jquery.dashboard.js')}}"></script>
@@ -66,7 +66,7 @@
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
 
 
-        
+
         <script type="text/javascript">
             /* ==============================================
             Counter Up
@@ -95,7 +95,7 @@
 <script>
 function error(){
 
-    
+
     swal("Only Admin Can Do IT !", "Please Contact With Admin!");
 }
 

@@ -195,11 +195,7 @@ GLOBAL PHARMA
 
 {{-- Customar Add Section --}}
 
-<<<<<<< HEAD
 <form class="container" action="{{ url('/customar/store') }}" method="post" enctype="multipart/form-data">
-=======
-<form class="container" action="{{ asset('/customar') }}" method="post" enctype="multipart/form-data">
->>>>>>> DemoPharmecy
     @csrf
     <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true" style="display: none;">

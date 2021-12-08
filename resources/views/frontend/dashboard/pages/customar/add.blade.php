@@ -4,11 +4,7 @@
 @section('content-section')
 
 <h3>Add Customar</h3>
-<<<<<<< HEAD
 <form class="container" action="{{ url('/customar/store') }}" method="post" enctype="multipart/form-data">
-=======
-<form class="container" action="{{ asset('/customar') }}" method="post" enctype="multipart/form-data">
->>>>>>> DemoPharmecy
     @csrf
     @include('message.alert')
 <div class="modal-body">
