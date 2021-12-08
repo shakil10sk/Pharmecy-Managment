@@ -32,7 +32,7 @@ ADD Employee
                     <a class="btn btn-primary" href="/employee/add">Refresh</a>
 
                     <form class="cmxform form-horizontal tasi-form " id="register" method="POST"
-                        action="/employee/{{ $edit->id }}/" enctype="multipart/form-data">
+                        action="{{ asset('/employee/'. $edit->id ) }}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group ">
                             <label for="name" class="control-label col-lg-2">Name <span
@@ -86,12 +86,13 @@ ADD Employee
                         </div>
 
                         <div class="form-group ">
-                            <img src="#" id="image" alt=""><br>
+                            <img src="{{ asset('images/users'.$edit->photo) }}" id="image" alt=""><br>
                             <label for="photo" class="control-label col-lg-2">Photo <span
                                     class="text-danger">*</span></label>
                             <div class="col-lg-10">
                                 <input class="form-control " id="photo" onchange="readURL(this);" accept="image/*"
                                     name="photo" type="file">
+                                    <input type="text" value="{{ $edit->photo }}">
                             </div>
                         </div>
 

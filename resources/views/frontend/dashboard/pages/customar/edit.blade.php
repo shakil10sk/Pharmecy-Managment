@@ -4,7 +4,11 @@
 @section('content-section')
 
 
+<<<<<<< HEAD
 <form class="container" action="{{ url('/customar/'.$customar->id) }}" method="post" enctype="multipart/form-data">
+=======
+<form class="container" action="{{ asset('/customar/'. $customar->id ) }}" method="post" enctype="multipart/form-data">
+>>>>>>> DemoPharmecy
     @csrf
 <div class="modal-body">
     <div class="row">
@@ -40,6 +44,7 @@
             <div class="form-group">
                 <label for="field-10" class="control-label">Photo</label>
                 <input class="form-control " id="field-10" name="photo"  value="{{ asset('images/'.$customar->photo) }}" type="file">
+                <input class="form-control " id="field-10" name="photo"  value="{{ asset('images/'.$customar->photo) }}" type="text">
             </div>
         </div>
     </div>

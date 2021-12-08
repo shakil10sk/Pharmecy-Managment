@@ -2,7 +2,11 @@
     <div class="sidebar-inner slimscrollleft">
         <div class="user-details">
             <div class="pull-left">
+<<<<<<< HEAD
                 <img src="{{ asset('public/frontend/images/admin.jpg') }}" alt=""
+=======
+                <img src="{{asset('/images/users/'.Auth::User()->photo)}}" alt=""
+>>>>>>> DemoPharmecy
                     class="thumb-md img-circle"></div>
             <div class="user-info">
                 <div class="dropdown">
@@ -11,21 +15,21 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="javascript:void(0)">
+                            <a href="{{ route('user.profile') }}">
                                 <i class="md md-face-unlock"></i>
                                 Profile<div class="ripple-wrapper"></div>
                             </a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="javascript:void(0)">
                                 <i class="md md-settings"></i>
                                 Settings</a>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <a href="javascript:void(0)">
                                 <i class="md md-lock"></i>
                                 Lock screen</a>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="{{ route('logout') }}" onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
@@ -48,9 +52,9 @@
                 </div>
                 <p class="text-muted m-0">
                     @if(Auth::user()->role==1)
-                    Adminsatrator
+                    {{ Auth::user()->position }}
                     @elseif(Auth::user()->role==2)
-                    Salesman(User)
+                    {{ Auth::user()->position }}
                     @endif</p>
             </div>
         </div>
@@ -68,10 +72,15 @@
 
                 @if(Auth::user()->role==2)
                 <li>
+<<<<<<< HEAD
                     <a href="{{ url('/pos') }}" class="waves-effect ">
                         <i class="md md-palette"></i>
+=======
+                    <a href="{{ asset('/pos')}}" class="waves-effect ">
+                        <i class="fa fa-cart-plus"></i>
+>>>>>>> DemoPharmecy
                         <span>
-                            POS
+                        My Shop
                         </span>
                     </a>
                 </li>
@@ -81,7 +90,7 @@
             @if(Auth()->user()->role==1)
                 <li class="has_sub">
                     <a href="#" class="waves-effect">
-                        <i class="md md-invert-colors-on"></i>
+                        <i class="fa fa-plus-square"></i>
                         <span>
                             Medicine
                         </span>
@@ -91,6 +100,7 @@
                     </a>
                     <ul class="list-unstyled">
                         <li>
+<<<<<<< HEAD
                             <a href="{{ url('/medicine/add') }}">Add Medicine</a>
                         </li>
                         <li>
@@ -98,6 +108,15 @@
                         </li>
                         <li>
                             <a href="{{ url('/medicine/view') }}">View Medicine</a>
+=======
+                            <a href="{{ asset('/medicine/add')}}">Add Medicine</a>
+                        </li>
+                        <li>
+                            <a href="{{ asset('/import-medicine')}}">Import Medicine</a>
+                        </li>
+                        <li>
+                            <a href="{{ asset('/medicine/view')}}">View Medicine</a>
+>>>>>>> DemoPharmecy
                         </li>
                     </ul>
                 </li>
@@ -106,7 +125,7 @@
              @if(Auth::user()->role==1)
                 <li class="has_sub">
                     <a href="#" class="waves-effect">
-                        <i class="md md-redeem"></i>
+                        <i class="fa fa-users"></i>
                         <span>
                             Employee
                         </span>
@@ -116,11 +135,15 @@
                     </a>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="{{ route('register') }}">Create Employee</a>
+                            <a href="{{ route('register')}}">Create Employee</a>
                         </li>
 
                         <li>
+<<<<<<< HEAD
                             <a href="{{ url('/employee/view') }}">View Employee</a>
+=======
+                            <a href="{{ asset('/employee/view')}}">View Employee</a>
+>>>>>>> DemoPharmecy
                         </li>
                     </ul>
                 </li>
@@ -130,9 +153,9 @@
             @if(Auth::user()->role==1)
                 <li class="has_sub">
                     <a href="#" class="waves-effect">
-                        <i class="fa fa-sellsy"></i>
+                        <i class="fa fa-user"></i>
                         <span>
-                            Customar
+                            Customer
                         </span>
                         <span class="pull-right">
                             <i class="md md-add"></i>
@@ -140,19 +163,23 @@
                     </a>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="{{ route('add') }}">Add Customar</a>
+                            <a href="{{ route('add') }}">Add Customer</a>
                         </li>
                         <li>
+<<<<<<< HEAD
                             <a href="{{ url('/customar/view') }}">View Customar</a>
+=======
+                            <a href="{{ asset('/customar/view')}}">View Customer</a>
+>>>>>>> DemoPharmecy
                         </li>
                     </ul>
                 </li>
             @elseif(Auth::user()->role==2)
                 <li>
                     <a href="{{ route('add') }}" class="waves-effect">
-                        <i class="fa fa-sellsy"></i>
+                        <i class="fa fa-user"></i>
                         <span>
-                            Add New Customar
+                            Add New Customer
                         </span>
                     </a>
                 </li>
@@ -164,24 +191,31 @@
                     <a href="#" class="waves-effect">
                         <i class="md md-invert-colors-on"></i>
                         <span>
-                            category
+                            Category
                         </span>
                         <span class="pull-right">
                             <i class="md md-add"></i>
                         </span>
                     </a>
                     <ul class="list-unstyled">
-                        {{-- <li><a href="/create-employee">Add category</a></li> --}}
+                        {{-- <li><a href="{{ asset('/create-employee')}}">Add Category</a></li> --}}
                         <li>
+<<<<<<< HEAD
                             <a href="{{ url('/add/category') }}">Add category</a>
                         </li>
                         <li>
                             <a href="{{ url('/category') }}">View category</a>
+=======
+                            <a href="{{ asset('/add/category')}}">Add Category</a>
+                        </li>
+                        <li>
+                            <a href="{{ asset('/category')}}">View Category</a>
+>>>>>>> DemoPharmecy
                         </li>
                     </ul>
                 </li>
 
-                <li class="has_sub">
+                <!-- <li class="has_sub">
                     <a href="#" class="waves-effect">
                         <i class="md md-invert-colors-on"></i>
                         <span>
@@ -192,12 +226,41 @@
                         </span>
                     </a>
                     <ul class="list-unstyled">
-                        {{-- <li><a href="/create-employee">Manufecturer</a></li> --}}
+                        {{-- <li><a href="{{ asset('/create-employee')}}">Manufecturer</a></li> --}}
                         <li>
-                            <a href="{{ url('/manufacturer') }} ">Manufacturer
+                            <a href="{{ asset('/manufacturer')}} ">Manufacturer
                             </a>
                         </li>
                     </ul>
+                </li> -->
+
+                <li class="has_sub">
+                    <a href="#" class="waves-effect">
+                        <i class="fa fa-list-alt"></i>
+                        <span>
+                            Report
+                        </span>
+                        <span class="pull-right">
+                            <i class="md md-add"></i>
+                        </span>
+                    </a>
+                    <ul class="list-unstyled">
+                        {{-- <li><a href="{{ asset('/create-employee')}}">Manufecturer</a></li> --}}
+                        <li>
+                            <a href="{{ asset('/report')}} ">Report
+                            </a>
+                        </li>
+
+                        <li>
+<<<<<<< HEAD
+                            <a href="{{ url('/manufacturer') }} ">Manufacturer
+=======
+                            <a href="{{ asset('/stock')}} ">Limited Stock
+>>>>>>> DemoPharmecy
+                            </a>
+                        </li>
+                    </ul>
+
                 </li>
             @endif
             </ul>

@@ -10,7 +10,11 @@ ADD Medicine
     <div class="col-md-2"></div>
     <div class="col-md-8">
         <div class="panel panel-info">
+<<<<<<< HEAD
             <div class="panel-heading"><h3 class="panel-titile text-white">Products Import <a href="{{ url('/export') }}" class="pull-right btn btn-danger btn-sm">Dowenload Xlsx</a></h3></div>
+=======
+            <div class="panel-heading"><h3 class="panel-titile text-white">Products Import <a href="{{url('/export')}}" class="pull-right btn btn-danger btn-sm">Dowenload Xlsx</a></h3></div>
+>>>>>>> DemoPharmecy
 
             @if($errors->any())
                 <div class="alert alert-danger">

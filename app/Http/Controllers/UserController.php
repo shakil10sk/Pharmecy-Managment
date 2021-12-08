@@ -19,11 +19,15 @@ class UserController extends Controller
         return view('frontend.index',compact('today_sells'));
     }
     public function profile(){
-        $value=Employee::get();
+
+        $value=User::get();
+
         return view('dashboard.user.userProfile',compact('value'));
+
     }
     public function view(){
         $view_user=User::get();
+        
         return view('frontend.dashboard.pages.employee.view',compact('view_user'));
     }
 
@@ -48,11 +52,11 @@ class UserController extends Controller
             $old_file=$data->photo;
             // dd($old_file);
            if(!empty($old_file)){
-             $path=("images/users/$old_file");
+             $path=("public/images/users/".$old_file);
             unlink($path);
           }
 
-            $image_resize->save("images/users/".$file_name);
+            $image_resize->save("public/images/users/".$file_name);
             $data->photo=$file_name;
         }
 
@@ -75,7 +79,7 @@ class UserController extends Controller
         $old_file=$delete->photo;
         // dd($old_file);
        if(!empty($old_file)){
-            $path=("images/users/$old_file");
+            $path=("public/images/users/$old_file");
             unlink($path);
         }
         $delete->delete();

@@ -4,7 +4,11 @@
 @section('content-section')
 
 <h3>Add Customar</h3>
+<<<<<<< HEAD
 <form class="container" action="{{ url('/customar/store') }}" method="post" enctype="multipart/form-data">
+=======
+<form class="container" action="{{ asset('/customar') }}" method="post" enctype="multipart/form-data">
+>>>>>>> DemoPharmecy
     @csrf
     @include('message.alert')
 <div class="modal-body">
@@ -48,7 +52,7 @@
         <div class="col-md-12">
             <div class="form-group">
                 <label for="field-4" class="control-label">Address<span class="text-danger"> *</span></label>
-                <input type="text" class="form-control" id="field-4"required  name="address" placeholder="Rajshahi">
+                <input type="text" class="form-control" id="field-4"required  name="address" placeholder="Dhaka">
             </div>
         </div>
     </div>
@@ -68,14 +72,12 @@
         <div class="col-md-4">
             <div class="form-group">
                 <label for="field-9" class="control-label">Bank Branch<span class="text-danger"> *</span></label>
-                <input type="text" class="form-control" id="field-9" required name="bank_branch" placeholder="Sapahar">
+                <input type="text" class="form-control" id="field-9" required name="bank_branch" placeholder="Dhaka">
             </div>
         </div>
 
     </div>
-
     <div class="modal-footer">
-        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-info waves-effect waves-light">Save changes</button>
     </div>
 </div>

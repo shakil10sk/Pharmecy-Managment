@@ -39,6 +39,9 @@
                         </div>
                     </div>
                     {{-- @yield('content-section') --}}
+                    <form class="container" action="{{ url('/final-invoice') }}" method="post">
+                        @include('message.alert')
+                        @csrf
                     <div class="row">
                         <div class="col-md-12">
                             <div class="panel panel-default">
@@ -63,25 +66,30 @@
                                             <div class="pull-left m-t-5">
 
                                                 <address>
-                                                    <strong>Name: {{ $customar->customar_name }}</strong><br>
-                                                    Address: {{ $customar->address }}<br>
-                                                    City: {{ $customar->custoamr_city }}<br>
-                                                    <abbr title="Phone">P:</abbr> {{ $customar->phone }}
+                                                    <strong>Name : {{ $customar->customar_name }}</strong><br>
+                                                    Address : {{ $customar->address }}<br>
+                                                    City : {{ $customar->custoamr_city }}<br>
+                                                    Phone : {{ $customar->phone }}
                                                 </address>
 
                                             </div>
                                             <div class="pull-right m-t-5">
-                                                <p><strong>Order Date: </strong>
+                                                <p><strong>Order Date : </strong>
                                                     {{ date("l jS \of F Y") }}</p>
-                                                <p class="m-t-5"><strong>Order Status: </strong> <span
+                                                <p class="m-t-5"><strong>Order Status : </strong> <span
                                                         class="label label-pink">Active</span></p>
                                                 @php
                                                     // $order=DB::table('orders')->select('id')->first();
                                                     $i=1;
                                                 @endphp
 
-                                                <p class="m-t-5"><strong>Order ID: </strong> #202100{{ ++$i }}
+                                                <p class="m-t-5"><strong>Order ID : </strong> #202100{{ ++$i }}
                                                     {{-- {{ $order++ }} --}}
+
+                                                </p>
+
+                                                <p class="m-t-5"><strong>Sold By : </strong>
+                                                {{ Auth::user()->name }}
 
                                                 </p>
                                             </div>
@@ -109,9 +117,20 @@
                                                             <tr>
                                                                 <td>{{ ++$sl }}</td>
                                                                 <td>{{ $row->name }}</td>
-                                                                <td>{{ $row->qty }}</td>
-                                                                <td>{{ $row->price }}</td>
-                                                                <td>{{ $row->price*$row->qty }}</td>
+                                                                {{-- <form action="post" action="{{ asset('update/qty') }}"> --}}
+                                                                    <input type="hidden" name="medicine_id" value="{{ $row->id }}">
+                                                                {{-- </form> --}}
+                                                                <td>{{ $row->qty }}
+                                                                    @php
+                                                                        DB::table('medicines')
+                                                                        ->where('id','=',$row->id)
+                                                                        ->decrement('qty', $row->qty);
+                                                                       
+                                                                    @endphp
+                                                                    pcs</td>
+                                                                <td>৳ {{ $row->price }}</td>
+                                                                <td>৳ {{ $row->price*$row->qty }}</td>
+
                                                             </tr>
                                                         @endforeach
                                                     </tbody>
@@ -121,11 +140,11 @@
                                     </div>
                                     <div class="row" style="border-radius: 0px;">
                                         <div class="col-md-3 col-md-offset-9">
-                                            <p class="text-right"><b>Sub-total:</b> {{ Cart::subtotal() }}</p>
+                                            <h4 class="text-right"><b>Sub-total :</b> ৳{{ Cart::subtotal() }}</h4>
                                             {{-- <p class="text-right">Discout: 12.9%</p> --}}
-                                            <p class="text-right">VAT: {{ Cart::tax(0) }}</p>
+                                            {{--<p class="text-right">Service Charge: {{ Cart::tax(2) }}</p>--}}
                                             <hr>
-                                            <h3 class="text-right">Total:- {{ Cart::total() }}</h3>
+                                            <h3 class="text-right">Total : ৳{{ Cart::total(2) }}</h3>
                                         </div>
                                     </div>
 
@@ -146,9 +165,9 @@
                     {{-- data model --}}
 
 
-                    <form class="container" action="{{ url('/final-invoice') }}" method="post">
+                    {{-- <form class="container" action="{{ url('/final-invoice') }}" method="post">
                         @include('message.alert')
-                        @csrf
+                        @csrf --}}
                         <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog"
                             aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                             <div class="modal-dialog">
@@ -175,7 +194,6 @@
                                                     <select name="payment_status" id="" class="form-control">
                                                         <option value="handcash"> Hand Cash </option>
                                                         <option value="cheack"> Cheack </option>
-                                                        <option value="due"> Due </option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -184,20 +202,22 @@
                                                     <label for="field-2" class="control-label">Pay<span
                                                             class="text-danger">
                                                             *</span></label>
-                                                    <input type="text" class="form-control" id="field-2" name="pay"
+                                                    <input type="text" class="form-control" required id="field-2" name="pay"
                                                         placeholder="payment amount">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label for="field-3" class="control-label">Due<span
-                                                            class="text-danger">
-                                                            *</span></label>
-                                                    <input type="text" class="form-control" id="field-3" name="due"
-                                                        placeholder="+8801700-000000">
+                                                    <input type="hidden" class="form-control" required id="field-3" name="due"
+                                                        value="0">
                                                 </div>
                                             </div>
+
                                         </div>
+                                        {{-- <input type="text" name="medicine_id" value=""> --}}
+                                        @foreach($contents as $key => $value)
+                                        <input type="hidden" value="{{ $value->id }}" name="medicine_id">
+                                        @endforeach
                                         <input type="hidden" name="customar_id" value="{{ $customar->id }}">
                                         <input type="hidden" name="order_date"
                                             value="{{ date('d/m/y') }}">

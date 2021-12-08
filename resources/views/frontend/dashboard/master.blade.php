@@ -5,7 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
         <meta name="author" content="Coderthemes">
+<<<<<<< HEAD
         <link rel="shortcut icon" href="{{asset('public/images/favicon_1.ico')}}">
+=======
+        <link rel="shortcut icon" href="{{ asset('favicon.jpg') }}" type="image/x-icon">
+        <link rel="icon" href="{{ asset('favicon.jpg') }}" type="image/x-icon">
+>>>>>>> DemoPharmecy
         <title>@yield('title') </title>
 
 

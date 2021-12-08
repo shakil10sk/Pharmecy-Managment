@@ -23,7 +23,11 @@ ADD Category
             @endif
             @include('message.alert') --}}
             <div class="panel-body">
+<<<<<<< HEAD
                 <form action="{{ url('/category/'.$edit->id.'/') }}" role="form" method="POST" enctype="multipart/form-data">
+=======
+                <form action="{{asset('/category/'.$edit->id)}}" role="form" method="POST" enctype="multipart/form-data">
+>>>>>>> DemoPharmecy
                     @csrf
 
                     @if(Session::get('success'))

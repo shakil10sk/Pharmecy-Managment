@@ -7,7 +7,7 @@ GLOBAL PHARMA
 @section('title-section')
 <div class="row">
     <div class="col-sm-12 bg-info">
-        <h4 class="pull-left page-title">POS(Point Of Sale)</h4>
+        <h4 class="pull-left page-title">My Shop</h4>
         <ol class="breadcrumb pull-right">
             <li>
                 <a href="{{ url('/') }}">GLOBAL PHRMA</a>
@@ -33,7 +33,7 @@ GLOBAL PHARMA
                         data-target="#con-close-modal">Add New</a>
                 </h4>
                 <select name="" id="" class="form-control">
-                    <option value="" disabled="" selected="">===Select Customar===</option>
+                    <option value="" disabled="" selected="">Select Customar</option>
 @foreach($customar as $cus)
                         <option value="{{ $cus->id }}">{{ $cus->customar_name }}</option>
         @endforeach
@@ -45,7 +45,7 @@ GLOBAL PHARMA
                 <thead class="bg-info">
                     <tr>
                         <th class="text-center text-white">Name</th>
-                        <th class="text-center text-white">QTY</th>
+                        <th class="text-center text-white">Quantity</th>
                         <th class="text-center text-white">Price</th>
                         <th class="text-center text-white">Sub Total</th>
                         <th class="text-center text-white">Action</th>
@@ -67,8 +67,8 @@ GLOBAL PHARMA
                                         <i class="fa fa-check "></i></button>
                                 </form>
                             </td>
-                            <td class="text-center">{{ $shop->price }}</td>
-                            <td class="text-center">{{ $shop->price*$shop->qty }}</td>
+                            <td class="text-center">৳ {{ $shop->price }}</td>
+                            <td class="text-center">৳ {{ $shop->price*$shop->qty }}</td>
                             <td class="text-center"><a
                                     href="{{ url('/cart-remove/'.$shop->rowId) }}"><i
                                         class="fa fa-trash fa-2x text-danger"></a></i>
@@ -80,13 +80,14 @@ GLOBAL PHARMA
         </ul>
         <div class="pricing-footer  bg-info">
             <div class=" bg-primary">
-                <p style="font-size:19px;"> Quantity: {{ Cart::count() }}</p>
-                <p style="font-size:19px;"> SubTotal: {{ Cart::subtotal() }}</p>
-                <p style="font-size:19px;"> Vat: {{ Cart::tax(0) }}</p>
+                <p style="font-size:19px;"> Quantity : {{ Cart::count(2) }} pcs</p>
+                <p style="font-size:19px;"> SubTotal : {{ Cart::subtotal(2) }} Taka</p>
+               {{-- <p style="font-size:19px;"> Service Charge : {{ Cart::tax(2) }}</p>--}}
                 <hr>
             </div>
-            <h2 class="text-white text-center m-0">Total:- {{ Cart::total() }} </h2>
+            <h2 class="text-white text-center m-0">Total : {{ Cart::total(2) }} Taka</h2>
 
+            {{-- Create Invoice --}}
             <form action="{{ url('/create-invoice') }}" method="post">
                 @csrf
                 <div class="panel"><br><br>
@@ -107,7 +108,7 @@ GLOBAL PHARMA
                         $customar=DB::table('customars')->get();
                     @endphp
                     <select name="cus_id" id="" class="form-control">
-                        <option value="" disabled="" selected="">===Select Customar===</option>
+                        <option value="" disabled="" selected="">Select Customar</option>
                         @foreach($customar as $cus)
                             <option value="{{ $cus->id }}">{{ $cus->customar_name }}</option>
                         @endforeach
@@ -128,12 +129,14 @@ GLOBAL PHARMA
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 ">
             <div class="portfolioFilter">
-                @foreach($medicine as $key => $value)
-                    {{-- <a href="#" data-filter="*" class="current">{{ $value->category }}</a>
-                    --}}
-                    <a href="#" data-filter=".webdesign"><span
-                            class="h5 text-uppercase">{{ $value->category }}</span></a>
-                @endforeach
+
+                <select name="cus_id" id="" class="form-control">
+                    <option value="" disabled="" selected="">Select Medicine Category</option>
+                    @foreach($category as $value)
+                        <option value="{{ $value->id }}">{{ $value->category }}</option>
+                    @endforeach
+                </select>
+
             </div>
         </div>
     </div>
@@ -150,6 +153,7 @@ GLOBAL PHARMA
                                 <th>Image</th>
                                 <th>Name</th>
                                 <th>Category</th>
+                                <th>Quantity</th>
                                 <th>Price</th>
                                 <th>ADD</th>
                             </tr>
@@ -158,7 +162,7 @@ GLOBAL PHARMA
                         <tbody>
                             @foreach($medicine as $key=>$value)
                                 <tr class="text-center">
-                                    <form action="/add-cart" method="post">
+                                    <form action="{{ asset('/add-cart') }}" method="post">
                                         @csrf
                                         <input type="hidden" name="id" value="{{ $value->id }}">
                                         <input type="hidden" name="name" value="{{ $value->medicine_name }}">
@@ -166,12 +170,13 @@ GLOBAL PHARMA
                                         <input type="hidden" name="price" value="{{ $value->sell_price }}">
                                         <td>
                                             {{-- <a href="#"></a> --}}
-                                            <img src="{{ asset('images/'.$value->Images) }}"
+                                            <img src="{{ asset('public/images/'.$value->Images) }}"
                                                 alt="" width="50" height="50"><br>{{ ++$key }}
                                         </td>
                                         <td>{{ $value->medicine_name }}</td>
                                         <td>{{ $value->category }}</td>
-                                        <td>{{ $value->sell_price }}</td>
+                                        <td>{{ $value->qty }}</td>
+                                        <td>৳ {{ $value->sell_price }}</td>
                                         <td> <button type="submit" class="btn btn-sm"><i
                                                     class="fa fa-plus-square fa-2x text-info"></i></button> </td>
                                     </form>
@@ -190,7 +195,11 @@ GLOBAL PHARMA
 
 {{-- Customar Add Section --}}
 
+<<<<<<< HEAD
 <form class="container" action="{{ url('/customar/store') }}" method="post" enctype="multipart/form-data">
+=======
+<form class="container" action="{{ asset('/customar') }}" method="post" enctype="multipart/form-data">
+>>>>>>> DemoPharmecy
     @csrf
     <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true" style="display: none;">
@@ -249,6 +258,7 @@ GLOBAL PHARMA
                                 <label for="field-10" class="control-label">Photo</label>
                             </div>
                         </div>
+
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="field-10" class="control-label">Photo</label>
@@ -263,7 +273,7 @@ GLOBAL PHARMA
                                 <label for="field-4" class="control-label">Address<span class="text-danger">
                                         *</span></label>
                                 <input type="text" class="form-control" id="field-4" required name="address"
-                                    placeholder="Rajshahi">
+                                    placeholder="Dhaka">
                             </div>
                         </div>
                     </div>
@@ -289,15 +299,16 @@ GLOBAL PHARMA
                                 <label for="field-9" class="control-label">Bank Branch<span class="text-danger">
                                         *</span></label>
                                 <input type="text" class="form-control" id="field-9" required name="bank_branch"
-                                    placeholder="sapahar">
+                                    placeholder="Dhaka">
                             </div>
                         </div>
+                        {{-- <input type="hidden" value="{{ Auth::user()->id }}"> --}}
 
                     </div>
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-info waves-effect waves-light">Save changes</button>
+                        <button type="submit" value=" Save Changes" class="btn btn-info waves-effect waves-light">Save changes</button>
                     </div>
                 </div>
 
