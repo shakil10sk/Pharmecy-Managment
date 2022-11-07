@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
     <meta name="author" content="Coderthemes">
-    <link rel="shortcut icon" href="{{ asset('images/favicon_1.ico') }}">
+    <link rel="shortcut icon" href="{{ asset('public/images/favicon_1.ico') }}">
     <title>@yield('title') </title>
     @include('frontend.dashboard.partials.style');
 </head>
@@ -32,8 +32,8 @@
                         <div class="col-sm-12">
                             <h4 class="pull-left page-title">Invoice</h4>
                             <ol class="breadcrumb pull-right">
-                                <li><a href="/">GLOBAL PHARMA</a></li>
-                                <li><a href="/POS">POS</a></li>
+                                <li><a href="{{ url('/') }}">GLOBAL PHARMA</a></li>
+                                <li><a href="{{ url('/POS') }}">POS</a></li>
                                 <li class="active">Invoice</li>
                             </ol>
                         </div>

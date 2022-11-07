@@ -79,6 +79,6 @@
                 </div>
             </div>
         </div> <!-- /Portlet -->
-    </div> <!-- end col --> 
+    </div> <!-- end col -->
 </div> <!-- End row -->
 --}}

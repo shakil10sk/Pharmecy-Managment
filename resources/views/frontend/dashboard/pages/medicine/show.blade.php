@@ -17,10 +17,10 @@ GLOBAL PHARMA
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <ul class="nav navbar-nav">
-        <li><a href="{{ route('admin.dashboard') }}">Home</a></li>
+        <li><a href="{{ url('/home') }}">Home</a></li>
         <li class="active"><a href="/medicine/show/{id}">{{ $show_data->medicine_name }}</a></li>
-        <li><a href="{{ asset('/medicine/view')}}">View Medicine List</a></li>
-        <li><a href="{{ asset('/medicine/add')}}">Add Medicine</a></li>
+        <li><a href="{{ url('/medicine/view') }}">View Medicine List</a></li>
+        <li><a href="{{ url('/medicine/add') }}">Add Medicine</a></li>
       </ul>
     </div>
   </nav>
@@ -28,7 +28,7 @@ GLOBAL PHARMA
   <div class="container">
     <div class="row">
         <div class="col-md-12 mx-auto text-center">
-            <img class="img-fluid" src="{{ asset('images/'.$show_data->Images) }}" alt="" >
+            <img class="img-fluid" src="{{ asset('public/images/'.$show_data->Images) }}" alt="" >
             <h1>{{ $show_data->medicine_name}}</h1>
         </div>
     </div>
@@ -54,7 +54,7 @@ GLOBAL PHARMA
     </div>
 
   </div>
-  
+
 {{-- <div class="table-responsive">
     <table class="table table-striped">
         <tr>

@@ -10,8 +10,8 @@ GLOBAL PHARMA
     <div class="col-sm-12">
         <h4 class="pull-left page-title">View Emplyoee</h4>
         <ol class="breadcrumb pull-right">
-            <li><a href="/">GLOBAL PHARMA</a></li>
-            <li><a href="/employee/add">emplyoee</a></li>
+            <li><a href="{{ url('/') }}">GLOBAL PHARMA</a></li>
+            <li><a href="{{ url('/employee/add') }}">emplyoee</a></li>
             <li class="active">Emplyoee Table</li>
         </ol>
     </div>
@@ -24,7 +24,7 @@ GLOBAL PHARMA
         <div class="row">
             <div class="col-sm-6">
                 <div class="m-b-30">
-                    <button id="addToTable" onclick="window.location.href='/employee/add'"
+                    <button id="addToTable" onclick="window.location.href='{{ url('/employee/add') }}'"
                         class="btn btn-primary waves-effect text-light waves-light">Add
                         <i class="fa fa-plus"></i></button>
                 </div>
@@ -58,12 +58,12 @@ GLOBAL PHARMA
                             <td>{{ $value->nid_number }}</td>
                             <td>{{ $value->city }}</td>
                             <td>{{ $value->position }}</td>
-                            <td><img src="{{ asset('images/users/'.$value->photo) }}" alt="" width="50" height="50"></td>
+                            <td><img src="{{ asset('public/images/users/'.$value->photo) }}" alt="" width="50" height="50"></td>
                             <td class="actions">
                                 {{-- <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a> --}}
                                 {{-- <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a> --}}
-                                <a href="{{ asset('/employee/edit/'. $value->id ) }}" class="on-default edit-row"><i class="fa fa-pencil"></i></a> | 
-                                <a href="{{ asset('/employee/delete/'. $value->id ) }}" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                                <a href="{{ url('/employee/'.$value->id.'/edit') }}" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
+                                <a href="{{ url('/employee/'.$value->id.'/delete') }}" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
                             </td>
 
                         </tr>

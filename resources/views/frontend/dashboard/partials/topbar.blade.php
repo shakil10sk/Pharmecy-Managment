@@ -3,7 +3,7 @@
     <div class="topbar-left">
         <div class="text-center d-inline-block">
             <a href="{{ route('admin.dashboard') }}" class="logo ">
-                <img class="myimage img-fluid" src="{{ asset('frontend/images/Global_Pharma.png') }}" alt="Global Pharma">
+                <img class="myimage img-fluid" src="{{ asset('public/frontend/images/Global_Pharma.png') }}" alt="Global Pharma">
             </a>
             {{-- <a href="/" class="logo "><img class="myimage" src="{{ asset('frontend/images/logo.PNG') }}" alt="Global"  ></span></a>
             <a href="index.html" class="logo"><i class="md md-terrain"></i> <span>abc </span></a> --}}

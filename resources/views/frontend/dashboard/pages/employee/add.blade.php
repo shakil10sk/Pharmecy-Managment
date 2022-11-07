@@ -9,8 +9,8 @@ ADD Employee
     <div class="col-sm-12">
         <h4 class="pull-left page-title">Add Employee</h4>
         <ol class="breadcrumb pull-right">
-            <li><a href="/">GLOBAL PHARMA</a></li>
-            <li class="active"><a href="/employee/view">View Emplyoee</a></li>
+            <li><a href="{{ url('/') }}">GLOBAL PHARMA</a></li>
+            <li class="active"><a href="{{ url('/employee/view') }}">View Emplyoee</a></li>
         </ol>
     </div>
 </div>
@@ -29,8 +29,8 @@ ADD Employee
             <div class="panel-body">
                 <div class=" form">
                     @include('message.alert')
-                    <a class="btn btn-primary" href="/employee/add">Refresh</a>
-                    <form class="cmxform form-horizontal tasi-form"  method="post" action="/employee/view"
+                    <a class="btn btn-primary" href="{{ url('/employee/add') }}">Refresh</a>
+                    <form class="cmxform form-horizontal tasi-form"  method="post" action="{{ url('/employee/view') }}"
                     enctype="multipart/form-data">
                         @csrf
                         <div class="form-group ">

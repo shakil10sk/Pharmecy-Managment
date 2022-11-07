@@ -9,8 +9,8 @@ ADD Employee
     <div class="col-sm-12">
         <h4 class="pull-left page-title">Add Employee</h4>
         <ol class="breadcrumb pull-right">
-            <li><a href="/">GLOBAL PHARMA</a></li>
-            <li class="active"><a href="/employee/view">View Emplyoee</a></li>
+            <li><a href="{{ url('/') }}">GLOBAL PHARMA</a></li>
+            <li class="active"><a href="{{ url('/employee/view') }}">View Emplyoee</a></li>
         </ol>
     </div>
 </div>

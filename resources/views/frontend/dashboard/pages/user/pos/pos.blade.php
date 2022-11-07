@@ -10,7 +10,7 @@ GLOBAL PHARMA
         <h4 class="pull-left page-title">My Shop</h4>
         <ol class="breadcrumb pull-right">
             <li>
-                <a href="/">GLOBAL PHRMA</a>
+                <a href="{{ url('/') }}">GLOBAL PHRMA</a>
             </li>
             <li class="text-white">{{ date('d/m/y') }}</li>
         </ol>
@@ -195,7 +195,7 @@ GLOBAL PHARMA
 
 {{-- Customar Add Section --}}
 
-<form class="container" action="{{ asset('/customar') }}" method="post" enctype="multipart/form-data">
+<form class="container" action="{{ url('/customar/store') }}" method="post" enctype="multipart/form-data">
     @csrf
     <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true" style="display: none;">
